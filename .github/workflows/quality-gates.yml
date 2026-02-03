@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+          cache: pip
+          cache-dependency-path: .github/ci/requirements-ci.txt
 
       - name: Set up Node
         uses: actions/setup-node@v4
@@ -24,7 +26,7 @@ jobs:
 
       - name: Install MkDocs + markdownlint-cli2 deps
         run: |
-          pip install -U mkdocs mkdocs-material
+          pip install -r .github/ci/requirements-ci.txt
           npm i -g markdownlint-cli2
 
       - name: Install lychee
@@ -32,6 +34,10 @@ jobs:
           set -euo pipefail
           BIN="$HOME/.local/bin"; mkdir -p "$BIN"
           export PATH="$BIN:$PATH"
+          if command -v lychee >/dev/null 2>&1; then
+            lychee --version || true
+            exit 0
+          fi
           FINAL_URL="$(curl -fsSLI -o /dev/null -w "%{url_effective}" https://github.com/lycheeverse/lychee/releases/latest)"
           TAG="${FINAL_URL##*/}"
           ASSET="lychee-x86_64-unknown-linux-gnu.tar.gz"
@@ -47,6 +53,10 @@ jobs:
           set -euo pipefail
           BIN="$HOME/.local/bin"; mkdir -p "$BIN"
           export PATH="$BIN:$PATH"
+          if command -v vale >/dev/null 2>&1; then
+            vale --version || true
+            exit 0
+          fi
           FINAL_URL="$(curl -fsSLI -o /dev/null -w "%{url_effective}" https://github.com/errata-ai/vale/releases/latest)"
           TAG="${FINAL_URL##*/}"
           VER="${TAG#v}"
@@ -58,6 +68,15 @@ jobs:
           tar -xzf "$tmp/vale.tgz" -C "$tmp/vale"
           install -m 0755 "$tmp/vale/vale" "$BIN/vale"
           vale --version
+
+      - name: Cache local bin
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/bin
+          key: ${{ runner.os }}-local-bin-${{ hashFiles('.github/ci/requirements-ci.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-local-bin-
 
       - name: Run all local gates (fail-closed)
         run: |
