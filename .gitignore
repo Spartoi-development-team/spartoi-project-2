@@ -1,1 +1,5 @@
 site/
+
+# local backups
+*.bak.*
+.github/workflows/*.bak.*
