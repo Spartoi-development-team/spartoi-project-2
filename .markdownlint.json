@@ -1,0 +1,14 @@
+{
+  "ignore": [
+    "**/node_modules/**",
+    "**/.git/**",
+    "**/site/**",
+    "**/dist/**",
+    "**/*.d.ts",
+    "**/*.d.ts.map",
+    ".opencode/node_modules/**"
+  ],
+  "MD013": false,
+  "MD033": false,
+  "MD041": false
+}

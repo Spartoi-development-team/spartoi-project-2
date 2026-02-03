@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "github-models/openai/gpt-4o-mini",
+  "small_model": "github-models/openai/gpt-4o-mini",
+  "agent": {
+    "solo": {
+      "description": "Ultra-minimal agent for GitHub Models 8k/req limit",
+      "model": "github-models/openai/gpt-4o-mini",
+      "prompt": "You are minimal. Answer briefly. Do not include extra context unless asked."
+    }
+  }
+}

@@ -1,0 +1,10 @@
+site_name: OMOC on Codespaces
+theme:
+  name: material
+markdown_extensions:
+  - admonition
+  - toc:
+      permalink: true
+strict: true
+nav:
+  - Home: index.md
