@@ -1,6 +1,12 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "plugin": ["oh-my-opencode@latest"],
-  "theme": "opencode",
+
+  // 把這行改成你 /models 看到的「Copilot GPT-4o」完整 id
+  "model": "github-copilot/gpt-4o",
+
+  // 可選：給小模型（做摘要/標題/輕量任務），省 Copilot Free 額度
+  // "small_model": "github-copilot/gpt-4o-mini",
+
   "compaction": { "auto": true, "prune": true }
 }
