@@ -9,6 +9,9 @@ on:
 jobs:
   gates:
     runs-on: ubuntu-latest
+    env:
+      VALE_VERSION: v3.13.0
+      LYCHEE_VERSION: lychee-v0.22.0
     steps:
       - uses: actions/checkout@v4
 
@@ -16,48 +19,73 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
+          cache: pip
+          cache-dependency-path: .github/ci/requirements-ci.txt
 
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: "20"
 
+      - name: Cache npm (optional)
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
       - name: Install MkDocs + markdownlint-cli2 deps
         run: |
-          pip install -U mkdocs mkdocs-material
-          npm i -g markdownlint-cli2
+          pip install -r .github/ci/requirements-ci.txt
+          # install markdownlint globally; create package-lock if needed
+          npm i -g markdownlint-cli2 || true
 
       - name: Install lychee
         run: |
           set -euo pipefail
           BIN="$HOME/.local/bin"; mkdir -p "$BIN"
           export PATH="$BIN:$PATH"
-          FINAL_URL="$(curl -fsSLI -o /dev/null -w "%{url_effective}" https://github.com/lycheeverse/lychee/releases/latest)"
-          TAG="${FINAL_URL##*/}"
-          ASSET="lychee-x86_64-unknown-linux-gnu.tar.gz"
-          URL="https://github.com/lycheeverse/lychee/releases/download/$TAG/$ASSET"
-          tmp="$(mktemp -d)"
-          curl -fsSL "$URL" -o "$tmp/lychee.tgz"
-          tar -xzf "$tmp/lychee.tgz" -C "$tmp"
-          install -m 0755 "$tmp/lychee" "$BIN/lychee"
-          lychee --version
+          if [ -x "$BIN/lychee" ]; then
+            "$BIN/lychee" --version || true
+          else
+            ASSET="lychee-x86_64-unknown-linux-gnu.tar.gz"
+            URL="https://github.com/lycheeverse/lychee/releases/download/${LYCHEE_VERSION}/$ASSET"
+            tmp="$(mktemp -d)"
+            curl -fsSL "$URL" -o "$tmp/lychee.tgz"
+            tar -xzf "$tmp/lychee.tgz" -C "$tmp"
+            install -m 0755 "$tmp/lychee" "$BIN/lychee"
+            "$BIN/lychee" --version
+          fi
 
       - name: Install vale
         run: |
           set -euo pipefail
           BIN="$HOME/.local/bin"; mkdir -p "$BIN"
           export PATH="$BIN:$PATH"
-          FINAL_URL="$(curl -fsSLI -o /dev/null -w "%{url_effective}" https://github.com/errata-ai/vale/releases/latest)"
-          TAG="${FINAL_URL##*/}"
-          VER="${TAG#v}"
-          ASSET="vale_${VER}_Linux_64-bit.tar.gz"
-          URL="https://github.com/errata-ai/vale/releases/download/$TAG/$ASSET"
-          tmp="$(mktemp -d)"
-          curl -fsSL "$URL" -o "$tmp/vale.tgz"
-          mkdir -p "$tmp/vale"
-          tar -xzf "$tmp/vale.tgz" -C "$tmp/vale"
-          install -m 0755 "$tmp/vale/vale" "$BIN/vale"
-          vale --version
+          if [ -x "$BIN/vale" ]; then
+            "$BIN/vale" --version || true
+          else
+            VER="${VALE_VERSION#v}"
+            ASSET="vale_${VER}_Linux_64-bit.tar.gz"
+            URL="https://github.com/errata-ai/vale/releases/download/${VALE_VERSION}/$ASSET"
+            tmp="$(mktemp -d)"
+            curl -fsSL "$URL" -o "$tmp/vale.tgz"
+            mkdir -p "$tmp/vale"
+            tar -xzf "$tmp/vale.tgz" -C "$tmp/vale"
+            install -m 0755 "$tmp/vale/vale" "$BIN/vale"
+            "$BIN/vale" --version
+          fi
+
+      - name: Cache local bin
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.local/bin
+          key: ${{ runner.os }}-local-bin-${{ env.VALE_VERSION }}-${{ env.LYCHEE_VERSION }}-${{ hashFiles('.github/ci/requirements-ci.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-local-bin-
 
       - name: Run all local gates (fail-closed)
         run: |
