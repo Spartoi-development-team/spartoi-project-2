@@ -1,28 +1,17 @@
-# AGENTS.md — Repo SSOT Contract (Fail-Closed)
-
-## Mission
-
-- Use OpenCode + OMOC to generate/maintain docs and code changes.
-- All outputs must be reproducible in GitHub Codespaces.
+# AGENTS.md (Repo Contract)
 
 ## Non-negotiables (Fail-Closed)
+- Write operations are SINGLE-STREAM: one agent writes at a time.
+- No force-push, no history rewrite, no automatic conflict resolution.
+- Any change must include: (a) what changed, (b) why, (c) how verified.
 
-- Do NOT bypass CI checks.
-- Do NOT modify workflows or security settings unless explicitly instructed.
-- Any generated docs must pass: mkdocs(strict) + markdownlint + vale + lychee.
+## Default Workflow
+1) Plan first (produce a concise plan)
+2) Execute with smallest diff possible
+3) Self-check: run the required commands
+4) Summarize outputs & next risks
 
-## Definition of Done
-
-- CI: all checks green.
-- Links: no broken external links (except explicitly allowlisted).
-- Style: Vale passes (no "error" level).
-- Docs build: mkdocs --strict passes.
-
-## Required Commands Before PR
-
-- mkdocs build --strict
-- markdownlint-cli2 "**/*.md"
-
-OR use the convenience script:
-
-- bash scripts/docs_gate_local.sh
+## Required Commands (run before you claim DONE)
+- git status --porcelain
+- git diff --stat
+- (project-specific checks go here)
