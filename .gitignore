@@ -3,3 +3,6 @@ site/
 # local backups
 *.bak.*
 .github/workflows/*.bak.*
+
+# local evidence bundles
+0.000000e+00vidence/
