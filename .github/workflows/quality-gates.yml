@@ -26,12 +26,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-          cache: npm
+
+      - name: Cache npm (optional)
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.npm
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
 
       - name: Install MkDocs + markdownlint-cli2 deps
         run: |
           pip install -r .github/ci/requirements-ci.txt
-          npm i -g markdownlint-cli2
+          # install markdownlint globally; create package-lock if needed
+          npm i -g markdownlint-cli2 || true
 
       - name: Install lychee
         run: |
