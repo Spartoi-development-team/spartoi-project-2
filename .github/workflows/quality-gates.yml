@@ -1,0 +1,65 @@
+name: quality-gates
+
+on:
+  pull_request:
+  push:
+  merge_group:
+
+jobs:
+  gates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install MkDocs + markdownlint-cli2 deps
+        run: |
+          pip install -U mkdocs mkdocs-material
+          npm i -g markdownlint-cli2
+
+      - name: Install lychee
+        run: |
+          set -euo pipefail
+          BIN="$HOME/.local/bin"; mkdir -p "$BIN"
+          export PATH="$BIN:$PATH"
+          FINAL_URL="$(curl -fsSLI -o /dev/null -w "%{url_effective}" https://github.com/lycheeverse/lychee/releases/latest)"
+          TAG="${FINAL_URL##*/}"
+          ASSET="lychee-x86_64-unknown-linux-gnu.tar.gz"
+          URL="https://github.com/lycheeverse/lychee/releases/download/$TAG/$ASSET"
+          tmp="$(mktemp -d)"
+          curl -fsSL "$URL" -o "$tmp/lychee.tgz"
+          tar -xzf "$tmp/lychee.tgz" -C "$tmp"
+          install -m 0755 "$tmp/lychee" "$BIN/lychee"
+          lychee --version
+
+      - name: Install vale
+        run: |
+          set -euo pipefail
+          BIN="$HOME/.local/bin"; mkdir -p "$BIN"
+          export PATH="$BIN:$PATH"
+          FINAL_URL="$(curl -fsSLI -o /dev/null -w "%{url_effective}" https://github.com/errata-ai/vale/releases/latest)"
+          TAG="${FINAL_URL##*/}"
+          VER="${TAG#v}"
+          ASSET="vale_${VER}_Linux_64-bit.tar.gz"
+          URL="https://github.com/errata-ai/vale/releases/download/$TAG/$ASSET"
+          tmp="$(mktemp -d)"
+          curl -fsSL "$URL" -o "$tmp/vale.tgz"
+          mkdir -p "$tmp/vale"
+          tar -xzf "$tmp/vale.tgz" -C "$tmp/vale"
+          install -m 0755 "$tmp/vale/vale" "$BIN/vale"
+          vale --version
+
+      - name: Run all local gates (fail-closed)
+        run: |
+          set -euo pipefail
+          export PATH="$HOME/.local/bin:$PATH"
+          bash scripts/gate_all_local.sh
