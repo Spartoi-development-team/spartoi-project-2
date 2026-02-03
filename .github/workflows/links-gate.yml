@@ -1,6 +1,7 @@
 name: links-gate
 
 on:
+  merge_group:
   pull_request:
   push:
     branches: [ main ]
