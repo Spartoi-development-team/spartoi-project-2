@@ -56,14 +56,18 @@ fi
 # 4) minimal Pipeline A run (produce triad.json)
 echo "[STEP] minimal Pipeline A (produce triad)" | tee -a "$OUT_DIR/acceptance_console.txt"
 python3 - <<'PY' > "$OUT_DIR/triad.json" 2>>"$OUT_DIR/acceptance_console.txt"
-import json,hashlib,glob
+import json,hashlib,glob,sys,os
+out = os.environ.get('OUT_DIR', None)
 files = sorted(glob.glob('gates/templates/*'))
 triad = []
 for p in files:
-    with open(p,'rb') as f:
-        data = f.read()
-    h = hashlib.sha256(data).hexdigest()
-    triad.append({'gate_file': p, 'sha256': h})
+    try:
+        with open(p,'rb') as f:
+            data = f.read()
+        h = hashlib.sha256(data).hexdigest()
+        triad.append({'gate_file': p, 'sha256': h})
+    except Exception as e:
+        triad.append({'gate_file': p, 'error': str(e)})
 json.dump({'triad': triad}, sys.stdout, indent=2)
 PY
 
