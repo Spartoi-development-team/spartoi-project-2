@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 Permanent behavior constraints
-- Prefer evidence over guesswork: verify with gh API or local files when uncertain.
+- Prefer evidence over guesswork: verify with `gh` API or local files when uncertain.
 - Avoid making irreversible or privileged changes without explicit permission and PR review.
 
 Security and supply-chain
