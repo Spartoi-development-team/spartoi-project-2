@@ -1,0 +1,8 @@
+{
+  "name": "vale_gate",
+  "description": "Style and writing gate",
+  "type": "style",
+  "policy": {
+    "vale": true
+  }
+}

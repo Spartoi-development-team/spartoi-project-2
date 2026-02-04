@@ -1,0 +1,8 @@
+{
+  "name": "tests_gate",
+  "description": "Run unit tests (if present)",
+  "type": "tests",
+  "policy": {
+    "run_tests": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "name": "links_gate",
+  "description": "Checks for broken links in docs",
+  "type": "links",
+  "policy": {
+    "lychee": true
+  }
+}
