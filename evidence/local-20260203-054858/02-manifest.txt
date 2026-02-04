@@ -1,0 +1,3 @@
+== manifest ==
+?? evidence/
+?? scripts/evidence_pack.sh

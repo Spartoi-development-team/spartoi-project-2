@@ -1,0 +1,8 @@
+== collecting environment ==
+2026-02-03T05:48:58+00:00
+Linux codespaces-217787 6.8.0-1030-azure #35~22.04.1-Ubuntu SMP Mon May 26 18:08:30 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+repo=/workspaces/spartoi-project-2
+commit=243a9d27fed4bd9cace88a8086df486a709fe249
+1.1.49
+lychee 0.22.0
+vale version 3.13.0

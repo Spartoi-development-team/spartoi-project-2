@@ -1,0 +1,30 @@
+HTTP/2.0 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+Cache-Control: private, max-age=60, s-maxage=60
+Content-Security-Policy: default-src 'none'
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Feb 2026 09:52:01 GMT
+Etag: W/"b97af89894990a6dab6bbcd81bdde659cef73d8450d31ca9df1fe1c090f6c9c7"
+Github-Authentication-Token-Expiration: 2026-02-03 21:17:26 UTC
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Server: github.com
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+Vary: Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+X-Accepted-Github-Permissions: metadata=read
+X-Accepted-Oauth-Scopes: repo
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Github-Api-Version-Selected: 2022-11-28
+X-Github-Media-Type: github.v3; format=json
+X-Github-Request-Id: A001:158C91:1B71CA:1E5DB2:6981C540
+X-Oauth-Client-Id: Iv1.ad5f73e593b03f40
+X-Oauth-Scopes: 
+X-Ratelimit-Limit: 50000
+X-Ratelimit-Remaining: 49954
+X-Ratelimit-Reset: 1770113848
+X-Ratelimit-Resource: core
+X-Ratelimit-Used: 46
+X-Xss-Protection: 0
+
+{"id":12397271,"name":"Require Gates Check on Main","target":"branch","source_type":"Repository","source":"shw097/spartoi-project-2","enforcement":"active","conditions":{},"rules":[],"node_id":"RRS_lACqUmVwb3NpdG9yec5Eb1R6zgC9Ktc","created_at":"2026-02-03T08:01:05.466Z","updated_at":"2026-02-03T08:01:05.466Z","bypass_actors":[],"current_user_can_bypass":"never","_links":{"self":{"href":"https://api.github.com/repos/shw097/spartoi-project-2/rulesets/12397271"},"html":{"href":"https://github.com/shw097/spartoi-project-2/rules/12397271"}}}
