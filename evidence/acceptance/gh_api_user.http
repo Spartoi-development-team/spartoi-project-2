@@ -1,0 +1,29 @@
+HTTP/2.0 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+Cache-Control: private, max-age=60, s-maxage=60
+Content-Security-Policy: default-src 'none'
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Feb 2026 09:50:53 GMT
+Etag: W/"b986e5f8ad77ebbd21bf308cb93a223ad9360831862589268d2b86472e85116d"
+Last-Modified: Sun, 06 Jul 2025 06:33:06 GMT
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Server: github.com
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+Vary: Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+X-Accepted-Oauth-Scopes: 
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Github-Api-Version-Selected: 2022-11-28
+X-Github-Media-Type: github.v3; format=json
+X-Github-Request-Id: A001:158C91:1B3203:1E16B2:6981C4FD
+X-Oauth-Client-Id: 178c6fc778ccc68e1d6a
+X-Oauth-Scopes: gist, read:org, repo
+X-Ratelimit-Limit: 5000
+X-Ratelimit-Remaining: 4963
+X-Ratelimit-Reset: 1770113848
+X-Ratelimit-Resource: core
+X-Ratelimit-Used: 37
+X-Xss-Protection: 0
+
+{"login":"shw097","id":219498218,"node_id":"U_kgDODRVG6g","avatar_url":"https://avatars.githubusercontent.com/u/219498218?v=4","gravatar_id":"","url":"https://api.github.com/users/shw097","html_url":"https://github.com/shw097","followers_url":"https://api.github.com/users/shw097/followers","following_url":"https://api.github.com/users/shw097/following{/other_user}","gists_url":"https://api.github.com/users/shw097/gists{/gist_id}","starred_url":"https://api.github.com/users/shw097/starred{/owner}{/repo}","subscriptions_url":"https://api.github.com/users/shw097/subscriptions","organizations_url":"https://api.github.com/users/shw097/orgs","repos_url":"https://api.github.com/users/shw097/repos","events_url":"https://api.github.com/users/shw097/events{/privacy}","received_events_url":"https://api.github.com/users/shw097/received_events","type":"User","user_view_type":"public","site_admin":false,"name":null,"company":null,"blog":"","location":null,"email":null,"hireable":null,"bio":null,"twitter_username":null,"notification_email":null,"public_repos":2,"public_gists":0,"followers":0,"following":0,"created_at":"2025-07-06T06:32:51Z","updated_at":"2025-07-06T06:33:06Z"}

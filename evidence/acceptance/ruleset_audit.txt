@@ -1,0 +1,10 @@
+Repository: shw097/spartoi-project-2
+Trying endpoint: /repos/shw097/spartoi-project-2/rulesets
+Saved evidence/acceptance/rulesets/_repos_shw097_spartoi-project-2_rulesets.http
+Found ruleset list; enumerating individual rulesets
+Fetching ruleset 12397323 -> https://api.github.com/repos/shw097/spartoi-project-2/rulesets/12397323
+Fetching ruleset 12397484 -> https://api.github.com/repos/shw097/spartoi-project-2/rulesets/12397484
+Fetching ruleset 12397271 -> https://api.github.com/repos/shw097/spartoi-project-2/rulesets/12397271
+Trying endpoint: /orgs/shw097/rulesets
+Endpoint /orgs/shw097/rulesets returned non-200 (see evidence/acceptance/rulesets/_orgs_shw097_rulesets.http)
+ruleset audit complete. See evidence/acceptance/rulesets

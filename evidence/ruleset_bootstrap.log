@@ -1,0 +1,267 @@
+repo=shw097/spartoi-project-2 branch=main head_sha=bf5172d9731e4083418b1c43ff7aade382311fbf
+== auth status ==
+github.com
+  ✓ Logged in to github.com account shw097 (GITHUB_TOKEN)
+  - Active account: true
+  - Git operations protocol: https
+  - Token: ghu_************************************
+
+  ✓ Logged in to github.com account shw097 (/home/vscode/.config/gh/hosts.yml)
+  - Active account: false
+  - Git operations protocol: https
+  - Token: gho_************************************
+  - Token scopes: 'gist', 'read:org', 'repo'
+==[1] contexts on HEAD ==
+gates
+==[2] GET /rulesets sanity ==
+HTTP/2.0 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+Cache-Control: private, max-age=60, s-maxage=60
+Content-Length: 2
+Content-Security-Policy: default-src 'none'
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Feb 2026 07:53:14 GMT
+Etag: "c38fdfba1143ae6535d649033bc15bdee5a5e60a59493b5b338546127fed5cc5"
+Github-Authentication-Token-Expiration: 2026-02-03 18:35:29 UTC
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Server: github.com
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+Vary: Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+X-Accepted-Github-Permissions: metadata=read
+X-Accepted-Oauth-Scopes: repo
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Github-Api-Version-Selected: 2022-11-28
+X-Github-Media-Type: github.v3; format=json
+X-Github-Request-Id: 281C:CEC17:3ABE:417A:6981A96A
+X-Oauth-Client-Id: Iv1.ad5f73e593b03f40
+X-Oauth-Scopes: 
+X-Ratelimit-Limit: 50000
+X-Ratelimit-Remaining: 49962
+==[3] build payload ==
+==[4] POST /rulesets ==
+gh: Resource not accessible by integration (HTTP 403)
+HTTP/2.0 403 Forbidden
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+Content-Security-Policy: default-src 'none'
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Feb 2026 07:53:15 GMT
+Github-Authentication-Token-Expiration: 2026-02-03 18:35:29 UTC
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Server: github.com
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+Vary: Accept-Encoding, Accept, X-Requested-With
+X-Accepted-Github-Permissions: administration=write
+X-Accepted-Oauth-Scopes: 
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Github-Api-Version-Selected: 2022-11-28
+X-Github-Media-Type: github.v3; format=json
+X-Github-Request-Id: 281D:EB1C8:377C:3E0C:6981A96B
+X-Oauth-Client-Id: Iv1.ad5f73e593b03f40
+X-Oauth-Scopes: 
+X-Ratelimit-Limit: 50000
+X-Ratelimit-Remaining: 49961
+X-Ratelimit-Reset: 1770108067
+X-Ratelimit-Resource: core
+X-Ratelimit-Used: 39
+X-Xss-Protection: 0
+
+{"message":"Resource not accessible by integration","documentation_url":"https://docs.github.com/rest/repos/rules#create-a-repository-ruleset","status":"403"}❌ FAIL @ line 50: sed -n '1,60p'
+❌ FAIL @ line 50: sed -n '1,60p'
+Tue Feb  3 07:54:46 AM UTC 2026 Starting Ruleset Creation...
+Tue Feb  3 07:54:46 AM UTC 2026 Payload: {
+  "name": "Required Gates Ruleset",
+  "target": "branch",
+  "enforcement": "enabled",
+  "conditions": {
+    "ref_name": {
+      "include": ["main"]
+    }
+  },
+  "required_status_checks": {
+    "strict": true,
+    "contexts": ["gates"]
+  }
+}
+Tue Feb  3 07:54:46 AM UTC 2026 HTTP Status: 401
+Tue Feb  3 07:54:46 AM UTC 2026 Response Body: {
+  "message": "Bad credentials",
+  "documentation_url": "https://docs.github.com/rest",
+  "status": "401"
+}
+repo=shw097/spartoi-project-2 branch=main head_sha=bf5172d9731e4083418b1c43ff7aade382311fbf
+== auth status (MUST NOT be GITHUB_TOKEN) ==
+github.com
+  ✓ Logged in to github.com account shw097 (/home/vscode/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: https
+  - Token: gho_************************************
+  - Token scopes: 'gist', 'read:org', 'repo'
+==[1] contexts on HEAD ==
+gates
+==[2] GET /rulesets sanity ==
+HTTP/2.0 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+Cache-Control: private, max-age=60, s-maxage=60
+Content-Length: 2
+Content-Security-Policy: default-src 'none'
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Feb 2026 08:00:05 GMT
+Etag: "1fb62e4190e7594065eb7443c6f8e2f6c40f4ea3a684502ef332c7b129d95954"
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Server: github.com
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+Vary: Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+X-Accepted-Oauth-Scopes: repo
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Github-Api-Version-Selected: 2022-11-28
+X-Github-Media-Type: github.v3; format=json
+X-Github-Request-Id: 281D:EB1C8:1D26E:2042C:6981AB05
+X-Oauth-Client-Id: 178c6fc778ccc68e1d6a
+X-Oauth-Scopes: gist, read:org, repo
+X-Ratelimit-Limit: 5000
+X-Ratelimit-Remaining: 4953
+X-Ratelimit-Reset: 1770108067
+X-Ratelimit-Resource: core
+==[3] build payload ==
+==[4] POST /rulesets ==
+HTTP/2.0 422 Unprocessable Entity
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+Content-Length: 223
+Content-Security-Policy: default-src 'none'
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Feb 2026 08:00:06 GMT
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Server: github.com
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+Vary: Accept-Encoding, Accept, X-Requested-With
+X-Accepted-Oauth-Scopes: 
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Github-Api-Version-Selected: 2022-11-28
+X-Github-Media-Type: github.v3; format=json
+X-Github-Request-Id: 281E:145A34:1B2EC:1E446:6981AB05
+X-Oauth-Client-Id: 178c6fc778ccc68e1d6a
+X-Oauth-Scopes: gist, read:org, repo
+X-Ratelimit-Limit: 5000
+X-Ratelimit-Remaining: 4952
+X-Ratelimit-Reset: 1770108067
+X-Ratelimit-Resource: core
+X-Ratelimit-Used: 48
+X-Xss-Protection: 0
+
+{"message":"Invalid request.\n\nInvalid property /rules/0: data matches no possible input. See `documentation_url`.","documentation_url":"https://docs.github.com/rest/repos/rules#create-a-repository-ruleset","status":"422"}gh: Invalid request.
+
+Invalid property /rules/0: data matches no possible input. See `documentation_url`. (HTTP 422)
+==[5] verify rulesets list ==
+✅ DONE
+log saved: evidence/ruleset_bootstrap.log
+Creating repository ruleset for required status check 'gates' on branch 'main'.
+{"message":"Invalid request.\n\nInvalid property /enforcement: `enabled` is not a possible value. Must be one of the following: disabled, active, evaluate.","documentation_url":"https://docs.github.com/rest/repos/rules#create-a-repository-ruleset","status":"422"}gh: Invalid request.
+
+Invalid property /enforcement: `enabled` is not a possible value. Must be one of the following: disabled, active, evaluate. (HTTP 422)
+Verifying ruleset creation...
+[]Creating repository ruleset for required status check 'gates' on branch 'main'.
+{"id":12397271,"name":"Require Gates Check on Main","target":"branch","source_type":"Repository","source":"shw097/spartoi-project-2","enforcement":"active","conditions":{},"rules":[],"node_id":"RRS_lACqUmVwb3NpdG9yec5Eb1R6zgC9Ktc","created_at":"2026-02-03T08:01:05.466Z","updated_at":"2026-02-03T08:01:05.466Z","bypass_actors":[],"current_user_can_bypass":"never","_links":{"self":{"href":"https://api.github.com/repos/shw097/spartoi-project-2/rulesets/12397271"},"html":{"href":"https://github.com/shw097/spartoi-project-2/rules/12397271"}}}Verifying ruleset creation...
+[{"id":12397271,"name":"Require Gates Check on Main","target":"branch","source_type":"Repository","source":"shw097/spartoi-project-2","enforcement":"active","node_id":"RRS_lACqUmVwb3NpdG9yec5Eb1R6zgC9Ktc","_links":{"self":{"href":"https://api.github.com/repos/shw097/spartoi-project-2/rulesets/12397271"},"html":{"href":"https://github.com/shw097/spartoi-project-2/rules/12397271"}},"created_at":"2026-02-03T08:01:05.466Z","updated_at":"2026-02-03T08:01:05.466Z"}]repo=shw097/spartoi-project-2 branch=main head_sha=bf5172d9731e4083418b1c43ff7aade382311fbf
+== auth status (must NOT be GITHUB_TOKEN) ==
+github.com
+  ✓ Logged in to github.com account shw097 (/home/vscode/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: https
+  - Token: gho_************************************
+  - Token scopes: 'gist', 'read:org', 'repo'
+==[1] contexts on HEAD ==
+gates
+==[2] build payload (FIX: required_review_thread_resolution + include uses ~DEFAULT_BRANCH) ==
+payload_ok=true
+==[3] detect existing ruleset id by name ==
+existing_id=<none>
+==[4] POST /rulesets ==
+HTTP/2.0 201 Created
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+Cache-Control: private, max-age=60, s-maxage=60
+Content-Length: 1057
+Content-Security-Policy: default-src 'none'
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Feb 2026 08:04:14 GMT
+Etag: "759cc399d5419f4d6ac7ff520d6474f9c1a1ec84cb3620f7adf994f19d39af92"
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Server: github.com
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+Vary: Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+X-Accepted-Oauth-Scopes: 
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Github-Api-Version-Selected: 2022-11-28
+X-Github-Media-Type: github.v3; format=json
+X-Github-Request-Id: 281E:145A34:2A2E8:2ED94:6981ABFD
+X-Oauth-Client-Id: 178c6fc778ccc68e1d6a
+X-Oauth-Scopes: gist, read:org, repo
+X-Ratelimit-Limit: 5000
+X-Ratelimit-Remaining: 4942
+X-Ratelimit-Reset: 1770108067
+X-Ratelimit-Resource: core
+X-Ratelimit-Used: 58
+X-Xss-Protection: 0
+
+{"id":12397323,"name":"fail-closed-gates","target":"branch","source_type":"Repository","source":"shw097/spartoi-project-2","enforcement":"active","conditions":{"ref_name":{"exclude":[],"include":["~DEFAULT_BRANCH"]}},"rules":[{"type":"pull_request","parameters":{"required_approving_review_count":1,"dismiss_stale_reviews_on_push":true,"required_reviewers":[],"require_code_owner_review":false,"require_last_push_approval":false,"required_review_thread_resolution":true,"allowed_merge_methods":["merge","squash","rebase"]}},{"type":"required_status_checks","parameters":{"strict_required_status_checks_policy":true,"do_not_enforce_on_create":false,"required_status_checks":[{"context":"gates"}]}}],"node_id":"RRS_lACqUmVwb3NpdG9yec5Eb1R6zgC9Kws","created_at":"2026-02-03T08:04:14.191Z","updated_at":"2026-02-03T08:04:14.247Z","bypass_actors":[],"current_user_can_bypass":"never","_links":{"self":{"href":"https://api.github.com/repos/shw097/spartoi-project-2/rulesets/12397323"},"html":{"href":"https://github.com/shw097/spartoi-project-2/rules/12397323"}}}==[5] verify ruleset (Fail-Closed) ==
+{
+  "id": 12397323,
+  "name": "fail-closed-gates",
+  "enforcement": "active",
+  "target": "branch"
+}
+==[6] verify rule details (must include pull_request + required_status_checks + context gates) ==
+{
+  "id": 12397323,
+  "name": "fail-closed-gates",
+  "enforcement": "active",
+  "conditions": {
+    "ref_name": {
+      "exclude": [],
+      "include": [
+        "~DEFAULT_BRANCH"
+      ]
+    }
+  },
+  "rules": [
+    {
+      "type": "pull_request",
+      "parameters": {
+        "required_approving_review_count": 1,
+        "dismiss_stale_reviews_on_push": true,
+        "required_reviewers": [],
+        "require_code_owner_review": false,
+        "require_last_push_approval": false,
+        "required_review_thread_resolution": true,
+        "allowed_merge_methods": [
+          "merge",
+          "squash",
+          "rebase"
+        ]
+      }
+    },
+    {
+      "type": "required_status_checks",
+      "parameters": {
+        "strict_required_status_checks_policy": true,
+        "do_not_enforce_on_create": false,
+        "required_status_checks": [
+          {
+            "context": "gates"
+          }
+        ]
+      }
+    }
+  ]
+}
+✅ DONE
+log saved: evidence/ruleset_bootstrap.log

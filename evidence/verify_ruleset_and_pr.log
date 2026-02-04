@@ -1,0 +1,38 @@
+==[0] auth status ==
+github.com
+  ✓ Logged in to github.com account shw097 (/home/vscode/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: https
+  - Token: gho_************************************
+  - Token scopes: 'gist', 'read:org', 'repo'
+
+==[1] list rulesets ==
+HTTP/2.0 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+Cache-Control: private, max-age=60, s-maxage=60
+Content-Security-Policy: default-src 'none'
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Feb 2026 08:14:51 GMT
+Etag: W/"d5989a9850722b68784fe12ca212a57f1c7c257254df435661b30b39ae22838c"
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Server: github.com
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+Vary: Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+X-Accepted-Oauth-Scopes: repo
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Github-Api-Version-Selected: 2022-11-28
+X-Github-Media-Type: github.v3; format=json
+X-Github-Request-Id: 281B:1300AA:53A9F:5C8CB:6981AE7B
+X-Oauth-Client-Id: 178c6fc778ccc68e1d6a
+X-Oauth-Scopes: gist, read:org, repo
+X-Ratelimit-Limit: 5000
+X-Ratelimit-Remaining: 4935
+X-Ratelimit-Reset: 1770108067
+X-Ratelimit-Resource: core
+X-Ratelimit-Used: 65
+X-Xss-Protection: 0
+
+[{"id":12397323,"name":"fail-closed-gates","target":"branch","source_type":"Repository","source":"shw097/spartoi-project-2","enforcement":"active","node_id":"RRS_lACqUmVwb3NpdG9yec5Eb1R6zgC9Kws","_links":{"self":{"href":"https://api.github.com/repos/shw097/spartoi-project-2/rulesets/12397323"},"html":{"href":"https://github.com/shw097/spartoi-project-2/rules/12397323"}},"created_at":"2026-02-03T08:04:14.191Z","updated_at":"2026-02-03T08:04:14.247Z"},{"id":12397484,"name":"gates","target":"branch","source_type":"Repository","source":"shw097/spartoi-project-2","enforcement":"active","node_id":"RRS_lACqUmVwb3NpdG9yec5Eb1R6zgC9K6w","_links":{"self":{"href":"https://api.github.com/repos/shw097/spartoi-project-2/rulesets/12397484"},"html":{"href":"https://github.com/shw097/spartoi-project-2/rules/12397484"}},"created_at":"2026-02-03T08:14:03.522Z","updated_at":"2026-02-03T08:14:03.576Z"},{"id":12397271,"name":"Require Gates Check on Main","target":"branch","source_type":"Repository","source":"shw097/spartoi-project-2","enforcement":"active","node_id":"RRS_lACqUmVwb3NpdG9yec5Eb1R6zgC9Ktc","_links":{"self":{"href":"https://api.github.com/repos/shw097/spartoi-project-2/rulesets/12397271"},"html":{"href":"https://github.com/shw097/spartoi-project-2/rules/12397271"}},"created_at":"2026-02-03T08:01:05.466Z","updated_at":"2026-02-03T08:01:05.466Z"}]jq: error (at <stdin>:1): Cannot iterate over null (null)
+❌ FAIL @ line 24: jq -r '.[] | "\(.id)\t\(.name)\t\(.enforcement)\t\(.conditions.ref_name.include|join(","))"'

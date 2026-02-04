@@ -1,0 +1,30 @@
+HTTP/2.0 200 OK
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+Cache-Control: private, max-age=60, s-maxage=60
+Content-Security-Policy: default-src 'none'
+Content-Type: application/json; charset=utf-8
+Date: Tue, 03 Feb 2026 09:52:00 GMT
+Etag: W/"dac22c3bcc28bc4d56be8138b70bbec72303fc9cb3569a5141385d73c08fdf03"
+Github-Authentication-Token-Expiration: 2026-02-03 21:17:26 UTC
+Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+Server: github.com
+Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+Vary: Accept, Authorization, Cookie, X-GitHub-OTP,Accept-Encoding, Accept, X-Requested-With
+X-Accepted-Github-Permissions: metadata=read
+X-Accepted-Oauth-Scopes: repo
+X-Content-Type-Options: nosniff
+X-Frame-Options: deny
+X-Github-Api-Version-Selected: 2022-11-28
+X-Github-Media-Type: github.v3; format=json
+X-Github-Request-Id: A007:16A121:1BA816:1E9491:6981C53F
+X-Oauth-Client-Id: Iv1.ad5f73e593b03f40
+X-Oauth-Scopes: 
+X-Ratelimit-Limit: 50000
+X-Ratelimit-Remaining: 49956
+X-Ratelimit-Reset: 1770113848
+X-Ratelimit-Resource: core
+X-Ratelimit-Used: 44
+X-Xss-Protection: 0
+
+{"id":12397323,"name":"fail-closed-gates","target":"branch","source_type":"Repository","source":"shw097/spartoi-project-2","enforcement":"active","conditions":{"ref_name":{"exclude":[],"include":["~DEFAULT_BRANCH"]}},"rules":[{"type":"pull_request","parameters":{"required_approving_review_count":1,"dismiss_stale_reviews_on_push":true,"required_reviewers":[],"require_code_owner_review":false,"require_last_push_approval":false,"required_review_thread_resolution":true,"allowed_merge_methods":["merge","squash","rebase"]}},{"type":"required_status_checks","parameters":{"strict_required_status_checks_policy":true,"do_not_enforce_on_create":false,"required_status_checks":[{"context":"gates"}]}}],"node_id":"RRS_lACqUmVwb3NpdG9yec5Eb1R6zgC9Kws","created_at":"2026-02-03T08:04:14.191Z","updated_at":"2026-02-03T08:04:14.247Z","bypass_actors":[],"current_user_can_bypass":"never","_links":{"self":{"href":"https://api.github.com/repos/shw097/spartoi-project-2/rulesets/12397323"},"html":{"href":"https://github.com/shw097/spartoi-project-2/rules/12397323"}}}
