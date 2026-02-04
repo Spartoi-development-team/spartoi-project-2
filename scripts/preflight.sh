@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-set -euo pipefail
+# preflight: conservative, avoids set -euo to prevent unexpected process exit in wrappers
+
+set -u
 
 # Create evidence preflight files if missing
 mkdir -p evidence/preflight
