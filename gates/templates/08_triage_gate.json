@@ -1,0 +1,8 @@
+{
+  "name": "triage_gate",
+  "description": "Triage gate ensuring triad schema emission",
+  "type": "triage",
+  "policy": {
+    "emit_triad": true
+  }
+}

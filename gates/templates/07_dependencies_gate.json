@@ -1,0 +1,8 @@
+{
+  "name": "dependencies_gate",
+  "description": "Check dependency manifest files",
+  "type": "deps",
+  "policy": {
+    "package_files": ["package.json", "requirements.txt"]
+  }
+}

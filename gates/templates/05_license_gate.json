@@ -1,0 +1,8 @@
+{
+  "name": "license_gate",
+  "description": "Ensure license files are present",
+  "type": "policy",
+  "policy": {
+    "license": ["LICENSE", "LICENSE.md"]
+  }
+}

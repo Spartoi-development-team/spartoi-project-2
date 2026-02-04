@@ -3,11 +3,13 @@ name: quality-gates
 on:
   pull_request:
   merge_group:
+    types: [checks_requested]
   push:
     branches: [main]
 
 jobs:
   gates:
+    name: gates
     runs-on: ubuntu-latest
     env:
       VALE_VERSION: v3.13.0
@@ -94,3 +96,19 @@ jobs:
           set -euo pipefail
           export PATH="$HOME/.local/bin:$PATH"
           bash scripts/gate_all_local.sh
+
+      - name: Run acceptance (B1 minimal slice)
+        run: |
+          set -euo pipefail
+          export PATH="$HOME/.local/bin:$PATH"
+          bash scripts/acceptance.sh
+
+      - name: Upload evidence artifacts (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: b1-evidence
+          path: |
+            evidence/_b1
+            evidence/evidence_index.json
+            evidence/b2 || true

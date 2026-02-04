@@ -1,0 +1,8 @@
+{
+  "name": "security_gate",
+  "description": "Placeholder security gate - runs basic checks",
+  "type": "security",
+  "policy": {
+    "scan": "basic"
+  }
+}

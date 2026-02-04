@@ -1,0 +1,9 @@
+{
+  "name": "docs_gate",
+  "description": "Checks that documentation builds and markdown linting run",
+  "type": "docs",
+  "policy": {
+    "mkdocs": true,
+    "markdownlint": true
+  }
+}
