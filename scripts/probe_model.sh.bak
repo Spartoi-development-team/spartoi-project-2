@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -u
+set -o pipefail
+
+mkdir -p evidence/b1
+
+target="github-copilot/gpt-5-mini"
+if [ -n "${OPENCODE_ESCALATE_MODEL:-}" ]; then
+  target="${OPENCODE_ESCALATE_MODEL}"
+fi
+
+stderr_file="evidence/b1/model_probe.stderr.txt"
+stdout_file="evidence/b1/model_probe.stdout.txt"
+
+# run probe (capture stdout/stderr separately)
+stdout="$(opencode run -m "$target" "Reply ONLY: OK $target" 2> "$stderr_file")"
+ec=$?
+printf "%s" "$stdout" > "$stdout_file"
+
+echo "(backup) WROTE evidence/b1/model_probe.stdout.txt and stderr"
