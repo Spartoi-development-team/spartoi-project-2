@@ -5,7 +5,32 @@ set -euo pipefail
 OUT_DIR="evidence/_b1"
 mkdir -p "$OUT_DIR"
 
+# ensure we always write exit code and keep logs (Fail-Closed)
+function _finalize() {
+  rc=${?}
+  echo "[ACCEPTANCE] EXIT rc=$rc" | tee -a "$OUT_DIR/acceptance_console.txt"
+  # ensure exit_code is present
+  if [ ! -f "$OUT_DIR/exit_code.txt" ]; then
+    echo "$rc" > "$OUT_DIR/exit_code.txt"
+  fi
+  # ensure verdict/artifacts exist (best-effort)
+  if [ -d "evidence" ]; then
+    ls -R evidence > "$OUT_DIR/evidence_contents.txt" || true
+  fi
+}
+trap _finalize EXIT
+
 echo "[ACCEPTANCE] START" | tee "$OUT_DIR/acceptance_console.txt"
+
+# print tool versions for CI debugging
+echo "[VERSIONS]" | tee -a "$OUT_DIR/acceptance_console.txt"
+python3 --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || true
+mkdocs --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || true
+markdownlint --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || true
+which lychee >/dev/null 2>&1 && lychee --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || echo "lychee not installed" | tee -a "$OUT_DIR/acceptance_console.txt"
+which vale >/dev/null 2>&1 && vale --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || echo "vale not installed" | tee -a "$OUT_DIR/acceptance_console.txt"
+node --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || true
+npm --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || true
 
 # 1) probe model
 echo "[STEP] probe_model" | tee -a "$OUT_DIR/acceptance_console.txt"
