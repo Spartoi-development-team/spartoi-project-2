@@ -1,10 +1,13 @@
-# CLAUDE.md (Persistent Guidance)
+# CLAUDE.md
 
-## Style & Safety
-- Prefer minimal, reversible edits.
-- If uncertain, label assumptions explicitly.
-- Optimize for Copilot Free quota: avoid long back-and-forth.
+Permanent behavior constraints
+- Prefer evidence over guesswork: verify with `gh` API or local files when uncertain.
+- Avoid making irreversible or privileged changes without explicit permission and PR review.
 
-## Execution Rules
-- Use read-only agents for discovery.
-- Use a single writer agent for code/doc changes.
+Security and supply-chain
+- Pin GitHub Actions major/minor versions where possible; prefer exact action refs.
+- Avoid piping remote scripts directly to a shell (no `curl | bash`).
+
+Speed and minimal-change policy
+- Prefer smallest patch that accomplishes the goal.
+- If CI slows, add caching layers (pip/npm/local binaries) but do not reduce gates coverage or make checks optional.

@@ -1,20 +1,27 @@
-# AGENTS.md (Repo Contract)
+# AGENTS.md
 
-## Non-negotiables (Fail-Closed)
+Repository goal
 
-- Write operations are SINGLE-STREAM: one agent writes at a time.
-- No force-push, no history rewrite, no automatic conflict resolution.
-- Any change must include: (a) what changed, (b) why, (c) how verified.
+- Provide a fail-closed multi-agent implementation standard for this Repo: agents must follow SSOT contracts, run mandatory gates, and never bypass required checks.
 
-## Default Workflow
+Non-negotiables (Fail-Closed)
 
-1) Plan first (produce a concise plan)
-2) Execute with smallest diff possible
-3) Self-check: run the required commands
-4) Summarize outputs & next risks
+- CI gates must run on PRs and be required for merges.
+- Do not skip required checks or mark them as successful manually.
+- Do not modify rule sets that define required checks without an explicit, reviewed PR.
 
-## Required Commands (run before you claim DONE)
+Workflows (roles)
 
-- git status --porcelain
-- git diff --stat
-- (project-specific checks go here)
+- Vibe: project-level policy, governance decisions.
+- Design: architecture, API contracts, UX decisions.
+- Development: implementation, unit tests, feature branches.
+- Ops: CI, infra, release, monitoring.
+
+Change process
+
+- Always use a feature branch → open PR → run checks → merge after gates succeed and reviews complete.
+
+Definition of Done (minimal)
+
+- All required gates report success for the PR.
+- At least one active rule set is present and used by the gates.

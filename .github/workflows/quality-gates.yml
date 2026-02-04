@@ -53,7 +53,8 @@ jobs:
             ASSET="lychee-x86_64-unknown-linux-gnu.tar.gz"
             URL="https://github.com/lycheeverse/lychee/releases/download/${LYCHEE_VERSION}/$ASSET"
             tmp="$(mktemp -d)"
-            curl -fsSL "$URL" -o "$tmp/lychee.tgz"
+            # retry curl with exponential backoff and timeouts
+            curl --retry 5 --retry-delay 5 --retry-all-errors --connect-timeout 15 --max-time 120 -fsSL "$URL" -o "$tmp/lychee.tgz"
             tar -xzf "$tmp/lychee.tgz" -C "$tmp"
             install -m 0755 "$tmp/lychee" "$BIN/lychee"
             "$BIN/lychee" --version
@@ -78,8 +79,9 @@ jobs:
             "$BIN/vale" --version
           fi
 
-      - name: Cache local bin
+      - name: Cache local bin (optional)
         uses: actions/cache@v4
+        continue-on-error: true
         with:
           path: |
             ~/.local/bin
