@@ -1,0 +1,6 @@
+{
+  "agent": "experts",
+  "permission": {
+    "task": "deny"
+  }
+}
