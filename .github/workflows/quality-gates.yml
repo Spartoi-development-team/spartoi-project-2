@@ -19,8 +19,8 @@ jobs:
           python -m pip install --upgrade pip || true
           # Install mkdocs into the environment so `mkdocs` CLI is available
           python -m pip install --user mkdocs || python -m pip install mkdocs || true
-          # Re-export path to include user bin
-          export PATH="$HOME/.local/bin:$PATH"
+          # Persist user bin to following steps via GITHUB_ENV so `mkdocs` is available
+          echo "PATH=$HOME/.local/bin:$PATH" >> "$GITHUB_ENV"
           # Install markdownlint-cli2 if npm is available
           if command -v npm >/dev/null 2>&1; then
             npm install -g markdownlint-cli2 || true
