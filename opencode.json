@@ -15,18 +15,5 @@
     "google",
     "xai"
   ],
-  "permissions": [
-    {
-      "match": "*",
-      "effect": "ask"
-    },
-    {
-      "actions": ["call_omo_agent", "task", "delegate_task"],
-      "effect": "allow"
-    },
-    {
-      "actions": ["bash", "write"],
-      "effect": "ask"
-    }
-  ]
+  // Permissions moved to .opencode/permissions.json for schema compatibility
 }
