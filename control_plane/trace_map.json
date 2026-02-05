@@ -49,8 +49,8 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "Agent schema validated: JSON Schema lint passes and example agent manifests included in acceptance artifacts.",
-    "gate_ref": "ci/unit-tests:agent-schema",
+    "pass_criteria": "",
+    "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1564"
   },
   {
@@ -58,8 +58,8 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "T1 schema validated: type checks and schema unit tests pass.",
-    "gate_ref": "ci/unit-tests:t1-schema",
+    "pass_criteria": "",
+    "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1592"
   },
   {
@@ -121,8 +121,8 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "Market profile extraction verified with sample dataset and automated checks included in artifacts.",
-    "gate_ref": "ci/integration:marketprofile",
+    "pass_criteria": "",
+    "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1811"
   },
   {
@@ -130,8 +130,8 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "Threshold behavior tested: automated test demonstrates expected SEM3 threshold behavior under sample inputs.",
-    "gate_ref": "ci/integration:sem3-threshold",
+    "pass_criteria": "",
+    "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1816"
   },
   {
@@ -139,8 +139,8 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "Arbiter component exercise validated by integration test and logs captured in acceptance artifacts.",
-    "gate_ref": "ci/integration:arbiter",
+    "pass_criteria": "",
+    "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1821"
   },
   {
@@ -148,8 +148,8 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "SQM7 scope documented and validated: acceptance docs include scope checklist and reviewer sign-off.",
-    "gate_ref": "docs/review:sqm7-scope",
+    "pass_criteria": "",
+    "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1826"
   },
   {
@@ -157,8 +157,8 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "Maintainability checks: lints and basic CI static analysis pass.",
-    "gate_ref": "ci/lint:maintainability",
+    "pass_criteria": "",
+    "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:532"
   },
   {
@@ -166,8 +166,8 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "Performance baseline measured and documented; perf tests do not regress beyond defined threshold.",
-    "gate_ref": "ci/perf:baseline",
+    "pass_criteria": "",
+    "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:697"
   },
   {
@@ -175,8 +175,8 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "Performance load test demonstrates required throughput for component 2.",
-    "gate_ref": "ci/perf:load-2",
+    "pass_criteria": "",
+    "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:701"
   },
   {
@@ -184,8 +184,8 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "Performance stress test for component 3 included and within acceptable thresholds.",
-    "gate_ref": "ci/perf:stress-3",
+    "pass_criteria": "",
+    "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:705"
   },
   {

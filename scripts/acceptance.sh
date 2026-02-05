@@ -188,6 +188,8 @@ PY
 
   # If we reach here, it looks like MAI coverage parsed and no missing fields
   echo "PASS" > "${FINAL_DIR}/verdict.txt"
+  # Emit deterministic verdict JSON after PASS/FAIL decision so payload reflects final state
+  python3 scripts/emit_verdict_json.py --base-dir "$BASE_DIR" --ts "$TS" || true
   exit 0
 done
 
