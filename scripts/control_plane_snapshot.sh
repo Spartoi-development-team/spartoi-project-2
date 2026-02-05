@@ -22,25 +22,26 @@ if [ -f "$OUTDIR/ruleset_12397323.json" ]; then
     cp "$OUTDIR/ruleset_12397323.json" "$OUTDIR/rules_main.json" || true
   fi
 fi
-mkdir -p "${OUTDIR}"
 
-# 1) rules_main.json (if present in control_plane/_evidence)
-if [ -f control_plane/_evidence/*/rules_main.json ]; then
-  cp control_plane/_evidence/*/rules_main.json "${OUTDIR}/rules_main.json" 2>/dev/null
-fi
+# Copy any historical control_plane/_evidence artifacts if present
+shopt -s nullglob 2>/dev/null || true
+for f in control_plane/_evidence/*/rules_main.json; do
+  cp "$f" "${OUTDIR}/rules_main.json" 2>/dev/null || true
+  break
+done
+for f in control_plane/_evidence/*/latest_main_runs.json; do
+  cp "$f" "${OUTDIR}/latest_main_runs.json" 2>/dev/null || true
+  echo 0 > "${OUTDIR}/main_runs.exit_code.txt" || true
+  break
+done
+for f in control_plane/_evidence/*/latest_merge_group_runs.json; do
+  cp "$f" "${OUTDIR}/latest_merge_group_runs.json" 2>/dev/null || true
+  echo 0 > "${OUTDIR}/mq_runs.exit_code.txt" || true
+  break
+done
 
-# 2) latest_main_runs.json and latest_merge_group_runs.json (if present)
-if [ -f control_plane/_evidence/*/latest_main_runs.json ]; then
-  cp control_plane/_evidence/*/latest_main_runs.json "${OUTDIR}/latest_main_runs.json" 2>/dev/null
-  echo $? > "${OUTDIR}/main_runs.exit_code.txt"
-fi
-if [ -f control_plane/_evidence/*/latest_merge_group_runs.json ]; then
-  cp control_plane/_evidence/*/latest_merge_group_runs.json "${OUTDIR}/latest_merge_group_runs.json" 2>/dev/null
-  echo $? > "${OUTDIR}/mq_runs.exit_code.txt"
-fi
-
-# 3) rules exit code
-if [ -f control_plane/_evidence/*/rules_main.json ]; then
+# Mark rules exit code if rules_main.json present
+if [ -f "${OUTDIR}/rules_main.json" ]; then
   echo 0 > "${OUTDIR}/rules.exit_code.txt"
 fi
 

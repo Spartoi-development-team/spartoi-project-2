@@ -75,16 +75,20 @@ if find "$BASE_DIR" -type f -iname '*kill*' -o -iname '*kill_switch*' | grep -q 
   while IFS= read -r f; do HITL_FILES+=("$f"); done < <(find "$BASE_DIR" -type f -iname '*kill*' -o -iname '*kill_switch*' 2>/dev/null)
 fi
 
-cat > "$VERDICT_JSON_FILE" <<EOF
-{
-  "verdict": "${VERDICT_VAL}",
-  "required_checks": ${REQUIRED_CHECKS_LIST:-[]},
-  "run_ids": {"main": ${MAIN_RUN_ID:+"${MAIN_RUN_ID}"}, "merge_group": ${MG_RUN_ID:+"${MG_RUN_ID}"}},
-  "evidence_paths": ["$BASE_DIR", "evidence/_opencode_safe/$TS", "evidence/ruleset_12397323.json"],
-  "HITL_guard": {"present": ${HITL_PRESENT}, "files": $(printf '%s
-  "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-}
+# Produce verdict JSON safely
+if command -v jq >/dev/null 2>&1; then
+  HITL_JSON=$(printf '%s
+  if [ -f "$REQUIRED_CHECKS_FILE" ]; then
+    REQ_JSON=$(jq -c '.[].name' "$REQUIRED_CHECKS_FILE" 2>/dev/null | jq -R -s -c 'split("\n")[:-1]' 2>/dev/null || echo '[]')
+  else
+    REQ_JSON='[]'
+  fi
+  jq -n --arg verdict "$VERDICT_VAL" --argjson required_checks "$REQ_JSON" --arg main_id "$MAIN_RUN_ID" --arg mg_id "$MG_RUN_ID" --arg evidence_base "$BASE_DIR" --arg evidence_opencode "evidence/_opencode_safe/$TS" --arg rules_path "evidence/ruleset_12397323.json" --arg timestamp "$(date -u +%Y-%m-%dT%H:%M:%SZ)" --argjson hitl_files "$HITL_JSON" '{verdict: $verdict, required_checks: $required_checks, run_ids: {main: ($main_id // null), merge_group: ($mg_id // null)}, evidence_paths: [$evidence_base, $evidence_opencode, $rules_path], HITL_guard: {present: ($hitl_files|length>0), files: $hitl_files}, timestamp: $timestamp}' > "$VERDICT_JSON_FILE" 2>/dev/null || true
+else
+  cat > "$VERDICT_JSON_FILE" <<EOF
+{"verdict":"${VERDICT_VAL}","required_checks":[],"run_ids":{"main":"${MAIN_RUN_ID}","merge_group":"${MG_RUN_ID}"},"evidence_paths":["$BASE_DIR","evidence/_opencode_safe/$TS","evidence/ruleset_12397323.json"],"HITL_guard":{"present":${HITL_PRESENT},"files":[]},"timestamp":"$(date -u +%Y-%m-%dT%H:%M:%SZ)"}
 EOF
+fi
 
 # Ensure verdict exit code is logically consistent for downstream verification
 if [ "${VERDICT_VAL}" = "PASS" ]; then
