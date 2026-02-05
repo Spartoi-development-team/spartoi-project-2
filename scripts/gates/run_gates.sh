@@ -8,22 +8,28 @@ mkdir -p artifacts/logs
 
 echo "[run_gates] START" | tee artifacts/logs/run_gates.log
 
-# Enforce EXECUTE_DISABLED (kill-switch)
-if [ -f EXECUTE_DISABLED ]; then
-  if grep -q "\"allowed\":\s*false" EXECUTE_DISABLED >/dev/null 2>&1; then
-    echo "[run_gates] EXECUTE_DISABLED is active — blocking any execute/trading paths" | tee -a artifacts/logs/run_gates.log
-  else
-    echo "[run_gates] WARNING: EXECUTE_DISABLED present but not set to false" | tee -a artifacts/logs/run_gates.log
-  fi
+## Enforce EXECUTE_DISABLED (kill-switch) - prefer control_plane/EXECUTE_DISABLED
+SSOT="control_plane/EXECUTE_DISABLED"
+if [ -f "$SSOT" ]; then
+  echo "[run_gates] Using repository SSOT $SSOT" | tee -a artifacts/logs/run_gates.log
+  cp "$SSOT" ./EXECUTE_DISABLED || true
 else
-  echo "[run_gates] No EXECUTE_DISABLED file found — creating fail-closed marker" | tee -a artifacts/logs/run_gates.log
-  cat > EXECUTE_DISABLED <<'JSON'
+  if [ -f EXECUTE_DISABLED ]; then
+    if grep -q "\"allowed\":\s*false" EXECUTE_DISABLED >/dev/null 2>&1; then
+      echo "[run_gates] EXECUTE_DISABLED is active — blocking any execute/trading paths" | tee -a artifacts/logs/run_gates.log
+    else
+      echo "[run_gates] WARNING: EXECUTE_DISABLED present but not set to false" | tee -a artifacts/logs/run_gates.log
+    fi
+  else
+    echo "[run_gates] No EXECUTE_DISABLED file found — creating fail-closed marker" | tee -a artifacts/logs/run_gates.log
+    cat > EXECUTE_DISABLED <<'JSON'
 {
   "allowed": false,
   "reason": "Fail-closed default created by run_gates"
 }
 JSON
-  echo "created EXECUTE_DISABLED" | tee -a artifacts/logs/run_gates.log
+    echo "created EXECUTE_DISABLED" | tee -a artifacts/logs/run_gates.log
+  fi
 fi
 
 # run the canonical local gates (uses scripts/gate_all_local.sh)
@@ -82,4 +88,6 @@ JSON
 
 echo "[run_gates] FINISH status=${status} rc=${RC}" | tee -a artifacts/logs/run_gates.log
 
+# Final exit follows the real exit code to ensure CI fails when gates truly fail.
+echo "[run_gates] EXITING with original rc=${RC}" | tee -a artifacts/logs/run_gates.log
 exit ${RC}

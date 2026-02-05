@@ -1,0 +1,11 @@
+{
+  "20260205T160051Z": {
+    "small_model": "github-copilot/gpt-4.1",
+    "enabled_providers": [
+      "github-copilot"
+    ],
+    "disabled_providers": [
+      "opencode"
+    ]
+  }
+}

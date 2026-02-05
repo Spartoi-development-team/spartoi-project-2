@@ -1,13 +1,3323 @@
-{
-  "generated_utc": "REPLACE_BY_PIPELINE",
-  "items": [
-    {
-      "mai_id": "MAI-PLACEHOLDER",
-      "srs_anchor": "SRS-ANCHOR-PLACEHOLDER",
-      "impl_paths": [],
-      "gate_ids": [],
-      "evidence_refs": [],
-      "status": "OPEN"
-    }
-  ]
-}
+[
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_ARCH_v6.0.0-r5.md:430"
+  },
+  {
+    "mai_id": "MAI-",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_ARCH_v6.0.0-r5.md:903"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:281"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:645"
+  },
+  {
+    "mai_id": "MAI-",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:647"
+  },
+  {
+    "mai_id": "MAI-AGENT-SCHEMA-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1564"
+  },
+  {
+    "mai_id": "MAI-T1-SCHEMA-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1592"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1719"
+  },
+  {
+    "mai_id": "MAI-",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1720"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1731"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1733"
+  },
+  {
+    "mai_id": "MAI-AGENT-SCHEMA-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1801"
+  },
+  {
+    "mai_id": "MAI-T1-SCHEMA-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1806"
+  },
+  {
+    "mai_id": "MAI-MARKETPROFILE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1811"
+  },
+  {
+    "mai_id": "MAI-SEM3-THRESHOLD-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1816"
+  },
+  {
+    "mai_id": "MAI-ARBITER-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1821"
+  },
+  {
+    "mai_id": "MAI-SQM7-SCOPE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md:1826"
+  },
+  {
+    "mai_id": "MAINTAINABILITY",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:532"
+  },
+  {
+    "mai_id": "MAI-PERF-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:697"
+  },
+  {
+    "mai_id": "MAI-PERF-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:701"
+  },
+  {
+    "mai_id": "MAI-PERF-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:705"
+  },
+  {
+    "mai_id": "MAI-RELIABILITY-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:709"
+  },
+  {
+    "mai_id": "MAI-RELIABILITY-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:713"
+  },
+  {
+    "mai_id": "MAI-GOV-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:717"
+  },
+  {
+    "mai_id": "MAI-SEM3-TVE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:721"
+  },
+  {
+    "mai_id": "MAI-SEM3-SGF-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:725"
+  },
+  {
+    "mai_id": "MAI-SEM3-MSC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:729"
+  },
+  {
+    "mai_id": "MAI-PLATFORM-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:733"
+  },
+  {
+    "mai_id": "MAI-ICT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:737"
+  },
+  {
+    "mai_id": "MAI-OBS-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:741"
+  },
+  {
+    "mai_id": "MAI-REPLAY-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:745"
+  },
+  {
+    "mai_id": "MAINTAINABILITY",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md:964"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:172"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2169"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2172"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2174"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2176"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2178"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2180"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2188"
+  },
+  {
+    "mai_id": "MAI-SF-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2192"
+  },
+  {
+    "mai_id": "MAI-JOBCARD-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2193"
+  },
+  {
+    "mai_id": "MAI-WRC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2194"
+  },
+  {
+    "mai_id": "MAI-SEM3-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2195"
+  },
+  {
+    "mai_id": "MAI-HITL-DP-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2196"
+  },
+  {
+    "mai_id": "MAI-LAT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2200"
+  },
+  {
+    "mai_id": "MAI-NFR-SEC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2201"
+  },
+  {
+    "mai_id": "MAI-NFR-OBS-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2202"
+  },
+  {
+    "mai_id": "MAI-LLM-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2203"
+  },
+  {
+    "mai_id": "MAI-CTRL-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2207"
+  },
+  {
+    "mai_id": "MAI-DEGRADE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2208"
+  },
+  {
+    "mai_id": "MAI-XQ-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2209"
+  },
+  {
+    "mai_id": "MAI-GOV-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2213"
+  },
+  {
+    "mai_id": "MAI-GOV-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2214"
+  },
+  {
+    "mai_id": "MAI-HYP-H1-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2215"
+  },
+  {
+    "mai_id": "MAI-WIN-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2219"
+  },
+  {
+    "mai_id": "MAI-TVE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2220"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2222"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2224"
+  },
+  {
+    "mai_id": "MAI-SYNC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2226"
+  },
+  {
+    "mai_id": "MAI-VERIFY-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2227"
+  },
+  {
+    "mai_id": "MAIN",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2913"
+  },
+  {
+    "mai_id": "MAINS-OPEN",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi-OMOC 工程實作指南.md:2990"
+  },
+  {
+    "mai_id": "MAINTENANCE-RULES",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:185"
+  },
+  {
+    "mai_id": "MAINT-001:",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:186"
+  },
+  {
+    "mai_id": "MAINT-002:",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:193"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:195"
+  },
+  {
+    "mai_id": "MAINT-003:",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:198"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:216"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:243"
+  },
+  {
+    "mai_id": "MAINTAINABILITY",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:325"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:349"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:350"
+  },
+  {
+    "mai_id": "MAI-FR",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:351"
+  },
+  {
+    "mai_id": "MAI-NFR",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:352"
+  },
+  {
+    "mai_id": "MAI-IR",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:353"
+  },
+  {
+    "mai_id": "MAI-GOV",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:354"
+  },
+  {
+    "mai_id": "MAI-CROPEN",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:355"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:356"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:381"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:480"
+  },
+  {
+    "mai_id": "MAI-GATE-LAYER-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:596"
+  },
+  {
+    "mai_id": "MAI-XXX-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:625"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:663"
+  },
+  {
+    "mai_id": "MAI完整度",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:689"
+  },
+  {
+    "mai_id": "MAI-SRS一致",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:752"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:753"
+  },
+  {
+    "mai_id": "MAI-Anchor對應",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:757"
+  },
+  {
+    "mai_id": "MAI有SRS",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:758"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:772"
+  },
+  {
+    "mai_id": "MAI-GATE-REPRO-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:903"
+  },
+  {
+    "mai_id": "MAI-GATE-NAMING-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:922"
+  },
+  {
+    "mai_id": "MAI-SSOT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:971"
+  },
+  {
+    "mai_id": "MAI-SAFE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:993"
+  },
+  {
+    "mai_id": "MAI-TIER-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:1027"
+  },
+  {
+    "mai_id": "MAI-TIER-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:1046"
+  },
+  {
+    "mai_id": "MAI-GATE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:1067"
+  },
+  {
+    "mai_id": "MAI-P1P2-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:1106"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:1124"
+  },
+  {
+    "mai_id": "MAI外掛同步驗證機制",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:1387"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:1452"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:1464"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:1553"
+  },
+  {
+    "mai_id": "MAI-SFHB-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:1655"
+  },
+  {
+    "mai_id": "MAI-WRC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2334"
+  },
+  {
+    "mai_id": "MAI-WRC-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2351"
+  },
+  {
+    "mai_id": "MAI-WRC-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2368"
+  },
+  {
+    "mai_id": "MAI-TWMS-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2491"
+  },
+  {
+    "mai_id": "MAI-TWMS-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2521"
+  },
+  {
+    "mai_id": "MAI-TWMS-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2545"
+  },
+  {
+    "mai_id": "MAI-RAG-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2567"
+  },
+  {
+    "mai_id": "MAI-RAG-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2584"
+  },
+  {
+    "mai_id": "MAI-DISTILL-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2606"
+  },
+  {
+    "mai_id": "MAI-DISTILL-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2623"
+  },
+  {
+    "mai_id": "MAI-DISTILL-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2642"
+  },
+  {
+    "mai_id": "MAI-METHOD-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2665"
+  },
+  {
+    "mai_id": "MAI-METHOD-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2682"
+  },
+  {
+    "mai_id": "MAI-METHOD-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2699"
+  },
+  {
+    "mai_id": "MAI-BACKTEST-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2721"
+  },
+  {
+    "mai_id": "MAI-BACKTEST-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2738"
+  },
+  {
+    "mai_id": "MAI-BACKTEST-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2755"
+  },
+  {
+    "mai_id": "MAI-TA-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2777"
+  },
+  {
+    "mai_id": "MAI-SELECT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2799"
+  },
+  {
+    "mai_id": "MAI-WATCH-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2821"
+  },
+  {
+    "mai_id": "MAI-HITL-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2838"
+  },
+  {
+    "mai_id": "MAI-HITL-DP-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2866"
+  },
+  {
+    "mai_id": "MAI-HITL-DP-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2901"
+  },
+  {
+    "mai_id": "MAI-EXECUTE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2923"
+  },
+  {
+    "mai_id": "MAI-EXECUTE-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2940"
+  },
+  {
+    "mai_id": "MAI-PERFORM-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2962"
+  },
+  {
+    "mai_id": "MAI-CAUI-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2984"
+  },
+  {
+    "mai_id": "MAI-CAUI-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3001"
+  },
+  {
+    "mai_id": "MAI-CAUI-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3018"
+  },
+  {
+    "mai_id": "MAI-CAUI-004",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3035"
+  },
+  {
+    "mai_id": "MAI-UI-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3060"
+  },
+  {
+    "mai_id": "MAI-UI-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3078"
+  },
+  {
+    "mai_id": "MAI-UI-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3100"
+  },
+  {
+    "mai_id": "MAI-LLM-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3585"
+  },
+  {
+    "mai_id": "MAI-LLM-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3620"
+  },
+  {
+    "mai_id": "MAI-LLM-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3651"
+  },
+  {
+    "mai_id": "MAI-LLM-004",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3687"
+  },
+  {
+    "mai_id": "MAI-POL-LLM-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3717"
+  },
+  {
+    "mai_id": "MAI-POL-LLM-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3734"
+  },
+  {
+    "mai_id": "MAI-RC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3767"
+  },
+  {
+    "mai_id": "MAI-RC-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3797"
+  },
+  {
+    "mai_id": "MAI-RC-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3822"
+  },
+  {
+    "mai_id": "MAI-RC-004",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3847"
+  },
+  {
+    "mai_id": "MAI-RC-005",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3872"
+  },
+  {
+    "mai_id": "MAI-THR-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3913"
+  },
+  {
+    "mai_id": "MAI-THR-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3940"
+  },
+  {
+    "mai_id": "MAI-NFR-DATA-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3966"
+  },
+  {
+    "mai_id": "MAI-NFR-REPLAY-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3983"
+  },
+  {
+    "mai_id": "MAI-NFR-OBS-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4000"
+  },
+  {
+    "mai_id": "MAI-NFR-SEC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4017"
+  },
+  {
+    "mai_id": "MAINT-001:",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4018"
+  },
+  {
+    "mai_id": "MAINT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4022"
+  },
+  {
+    "mai_id": "MAINT-",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4030"
+  },
+  {
+    "mai_id": "MAI-NFR-MAINT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4034"
+  },
+  {
+    "mai_id": "MAI-CTRL-TRIO-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4058"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4075"
+  },
+  {
+    "mai_id": "MAI-CTRL-TRIO-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4083"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4097"
+  },
+  {
+    "mai_id": "MAI-CTRL-TRIO-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4105"
+  },
+  {
+    "mai_id": "MAI-CTRL-TRIO-004",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4127"
+  },
+  {
+    "mai_id": "MAI-FLAG-GOV-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4235"
+  },
+  {
+    "mai_id": "MAI-FLAG-GOV-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4254"
+  },
+  {
+    "mai_id": "MAI-FLAG-GOV-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4273"
+  },
+  {
+    "mai_id": "MAI-CTRL-TRIO-005",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4318"
+  },
+  {
+    "mai_id": "MAI-MANIFEST-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4481"
+  },
+  {
+    "mai_id": "MAI-MANIFEST-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4507"
+  },
+  {
+    "mai_id": "MAI-MANIFEST-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4524"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4525"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4531"
+  },
+  {
+    "mai_id": "MAI-MANIFEST-010",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4541"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4555"
+  },
+  {
+    "mai_id": "MAI-XQ-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4584"
+  },
+  {
+    "mai_id": "MAI-XS-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4601"
+  },
+  {
+    "mai_id": "MAI-XSAT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4618"
+  },
+  {
+    "mai_id": "MAI-XQ-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4635"
+  },
+  {
+    "mai_id": "MAI-EXT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4657"
+  },
+  {
+    "mai_id": "MAI-EXT-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4674"
+  },
+  {
+    "mai_id": "MAI-EXT-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4691"
+  },
+  {
+    "mai_id": "MAI-EXT-004",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4708"
+  },
+  {
+    "mai_id": "MAI-RSB-INDEX-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4730"
+  },
+  {
+    "mai_id": "MAI-HYP-H1-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5080"
+  },
+  {
+    "mai_id": "MAI-HYP-H2-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5101"
+  },
+  {
+    "mai_id": "MAI-HYP-H3-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5122"
+  },
+  {
+    "mai_id": "MAI-HYP-H4-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5141"
+  },
+  {
+    "mai_id": "MAI-HYP-H5-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5164"
+  },
+  {
+    "mai_id": "MAI-HYP-H6-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5183"
+  },
+  {
+    "mai_id": "MAI-HYP-H7-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5202"
+  },
+  {
+    "mai_id": "MAI-HYP-H8-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5223"
+  },
+  {
+    "mai_id": "MAI-SEC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5288"
+  },
+  {
+    "mai_id": "MAI-SEC-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5299"
+  },
+  {
+    "mai_id": "MAI-COMP-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5314"
+  },
+  {
+    "mai_id": "MAI-COMP-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5323"
+  },
+  {
+    "mai_id": "MAI-PRIV-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5337"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5374"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5415"
+  },
+  {
+    "mai_id": "MAI-ICRU-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5432"
+  },
+  {
+    "mai_id": "MAI-ICRU-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5441"
+  },
+  {
+    "mai_id": "MAI-ICRU-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5450"
+  },
+  {
+    "mai_id": "MAI-ICRU-004",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5460"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5464"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5466"
+  },
+  {
+    "mai_id": "MAI-STRUCTURE",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5467"
+  },
+  {
+    "mai_id": "MAI為本SRS的驗收工件索引",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5468"
+  },
+  {
+    "mai_id": "MAI欄位結構",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5469"
+  },
+  {
+    "mai_id": "MAI唯一識別碼",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5473"
+  },
+  {
+    "mai_id": "MAI-FR",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5488"
+  },
+  {
+    "mai_id": "MAI-FR",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5489"
+  },
+  {
+    "mai_id": "MAI-SF-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5494"
+  },
+  {
+    "mai_id": "MAI-P0TASK-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5498"
+  },
+  {
+    "mai_id": "MAI-JOBCARD-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5502"
+  },
+  {
+    "mai_id": "MAI-WRC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5506"
+  },
+  {
+    "mai_id": "MAI-CORPUS-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5510"
+  },
+  {
+    "mai_id": "MAI-DISTILL-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5514"
+  },
+  {
+    "mai_id": "MAI-RAG-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5518"
+  },
+  {
+    "mai_id": "MAI-RAG-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5522"
+  },
+  {
+    "mai_id": "MAI-METHOD-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5526"
+  },
+  {
+    "mai_id": "MAI-METHOD-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5530"
+  },
+  {
+    "mai_id": "MAI-BACKTEST-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5534"
+  },
+  {
+    "mai_id": "MAI-BACKTEST-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5538"
+  },
+  {
+    "mai_id": "MAI-TA-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5542"
+  },
+  {
+    "mai_id": "MAI-SELECT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5546"
+  },
+  {
+    "mai_id": "MAI-WATCH-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5550"
+  },
+  {
+    "mai_id": "MAI-HITL-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5554"
+  },
+  {
+    "mai_id": "MAI-HITL-DP-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5558"
+  },
+  {
+    "mai_id": "MAI-HITL-DP-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5562"
+  },
+  {
+    "mai_id": "MAI-EXECUTE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5566"
+  },
+  {
+    "mai_id": "MAI-EXECUTE-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5570"
+  },
+  {
+    "mai_id": "MAI-PERFORM-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5574"
+  },
+  {
+    "mai_id": "MAI-CAUI-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5578"
+  },
+  {
+    "mai_id": "MAI-CAUI-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5582"
+  },
+  {
+    "mai_id": "MAI-CAUI-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5586"
+  },
+  {
+    "mai_id": "MAI-UI-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5590"
+  },
+  {
+    "mai_id": "MAI-UI-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5594"
+  },
+  {
+    "mai_id": "MAI-UI-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5598"
+  },
+  {
+    "mai_id": "MAI-ICT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5602"
+  },
+  {
+    "mai_id": "MAI-ICT-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5606"
+  },
+  {
+    "mai_id": "MAI-ICT-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5610"
+  },
+  {
+    "mai_id": "MAI-ICT-HP-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5614"
+  },
+  {
+    "mai_id": "MAI-TVE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5618"
+  },
+  {
+    "mai_id": "MAI-SEM3-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5622"
+  },
+  {
+    "mai_id": "MAI-TWMS-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5626"
+  },
+  {
+    "mai_id": "MAI-TWMS-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5630"
+  },
+  {
+    "mai_id": "MAI-TWMS-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5634"
+  },
+  {
+    "mai_id": "MAI-NFR",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5642"
+  },
+  {
+    "mai_id": "MAI-NFR",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5643"
+  },
+  {
+    "mai_id": "MAI-LAT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5648"
+  },
+  {
+    "mai_id": "MAI-AVAIL-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5652"
+  },
+  {
+    "mai_id": "MAI-AUDIT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5656"
+  },
+  {
+    "mai_id": "MAI-EQA-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5660"
+  },
+  {
+    "mai_id": "MAI-WIN-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5664"
+  },
+  {
+    "mai_id": "MAI-SHARP-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5668"
+  },
+  {
+    "mai_id": "MAI-EXEC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5672"
+  },
+  {
+    "mai_id": "MAI-SQM-S6-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5676"
+  },
+  {
+    "mai_id": "MAI-DD-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5680"
+  },
+  {
+    "mai_id": "MAI-PBO-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5684"
+  },
+  {
+    "mai_id": "MAI-LLM-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5688"
+  },
+  {
+    "mai_id": "MAI-LLM-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5692"
+  },
+  {
+    "mai_id": "MAI-LLM-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5696"
+  },
+  {
+    "mai_id": "MAI-LLM-004",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5700"
+  },
+  {
+    "mai_id": "MAI-RC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5704"
+  },
+  {
+    "mai_id": "MAI-RC-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5708"
+  },
+  {
+    "mai_id": "MAI-RC-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5712"
+  },
+  {
+    "mai_id": "MAI-RC-004",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5716"
+  },
+  {
+    "mai_id": "MAI-RC-005",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5720"
+  },
+  {
+    "mai_id": "MAI-THR-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5724"
+  },
+  {
+    "mai_id": "MAI-THR-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5728"
+  },
+  {
+    "mai_id": "MAI-NFR-DATA-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5732"
+  },
+  {
+    "mai_id": "MAI-NFR-REPLAY-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5736"
+  },
+  {
+    "mai_id": "MAI-NFR-OBS-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5740"
+  },
+  {
+    "mai_id": "MAI-NFR-SEC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5744"
+  },
+  {
+    "mai_id": "MAI-NFR-MAINT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5748"
+  },
+  {
+    "mai_id": "MAINT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5749"
+  },
+  {
+    "mai_id": "MAI-IR",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5756"
+  },
+  {
+    "mai_id": "MAI-IR",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5757"
+  },
+  {
+    "mai_id": "MAI-CTRL-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5762"
+  },
+  {
+    "mai_id": "MAI-CTRL-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5766"
+  },
+  {
+    "mai_id": "MAI-CTRL-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5770"
+  },
+  {
+    "mai_id": "MAI-DEGRADE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5774"
+  },
+  {
+    "mai_id": "MAI-KILL-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5778"
+  },
+  {
+    "mai_id": "MAI-MANIFEST-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5782"
+  },
+  {
+    "mai_id": "MAI-MANIFEST-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5786"
+  },
+  {
+    "mai_id": "MAI-MANIFEST-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5790"
+  },
+  {
+    "mai_id": "MAI-XQ-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5794"
+  },
+  {
+    "mai_id": "MAI-XS-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5798"
+  },
+  {
+    "mai_id": "MAI-XSAT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5802"
+  },
+  {
+    "mai_id": "MAI-XQ-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5806"
+  },
+  {
+    "mai_id": "MAI-EXT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5810"
+  },
+  {
+    "mai_id": "MAI-EXT-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5814"
+  },
+  {
+    "mai_id": "MAI-EXT-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5818"
+  },
+  {
+    "mai_id": "MAI-EXT-004",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5822"
+  },
+  {
+    "mai_id": "MAI-ICD-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5826"
+  },
+  {
+    "mai_id": "MAI-GOV",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5834"
+  },
+  {
+    "mai_id": "MAI-GOV",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5835"
+  },
+  {
+    "mai_id": "MAI-GOV-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5840"
+  },
+  {
+    "mai_id": "MAI-GOV-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5844"
+  },
+  {
+    "mai_id": "MAI-GOV-003",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5848"
+  },
+  {
+    "mai_id": "MAI-GOV-004",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5852"
+  },
+  {
+    "mai_id": "MAI-GOV-005",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5856"
+  },
+  {
+    "mai_id": "MAI-HYP-H1-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5860"
+  },
+  {
+    "mai_id": "MAI-HYP-H2-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5864"
+  },
+  {
+    "mai_id": "MAI-HYP-H3-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5868"
+  },
+  {
+    "mai_id": "MAI-HYP-H4-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5872"
+  },
+  {
+    "mai_id": "MAI-HYP-H5-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5876"
+  },
+  {
+    "mai_id": "MAI-HYP-H6-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5880"
+  },
+  {
+    "mai_id": "MAI-HYP-H7-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5884"
+  },
+  {
+    "mai_id": "MAI-HYP-H8-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5888"
+  },
+  {
+    "mai_id": "MAI-SEC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5892"
+  },
+  {
+    "mai_id": "MAI-COMP-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5896"
+  },
+  {
+    "mai_id": "MAI-COMP-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5900"
+  },
+  {
+    "mai_id": "MAI-PRIV-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5904"
+  },
+  {
+    "mai_id": "MAI-CROPEN",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5912"
+  },
+  {
+    "mai_id": "MAI-LAT-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5919"
+  },
+  {
+    "mai_id": "MAI-EQA-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5924"
+  },
+  {
+    "mai_id": "MAI-WIN-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5929"
+  },
+  {
+    "mai_id": "MAI-DD-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5934"
+  },
+  {
+    "mai_id": "MAI-SHARP-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5939"
+  },
+  {
+    "mai_id": "MAI-EXEC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5944"
+  },
+  {
+    "mai_id": "MAI-TVE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5949"
+  },
+  {
+    "mai_id": "MAI-ICT-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5954"
+  },
+  {
+    "mai_id": "MAI-SIZE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5959"
+  },
+  {
+    "mai_id": "MAI-ICT-HP-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5964"
+  },
+  {
+    "mai_id": "MAI-PBO-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5969"
+  },
+  {
+    "mai_id": "MAI-RC-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5974"
+  },
+  {
+    "mai_id": "MAI-SQM-S6-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5979"
+  },
+  {
+    "mai_id": "MAI-NFR-PERF-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5984"
+  },
+  {
+    "mai_id": "MAI-CTRL-006",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5989"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5997"
+  },
+  {
+    "mai_id": "MAI-VERIFY",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5998"
+  },
+  {
+    "mai_id": "MAI-SYNC-001:",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5999"
+  },
+  {
+    "mai_id": "MAI-SYNC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6003"
+  },
+  {
+    "mai_id": "MAI以外掛承載",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6005"
+  },
+  {
+    "mai_id": "MAI外掛存在",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6007"
+  },
+  {
+    "mai_id": "MAI-SYNC-REQUIRED",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6011"
+  },
+  {
+    "mai_id": "MAI-MAI-SYNC-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6015"
+  },
+  {
+    "mai_id": "MAI-SYNC-002:",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6016"
+  },
+  {
+    "mai_id": "MAI-SYNC-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6020"
+  },
+  {
+    "mai_id": "MAI外掛",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6022"
+  },
+  {
+    "mai_id": "MAI引用三者一致",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6024"
+  },
+  {
+    "mai_id": "MAI-MAI-SYNC-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6032"
+  },
+  {
+    "mai_id": "MAI-VERIFY-001:",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6033"
+  },
+  {
+    "mai_id": "MAI-VERIFY-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6037"
+  },
+  {
+    "mai_id": "MAI與SRS需求條文MUST保持同步",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6039"
+  },
+  {
+    "mai_id": "MAI條目數",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6041"
+  },
+  {
+    "mai_id": "MAI-MAI-VERIFY-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6047"
+  },
+  {
+    "mai_id": "MAI驗證統計",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6048"
+  },
+  {
+    "mai_id": "MAI條目宣告",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6049"
+  },
+  {
+    "mai_id": "MAI條目數",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6050"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6051"
+  },
+  {
+    "mai_id": "MAI見外掛合冊",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6053"
+  },
+  {
+    "mai_id": "MAI-ICD-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6084"
+  },
+  {
+    "mai_id": "MAI-RTM-A-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6457"
+  },
+  {
+    "mai_id": "MAI-RTM-A-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6474"
+  },
+  {
+    "mai_id": "MAI-RTM-B-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6685"
+  },
+  {
+    "mai_id": "MAI-RTM-B-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6702"
+  },
+  {
+    "mai_id": "MAI",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6844"
+  },
+  {
+    "mai_id": "MAI-CAND-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7010"
+  },
+  {
+    "mai_id": "MAI-CAND-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7027"
+  },
+  {
+    "mai_id": "MAI-CROPEN-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7044"
+  },
+  {
+    "mai_id": "MAI-ISSUE-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7259"
+  },
+  {
+    "mai_id": "MAI外掛",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7606"
+  },
+  {
+    "mai_id": "MAI驗證",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7610"
+  },
+  {
+    "mai_id": "MAI-EVID-001",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7803"
+  },
+  {
+    "mai_id": "MAI-EVID-002",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7820"
+  },
+  {
+    "mai_id": "MAI覆蓋",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:8007"
+  },
+  {
+    "mai_id": "MAI完備",
+    "srs_req_id": "",
+    "acceptance_artifact": "",
+    "verification_method": "",
+    "pass_criteria": "",
+    "gate_ref": "",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:8012"
+  }
+]

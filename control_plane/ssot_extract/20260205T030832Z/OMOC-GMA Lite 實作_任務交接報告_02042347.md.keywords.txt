@@ -1,0 +1,19 @@
+12:* **A0**：《Spartoi-OMOC 工程實作指南》為最終準則（Definition of Done / GateKit / 15 CA Stations / Evidence Trinity 等）。  
+21:* CI（quality-gates）可用  
+24:  但「全量 DoD」尚未達成（見 §6）。《指南》明確定義「合法 DoD」＝控制面工程化 \+ 全 CA 工作站可跑 \+ 驗收閉環 PASS \+ EXECUTE 鎖定（HITL/Kill-Switch）。
+33:* PR \#9：`feat(b1): minimal GateKit + acceptance entrypoint`（已 squash merge 到 `main`）
+37:* 目前只有 1 個 active ruleset：`fail-closed-gates`（其餘 disabled）。  
+40:註：若未來啟用 Merge Queue，必須把 workflow 加上 `merge_group` 事件，否則 merge queue 階段 required checks 會永遠 pending。([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue?utm_source=chatgpt.com))
+48:* workflow：`quality-gates`
+141:若未來啟用 merge queue：workflow 必須支援 `merge_group`，GitHub 文件明確要求。([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue?utm_source=chatgpt.com))
+149:### **5.1 GateKit / GateRunner / Trinity（概念與工件）**
+151:* **GateKit：8 Gate 模板**在指南有固定清單（G-SRC / G-SCHEMA / G-BT-H / G-SEG-L / G-CONF-L / G-XQ-PARITY / G-HITL-LOG / G-RUN）。  
+169:4. **GateKit 8 templates 的工程化落地與綁定覆蓋（非僅概念）**：目前是 B1 切片；尚未達「全站點覆蓋 \+ 全 gate binding」
+179:* **merge queue 假象**：PR 綠 ≠ merge queue 綠；merge queue 需要 `merge_group`。([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue?utm_source=chatgpt.com))
+204:### **WP-Next-03｜HITL/Kill-Switch 鎖定（EXECUTE 禁止自動下單）**
+208:### **WP-Next-04｜GateKit 8 templates 實作化 \+ 綁定覆蓋（全站點 gate\_binding）**
+210:* 由 gate\_binding 驅動 GateRunner；產出 deterministic verdict。
+218:* **GateKit 8 模板清單**：G-SRC / G-SCHEMA / G-BT-H / G-SEG-L / G-CONF-L / G-XQ-PARITY / G-HITL-LOG / G-RUN  
+240:\- CI quality-gates has successful runs for PR branch and main push (run IDs recorded in this report)  
+256:\- EXECUTE lock (HITL/Kill-Switch) engineering enforcement not fully proven across pipelines.  
+257:\- GateKit 8 templates \+ gate\_binding coverage not fully proven across all stations.

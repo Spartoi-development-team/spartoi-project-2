@@ -1,0 +1,84 @@
+29:	Open Items / CR_OPEN Register
+51:* 提供與 Gate/允收的掛鉤指引（gate_hook）
+55:2. §6 (CR_OPEN) 登記所有未授權門檻，採 Fail-Closed，含完整 Evidence_Refs
+59:* 找 Gate 掛鉤：搜尋 gate_hook 或 GATE-
+60:* 找 CR_OPEN：搜尋 CR-OPEN-E-
+65:	LBP-E 定義 Gate
+66:	❌ 錯誤。LBP-E 只掛鉤 SRS Gate Dictionary 既有 Gate
+68:	❌ 錯誤。門檻數值必須經 SRS 授權，否則進 CR_OPEN
+77:	Gate
+117:	CR_OPEN 索引：
+118:CR_OPEN ID
+192:2. 重構 §6 CR_OPEN Register：補齊完整 Evidence_Refs 格式（每筆含 8 欄位）
+260:* 本文件僅承擔「Fitness Function 定義與 Gate 掛鉤」
+262:* 所有 Gate 定義以 SRS#SRS-V700-GATE-ID-INDEX 為 SSOT
+263:* 本文件 不定義 任何 Gate、Pack、門檻數值
+291:	所有未定義門檻/方法必須 CR_OPEN 化並可稽核
+303:	新增 Gate 類別或新增 Pack 類別
+304:	只能掛鉤既有 Gate
+320:* ❌ 不新增 Gate（只能掛鉤 SRS Gate Dictionary）
+370:若上游條款衝突或不可定位 → 進 CR_OPEN，採 Fail-Closed 預設，且不得宣稱為硬門檻。
+371:§2.3 Gate 分層架構
+373:依 SRS v7.0.0 Gate 分層架構：
+374:* gate_policy（裁決層）：三態固定（BLOCK_RELEASE / RADAR_ONLY / EXECUTE_DISABLED）
+403:	FIT-001~005 (CR_OPEN)
+432:	通過/失敗規則（含 CR_OPEN 標註）
+434:	Gate 掛鉤（指向 SRS Gate Dictionary）
+452:	[CR_OPEN] 門檻值未獲 SRS 授權；缺 backtest_log → FAIL-CLOSED: RADAR_ONLY
+471:	[CR_OPEN] 門檻值未獲 SRS 授權；缺 fitness_report → FAIL-CLOSED: RADAR_ONLY
+490:	[CR_OPEN] 門檻值未獲 SRS 授權；缺 backtest_log → FAIL-CLOSED: RADAR_ONLY
+509:	[CR_OPEN] 門檻值未獲 SRS 授權；evals_report 缺失 → FAIL-CLOSED: RADAR_ONLY
+528:	[CR_OPEN] 門檻值未獲 SRS 授權；report 缺失 → FAIL-CLOSED: RADAR_ONLY
+532:	SRS#SRS-V700-NFR-MAINTAINABILITY, REQ21-01
+566:	[CR_OPEN] 門檻值未獲 SRS 授權；drift > threshold → RADAR_ONLY
+585:	[CR_OPEN] 門檻值未獲 SRS 授權；score 缺失 → FAIL-CLOSED: RADAR_ONLY
+604:	[CR_OPEN] 門檻值未獲 SRS 授權；violation → FAIL-CLOSED: RADAR_ONLY
+623:	不一致 → EXECUTE_DISABLED
+661:	[CR_OPEN] required_events 清單未獲 SRS 授權；coverage < 100% → RADAR_ONLY
+680:	[CR_OPEN] determinism_claim 規範缺上游定位；drift_detected → BLOCK_RELEASE
+697:	MAI-PERF-001
+701:	MAI-PERF-002
+705:	MAI-PERF-003
+709:	MAI-RELIABILITY-001
+713:	MAI-RELIABILITY-002
+717:	MAI-GOV-001
+721:	MAI-SEM3-TVE-001
+725:	MAI-SEM3-SGF-001
+729:	MAI-SEM3-MSC-001
+733:	MAI-PLATFORM-001
+735:	EXECUTE_DISABLED
+737:	MAI-ICT-001
+741:	MAI-OBS-001
+745:	MAI-REPLAY-001
+755:§6 Open Items / CR_OPEN Register
+757:§6.1 CR_OPEN 登錄簿格式說明
+758:依《Candidate 處置規則 v2》，每條 CR_OPEN 必須包含：
+764:§6.2 CR_OPEN 完整登錄（11 條）
+964:	SRS#SRS-V700-NFR-MAINTAINABILITY
+1250:	門檻未驗證、CR_OPEN 未關單
+1251:	EXECUTE_DISABLED
+1253:	Kill-Switch 觸發、HITL 未確認
+1254:	§6.4 CR_OPEN 範圍說明
+1256:範圍聲明： 本文件 CR_OPEN 範圍限於 LBP-E 職責內的門檻（共 11 條）。
+1270:	對應 CR_OPEN
+1411:	對應 CR_OPEN
+1546:	FIT-006 (Gate分層)
+1605:	Gate 自創檢查
+1606:	所有 gate_hook 對應 SRS Gate Dictionary
+1620:	CR_OPEN 完整性
+1621:	所有門檻皆有 CR_OPEN 登記
+1626:	每條 CR_OPEN ≥2 筆 Evidence_Refs
+1661:# CR_OPEN Evidence_Refs 計數
+1663:# 預期結果：≥22（11 條 CR_OPEN × 2 筆）
+1670:	我是否新增了 Gate 類別？
+1672:	僅引用 SRS Gate Dictionary
+1675:	所有數值在 CR_OPEN/Evidence_Refs
+1691:	我是否補齊 CR_OPEN Evidence_Refs 完整格式？
+1714:	BLK-002: CR_OPEN 缺 Evidence_Refs
+1790:* [PATCH-V301-002] 重構 §6 CR_OPEN Register：每條含完整 Evidence_Refs（2 筆 × 完整欄位）
+1801:* [PATCH-E-004] 將所有門檻數值移至 CR_OPEN + Evidence_Refs（FIT-001~005）
+1802:* [PATCH-E-005~006] 對齊 SRS v7.0.0 Gate 分層架構（gate_policy 三態 + gate_id 掛鉤）
+1806:* [PATCH-E-017] 完成 CR_OPEN Register 11 條登錄
+1812:Quality Gates 宣告
+1835:	§6 CR_OPEN Evidence_Refs 是否完整格式
+1858:	Overall Quality Gate: ✅ PASS

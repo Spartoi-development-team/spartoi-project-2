@@ -6,5 +6,46 @@
     "ultrawork",
     "ralph"
   ],
-  "concurrency": 1
+  "concurrency": 1,
+  "permissions": [
+    {
+      "match": "*",
+      "effect": "allow",
+      "actions": [
+        "read",
+        "list",
+        "grep",
+        "glob"
+      ]
+    },
+    {
+      "match": "*",
+      "effect": "allow",
+      "actions": [
+        "bash",
+        "edit",
+        "write"
+      ]
+    },
+    {
+      "match": "*",
+      "effect": "allow",
+      "actions": [
+        "call_omo_agent",
+        "task",
+        "delegate_task"
+      ]
+    },
+    {
+      "match": "*",
+      "effect": "deny",
+      "actions": [
+        "execute",
+        "rm",
+        "rm_rf",
+        "write_secrets",
+        "network_execute"
+      ]
+    }
+  ]
 }

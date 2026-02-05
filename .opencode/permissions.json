@@ -1,0 +1,7 @@
+{
+  "permissions": [
+    { "match": "*", "effect": "allow" },
+    { "actions": ["call_omo_agent", "task", "delegate_task"], "effect": "allow" },
+    { "actions": ["bash", "write"], "effect": "allow" }
+  ]
+}

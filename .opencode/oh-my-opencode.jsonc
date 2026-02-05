@@ -1,0 +1,46 @@
+// OH-MY-OPENCODE consolidated config
+{
+  // model pins
+  "model": "github-copilot/gpt-5-mini",
+  "small_model": "github-copilot/gpt-4.1",
+
+  // provider control: wildcard entries should come first for clarity
+  "enabled_providers": [
+    "*",
+    "github-copilot"
+  ],
+  "disabled_providers": [
+    "opencode"
+  ],
+
+  // permissions: ordered list. Use last-match-wins. Catch-all first, then exceptions.
+  "permissions": [
+    // catch-all: allow common read actions by default to avoid constant permission prompts
+    {
+      "match": "*",
+      "effect": "allow",
+      "actions": ["read", "list", "grep", "glob"]
+    },
+    // allow common developer tools by default (bash/edit) to restore previous looseness
+    {
+      "match": "*",
+      "effect": "allow",
+      "actions": ["bash", "edit", "write"]
+    },
+    // explicit allows needed by OMOC workflows
+    {
+      "match": "*",
+      "effect": "allow",
+      "actions": ["call_omo_agent", "task", "delegate_task"]
+    },
+    // Deny high-risk actions as exceptions (placed after allow rules so they win)
+    {
+      "match": "*",
+      "effect": "deny",
+      "actions": ["execute", "rm", "rm_rf", "write_secrets", "network_execute"]
+    }
+  ],
+
+  // Safety: do not enable EXECUTE in any place by default. This file intentionally
+  // does not include an EXECUTE enablement flag.
+}

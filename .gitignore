@@ -9,3 +9,6 @@ site/
 
 # local evidence bundles
 evidence/
+
+# local errors
+pr_create.err

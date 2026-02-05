@@ -1,0 +1,5 @@
+== Spartoi｜P1_ARCH_v6.0.0-r5.md ==
+858:# Candidate Fence Lint
+4399:# xdoc_flag_consistency_check.sh
+4401:# 差異非空 → BLOCK_RELEASE
+

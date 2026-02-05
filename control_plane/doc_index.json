@@ -1,53 +1,53 @@
 {
-  "generated_utc": "2026-02-05T01:13:14Z",
+  "generated_utc": "2026-02-05T17:57:55Z",
   "ssot_files": [
     {
       "basename": "Spartoi-OMOC_開發實作方案.md",
-      "path": null,
-      "sha256": null,
-      "bytes": null
+      "path": "./ssot/inputs/Spartoi-OMOC_開發實作方案.md",
+      "sha256": "12f473771b4145a3929aaabc90267607209a10bd2c1bf15713263f48f970a525",
+      "bytes": 20742
     },
     {
       "basename": "Spartoi-OMOC 工程實作指南.md",
-      "path": null,
-      "sha256": null,
-      "bytes": null
+      "path": "./ssot/inputs/Spartoi-OMOC 工程實作指南.md",
+      "sha256": "6831223394c19ca2ad4386af751de0ddace7fa390d7602dfd3c4178284649909",
+      "bytes": 251293
     },
     {
       "basename": "Spartoi｜P1_SRS_v7.0.0.md",
-      "path": null,
-      "sha256": null,
-      "bytes": null
+      "path": "./ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md",
+      "sha256": "49005df16855e6ad996832abec0869a633fff073d6eac436c1dcdd669de6d0f2",
+      "bytes": 182508
     },
     {
       "basename": "Spartoi｜P1_ARCH_v6.0.0-r5.md",
-      "path": null,
-      "sha256": null,
-      "bytes": null
+      "path": "./ssot/inputs/Spartoi｜P1_ARCH_v6.0.0-r5.md",
+      "sha256": "58c057bc03421f09b6963b5f000f829a79591895df2bac03c9b507c3da6fd758",
+      "bytes": 192678
     },
     {
       "basename": "Spartoi｜P1_LBP-B(ICD)_v5.0.1.md",
-      "path": null,
-      "sha256": null,
-      "bytes": null
+      "path": "./ssot/inputs/Spartoi｜P1_LBP-B(ICD)_v5.0.1.md",
+      "sha256": "1a212f7a22d118b334c2c5dbb78310dbca3cb2f72e354ee8b3422bc99f2872ad",
+      "bytes": 51838
     },
     {
       "basename": "Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md",
-      "path": null,
-      "sha256": null,
-      "bytes": null
+      "path": "./ssot/inputs/Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md",
+      "sha256": "92ce725fa425759761264ca91cbe89171704f98a8d5da9af3b96f5ac74b622ac",
+      "bytes": 39698
     },
     {
       "basename": "Spartoi｜SubP1-LITE+MVP 開發 RUNBOOK & WI_v1.4.0.md",
-      "path": null,
-      "sha256": null,
-      "bytes": null
+      "path": "./ssot/inputs/Spartoi｜SubP1-LITE+MVP 開發 RUNBOOK & WI_v1.4.0.md",
+      "sha256": "b906eb8d027cae68290dc9f9521a4dd0e1b061411bee27e2a7f4da59ec4e70fc",
+      "bytes": 165917
     },
     {
       "basename": "OMOC-GMA Lite 實作_任務交接報告_02042347.md",
-      "path": null,
-      "sha256": null,
-      "bytes": null
+      "path": "./ssot/inputs/OMOC-GMA Lite 實作_任務交接報告_02042347.md",
+      "sha256": "7e19d3255617ff3f71fec7627fad3ff89048718504e779c956c9ca5be9558502",
+      "bytes": 13306
     }
   ]
 }

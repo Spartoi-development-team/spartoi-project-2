@@ -1,0 +1,15 @@
+## feat/omoc-fix-opencode-schema...origin/feat/omoc-fix-opencode-schema
+ M .opencode/oh-my-opencode.jsonc
+ M control_plane/doc_index.json
+ M control_plane/trace_map_inflight.json
+ M opencode.json
+ M scripts/verify_omo_subagents.sh
+?? ".sisyphus/plans/Spartoi-OMOC\345\225\237\347\224\250\345\255\220\344\273\243\347\220\206-\346\226\271\346\241\210.md"
+?? .sisyphus/plans/omo-next-steps.md
+?? _evidence/
+?? control_plane/doc_index.build.stderr
+?? control_plane/doc_index.build.stdout
+?? control_plane/ssot_fill_inflight.stderr
+?? control_plane/ssot_fill_inflight.stdout
+?? opencode.jsonc
+?? scripts/collect_final_evidence.sh

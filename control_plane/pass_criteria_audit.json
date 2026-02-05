@@ -1,0 +1,765 @@
+{
+  "audit": [
+    {
+      "mai_id": "Maintenance",
+      "pass_criteria": "* ❌ 完整 JSON Schema 展開（只能寫最小欄位列表 + Route-Out） * ❌ 把 Runbook/SFHB 當 SSOT 或契約引用 * ❌ 設計細節全文複製進 SRS",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:145",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAINTENANCE-RULES",
+      "pass_criteria": "* ❌ 完整 JSON Schema 展開（只能寫最小欄位列表 + Route-Out） * ❌ 把 Runbook/SFHB 當 SSOT 或契約引用 * ❌ 設計細節全文複製進 SRS",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:145",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAINT-001",
+      "pass_criteria": "* ❌ 完整 JSON Schema 展開（只能寫最小欄位列表 + Route-Out） * ❌ 把 Runbook/SFHB 當 SSOT 或契約引用 * ❌ 設計細節全文複製進 SRS",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:145",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAINT-002",
+      "pass_criteria": "* 本 SRS 內已存在且可驗收的需求條文（含欄位清單、Gate、工件契約），不得以「摘要/口號」取代 * 任何刪除/簡化 MUST： 1. 在 §13.2 Conflict Ledger 登錄",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:187",
+      "classification": "criteria",
+      "flags": []
+    },
+    {
+      "mai_id": "MAINT-003",
+      "pass_criteria": "3. RTM-B 外掛補齊驗證機制（hash/sample/統計） 4. APPX-I Candidate Migration Ledger 補齊 15 條實質內容（numeric-free） 5. 新增 §3.20 ICT模組需求框架",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:162",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword",
+        "index_like"
+      ]
+    },
+    {
+      "mai_id": "MAI-STRUCTURE",
+      "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-FR",
+      "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-NFR",
+      "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-IR",
+      "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-GOV",
+      "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-CROPEN",
+      "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-VERIFY",
+      "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-GATE-LAYER-001",
+      "pass_criteria": "介面schema LBP-B(ICD) 「Route-Out: LBP-B(ICD) SCHEMA-XXX」",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:559",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-",
+      "pass_criteria": "* §10.2 FR 驗收索引 [#SRS-V700-MAI-FR] * §10.3 NFR 驗收索引 [#SRS-V700-MAI-NFR] * §10.4 IR 驗收索引 [#SRS-V700-MAI-IR]",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:351",
+      "classification": "unknown",
+      "flags": [
+        "cross_mai",
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-GATE-NAMING-001",
+      "pass_criteria": "§0.4.4 Gate執行與驗證機制 [ANCHOR:SRS-V700-GATE-EXECUTION] Gate執行流程（Normative）：",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:923",
+      "classification": "criteria",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-WRC-001",
+      "pass_criteria": "jobcard_schema_validation.json Test MAI-WRC-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5504",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-TWMS-002",
+      "pass_criteria": "系統MUST驗證策略符合台股微結構三軸約束 Fit Criterion twms_axis_check_report.json Pass",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2481",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-TWMS-003",
+      "pass_criteria": "SRS-FR-TWMS-AXIS-002: 驗收報表schema 欄位 內容",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2505",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-RAG-001",
+      "pass_criteria": "* axis_1_time_window: {verdict, violations[]} * axis_2_liquidity: {verdict, violations[]} * axis_3_trading_rules: {verdict, violations[]}",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2525",
+      "classification": "criteria",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-DISTILL-001",
+      "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-CORPUS Acceptance MAI-RAG-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2565",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-DISTILL-003",
+      "pass_criteria": "sem3_pipeline_test.json Pass Verification Method Test",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2598",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-METHOD-001",
+      "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-METHOD-TRIPLE-SOURCE Acceptance MAI-METHOD-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2663",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-METHOD-002",
+      "pass_criteria": "SRS-FR-METHOD-003: MethodCard Schema 欄位 內容",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2683",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-METHOD-003",
+      "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-METHOD-TRIPLE-SOURCE Acceptance MAI-METHOD-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2663",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-BACKTEST-001",
+      "pass_criteria": "SRS-FR-METHOD-003: MethodCard Schema 欄位 內容",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2683",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-BACKTEST-002",
+      "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-METHOD-CARD Acceptance MAI-METHOD-003",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2697",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-BACKTEST-003",
+      "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-BACKTEST-REPORT Acceptance MAI-BACKTEST-003",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2753",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-TA-001",
+      "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-TA-OUTPUT Acceptance MAI-TA-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2775",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-HITL-DP-001",
+      "pass_criteria": "decision_package_schema_test.json Inspection MAI-HITL-DP-002",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5560",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-HITL-DP-002",
+      "pass_criteria": "decision_package_schema_test.json Pass Verification Method Inspection",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2858",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-EXECUTE-001",
+      "pass_criteria": "decision_package_schema_test.json Inspection MAI-HITL-DP-002",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5560",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-PERFORM-001",
+      "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-PERFORMANCE-REPORT Acceptance MAI-PERFORM-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2960",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-CAUI-002",
+      "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-PERFORMANCE-REPORT Acceptance MAI-PERFORM-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2960",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-CAUI-003",
+      "pass_criteria": "ui_decision_isolation_test.json Pass Verification Method Test",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2976",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-CAUI-004",
+      "pass_criteria": "ui_jobcard_io_test.json Pass Verification Method Demonstration",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2993",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-UI-002",
+      "pass_criteria": "SRS-CAUI-IC-001: UI觸發任一執行流程MUST生成/引用run_config_snapshot.json SRS-CAUI-IC-002: UI必須將本次輸入工件納入release_bundle_manifest.json（含input_digest） SRS-CAUI-IC-003: UI必須顯示以下Gate評估結果：GATE-RL-001~005（發布準備度）、RC1~RC5（蒸餾質量） SRS-CAUI-IC-004: EXECUTE預設禁用：UI初始狀態MUST為EXECUTE_DISABLED或RADAR_ONLY；只有在RC Gate全數PASS且HITL明確確認後才允許切換 ________________",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3038",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-LLM-004",
+      "pass_criteria": "fallback_test.json所有路徑Pass Verification Method Test",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3643",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-POL-LLM-001",
+      "pass_criteria": "llm_dependency_audit.json驗證通過 Verification Method Inspection",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3679",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-POL-LLM-002",
+      "pass_criteria": "驗收標準： MUST提供llm_dependency_audit.json，證明： * REQUIRED_LLM = 0（核心功能無強制依賴） * OPTIONAL_LLM = N（可選加速）",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3695",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-RC-002",
+      "pass_criteria": "* 交叉驗證：至少2名標註員獨立評分 fidelity_report.json最小欄位： * batch_id, bleu4_score, human_eval_scores, human_eval_mean, inter_annotator_agreement, failed_cases",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3801",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-RC-005",
+      "pass_criteria": "* batch_id, total_scripts, passed_scripts, failed_scripts, executability_ratio, failure_reasons[] 門檻值（Candidate）： 建議可執行率≥95% SRS-RC-004：RC4（Platform Alignment - 平台對齊）",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3828",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-THR-001",
+      "pass_criteria": "* batch_id, baseline_metrics{}, distilled_metrics{}, metric_diffs{}, consistency_pass 門檻值（Candidate）： 建議關鍵指標差異≤5% RC治理規則",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3878",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-THR-002",
+      "pass_criteria": "schema驗證通過 Verification Method Inspection",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3905",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-NFR-DATA-001",
+      "pass_criteria": "* pass_probability: {win_rate_ge_55pct, mdd_le_20pct, sharpe_ge_1p5} * recommended_candidate_thresholds: {win_rate_threshold, mdd_threshold, sharpe_threshold, rationale, confidence_level} SRS-THR-002: Candidate禁止成為Fail-Closed門檻",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3924",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-NFR-REPLAY-001",
+      "pass_criteria": "* CR_OPEN（未驗證不得上線） ________________",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3944",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-NFR-OBS-001",
+      "pass_criteria": "系統MUST驗證輸入資料品質（完整性/時效性/一致性） Fit Criterion data_quality_report.json Pass",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3956",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-NFR-SEC-001",
+      "pass_criteria": "replay_test.json Pass Verification Method Demonstration",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3975",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAINT",
+      "pass_criteria": "* 本 SRS 內已存在且可驗收的需求條文（含欄位清單、Gate、工件契約），不得以「摘要/口號」取代 * 任何刪除/簡化 MUST： 1. 在 §13.2 Conflict Ledger 登錄",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:187",
+      "classification": "criteria",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-CTRL-TRIO-001",
+      "pass_criteria": "intent_spec.json最小欄位列表（完整schema Route-Out至ICD）： * intent_version (string) * run_id (string)",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4059",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-CTRL-TRIO-002",
+      "pass_criteria": "Route-Out: ICD / schema_id: SCHEMA-VALIDATION-HOOK SRS-CTRL-TRIO-003: evidence_refs.json（最小契約） 欄位",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4088",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-CTRL-TRIO-003",
+      "pass_criteria": "Route-Out: ICD / schema_id: SCHEMA-INTENT-SPEC SRS-CTRL-TRIO-002: validation_hook.json（最小契約） 欄位",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4066",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-CTRL-TRIO-004",
+      "pass_criteria": "Route-Out: ICD / schema_id: SCHEMA-VALIDATION-HOOK SRS-CTRL-TRIO-003: evidence_refs.json（最小契約） 欄位",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4088",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-MANIFEST-002",
+      "pass_criteria": "manifest schema驗證通過 Verification Method Inspection",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4473",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-XS-001",
+      "pass_criteria": "驗收索引 GATE-RL-002 APPX-RSB-INDEX",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4557",
+      "classification": "criteria",
+      "flags": [
+        "index_like"
+      ]
+    },
+    {
+      "mai_id": "MAI-XSAT-001",
+      "pass_criteria": "xq_integration_test.json Pass Verification Method Test",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4576",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-XQ-002",
+      "pass_criteria": "系統MUST能產出符合XQ平台規格的XS腳本 Fit Criterion xs_syntax_test.json Pass",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4591",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-EXT-003",
+      "pass_criteria": "sinopac_api_test.json Pass（若啟用） Verification Method Test",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4649",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-EXT-004",
+      "pass_criteria": "finmind_api_test.json Pass（若啟用） Verification Method Test",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4666",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-HYP-H1-001",
+      "pass_criteria": "LBP-B(ICD) SCHEMA-DISTILL-SEM3 Acceptance MAI-HYP-H1-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5078",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-HYP-H2-001",
+      "pass_criteria": "本節將《全文件最終增補升級方案v2》的八大設計假說條文化為可驗收需求。 H1: SEM³（三層蒸餾） [ANCHOR:SRS-V700-HYPOTHESIS-H1]",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5059",
+      "classification": "criteria",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-HYP-H3-001",
+      "pass_criteria": "LBP-B(ICD) SCHEMA-DISTILL-SEM3 Acceptance MAI-HYP-H1-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5078",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-HYP-H4-001",
+      "pass_criteria": "LBP-B(ICD) SCHEMA-METHOD-TRIPLE-SOURCE Acceptance MAI-HYP-H2-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5099",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-HYP-H5-001",
+      "pass_criteria": "LBP-B(ICD) SCHEMA-RAG-TRIRAG Acceptance MAI-HYP-H3-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5120",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-HYP-H8-001",
+      "pass_criteria": "LBP-B(ICD) SCHEMA-MARKET-PROFILE Acceptance MAI-HYP-H8-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5221",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-SEC-001",
+      "pass_criteria": "待驗證 失敗→RADAR_ONLY H4",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5243",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-SEC-002",
+      "pass_criteria": "待驗證 無證據→BLOCK_RELEASE H7",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5258",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-ICRU-001",
+      "pass_criteria": "待驗證 H3 TriRAG（三階段RAG）",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5389",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-ICRU-002",
+      "pass_criteria": "待驗證 H6 Evidence-Only Firewall",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5398",
+      "classification": "criteria",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-ICRU-003",
+      "pass_criteria": "待驗證",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5407",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-SF-001",
+      "pass_criteria": "核心FR驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-FR）： mai_id srs_req_id",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5489",
+      "classification": "unknown",
+      "flags": [
+        "cross_mai",
+        "no_keyword",
+        "index_like"
+      ]
+    },
+    {
+      "mai_id": "MAI-JOBCARD-001",
+      "pass_criteria": "MAI為本SRS的驗收工件索引，每條需求對應一個acceptance_hook。 MAI欄位結構： 欄位",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5468",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-CORPUS-001",
+      "pass_criteria": "MAI為本SRS的驗收工件索引，每條需求對應一個acceptance_hook。 MAI欄位結構： 欄位",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5468",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-ICT-001",
+      "pass_criteria": "decision_package_schema_test.json Inspection MAI-HITL-DP-002",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5560",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-LAT-001",
+      "pass_criteria": "核心NFR驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-NFR）： mai_id srs_req_id",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5643",
+      "classification": "unknown",
+      "flags": [
+        "cross_mai",
+        "no_keyword",
+        "index_like"
+      ]
+    },
+    {
+      "mai_id": "MAI-SHARP-001",
+      "pass_criteria": "twms_schema_validation.json Inspection MAI-TWMS-003",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5632",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-EXEC-001",
+      "pass_criteria": "twms_schema_validation.json Inspection MAI-TWMS-003",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5632",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-SQM-S6-001",
+      "pass_criteria": "twms_schema_validation.json Inspection MAI-TWMS-003",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5632",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-DD-001",
+      "pass_criteria": "§10.3 NFR 驗收索引 [ANCHOR:SRS-V700-MAI-NFR] 核心NFR驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-NFR）：",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5641",
+      "classification": "criteria",
+      "flags": [
+        "cross_mai",
+        "index_like"
+      ]
+    },
+    {
+      "mai_id": "MAI-PBO-001",
+      "pass_criteria": "§10.3 NFR 驗收索引 [ANCHOR:SRS-V700-MAI-NFR] 核心NFR驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-NFR）：",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5641",
+      "classification": "criteria",
+      "flags": [
+        "cross_mai",
+        "index_like"
+      ]
+    },
+    {
+      "mai_id": "MAI-CTRL-001",
+      "pass_criteria": "核心IR驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-IR）： mai_id srs_req_id",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5757",
+      "classification": "unknown",
+      "flags": [
+        "cross_mai",
+        "no_keyword",
+        "index_like"
+      ]
+    },
+    {
+      "mai_id": "MAI-CTRL-003",
+      "pass_criteria": "run_config_schema_check.json Inspection MAI-DEGRADE-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5772",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-DEGRADE-001",
+      "pass_criteria": "run_config_schema_check.json Inspection MAI-DEGRADE-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5772",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-KILL-001",
+      "pass_criteria": "run_config_schema_check.json Inspection MAI-DEGRADE-001",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5772",
+      "classification": "procedure",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-ICD-001",
+      "pass_criteria": "Contract參照數量： 55 contracts（見§6.2） Schema參照數量： 28 schemas（見§6.3） ________________",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6085",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-GOV-001",
+      "pass_criteria": "核心GOV驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-GOV）： mai_id srs_req_id",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5835",
+      "classification": "unknown",
+      "flags": [
+        "cross_mai",
+        "no_keyword",
+        "index_like"
+      ]
+    },
+    {
+      "mai_id": "MAI-SYNC-001",
+      "pass_criteria": "§10.7 MAI 外掛驗證機制 [ANCHOR:SRS-V700-MAI-VERIFY] SRS-MAI-SYNC-001: MAI外掛同步驗證（Fail-Closed）",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5997",
+      "classification": "criteria",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-SYNC-REQUIRED",
+      "pass_criteria": "若MAI以外掛承載，系統MUST對MAI外掛執行同步驗證：外掛存在、hash記錄於Manifest、且與正文宣告的統計一致；任一不一致MUSTFail-Closed Fit Criterion MAI外掛存在；manifest含該工件hash；正文MAI覆蓋統計與外掛一致",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6005",
+      "classification": "criteria",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-SYNC-002",
+      "pass_criteria": "系統MUST使用單一命名規則引用MAI外掛（檔名、artifact_id、schema_id）；任一不一致MUST視為不同工件並Fail-Closed Fit Criterion SRS/Manifest/validation_hook的MAI引用三者一致",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6022",
+      "classification": "procedure",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-MAI-SYNC-002",
+      "pass_criteria": "§10.7 MAI 外掛驗證機制 [ANCHOR:SRS-V700-MAI-VERIFY] SRS-MAI-SYNC-001: MAI外掛同步驗證（Fail-Closed）",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5997",
+      "classification": "criteria",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-VERIFY-001",
+      "pass_criteria": "§10.7 MAI 外掛驗證機制 [ANCHOR:SRS-V700-MAI-VERIFY] SRS-MAI-SYNC-001: MAI外掛同步驗證（Fail-Closed）",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5997",
+      "classification": "criteria",
+      "flags": [
+        "cross_mai"
+      ]
+    },
+    {
+      "mai_id": "MAI-MAI-VERIFY-001",
+      "pass_criteria": "若MAI以外掛承載，系統MUST對MAI外掛執行同步驗證：外掛存在、hash記錄於Manifest、且與正文宣告的統計一致；任一不一致MUSTFail-Closed Fit Criterion MAI外掛存在；manifest含該工件hash；正文MAI覆蓋統計與外掛一致",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6005",
+      "classification": "criteria",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-RTM-A-001",
+      "pass_criteria": "升級方案v3（外掛+正文摘要+驗證機制） gate_ref BLOCK_RELEASE",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6453",
+      "classification": "criteria",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-RTM-A-002",
+      "pass_criteria": "RTM-A驗證統計： * 總條目：74 * row_count：74",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6475",
+      "classification": "unknown",
+      "flags": [
+        "no_keyword"
+      ]
+    },
+    {
+      "mai_id": "MAI-CROPEN-001",
+      "pass_criteria": "正文中不得以\"Candidate/待定/先這樣\"形式保留未驗證門檻或規則；所有此類項MUST轉為CR_OPEN條文並綁定Fail-Closed gate_policy Fit Criterion 正文Candidate字樣0命中（允許僅存在於非規範ledger註記）；每條CR_OPEN具gate_policy",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7000",
+      "classification": "criteria",
+      "flags": []
+    },
+    {
+      "mai_id": "MAI-EVID-002",
+      "pass_criteria": "Evidence_Ref最小欄位Schema（完整10欄位版）： { \"evidence_id\": \"string (唯一識別碼)\",",
+      "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7821",
+      "classification": "procedure",
+      "flags": []
+    }
+  ]
+}

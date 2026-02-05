@@ -1,0 +1,216 @@
+20:  * **合法定義**：控制面工程化 \+ 全 CA 工作站可跑 \+ 驗收閉環 PASS \+ EXECUTE 鎖定 (HITL/Kill-Switch) \[Spartoi-OMOC\_開發實作方案.md\]。  
+33:* **1.3.3 HITL 強制介入**：涉及資金操作必須人工確認，禁止無人值守 \[Spartoi-OMOC\_開發實作方案.md\]\[Spartoi｜P1\_ARCH\_v6.0.0-r5.md\]。  
+52:### **2.3 Gate 體系 (GateKit)**
+54:* **2.3.1 Gate 分層架構**：Policy (裁決層) 與 Check (檢核層) 分離 \[Spartoi｜P1\_SRS\_v7.0.0.md\]\[Spartoi｜P1\_LBP-A(SIR)\_v6.0.0-r2.md\]。  
+55:* **2.3.2 8 Gate 模板**：G-SRC, G-SCHEMA, G-BT-H, G-SEG-L, G-CONF-L, G-XQ-PARITY, G-HITL-LOG, G-RUN \[Spartoi｜SubP1-LITE+MVP\_藍圖v1.2.2.md\]。  
+56:* **2.3.3 GateRunner**：最薄執行器，讀 manifest → 執行檢核 → 產三件套 \[Spartoi｜SubP1-LITE+MVP 開發 RUNBOOK & WI\_v1.4.0.md\]。
+113:* **4.5.4 CA-GOVERN (治理)**：控制面主控，Gate 執行 \[Spartoi｜SubP1-LITE+MVP\_總控控制平面\_v1.0.1.md\]。  
+172:* **7.2.1 MAI (Master Acceptance Index)**：需求對應驗收鉤子 \[Spartoi｜P1\_SRS\_v7.0.0.md\]。  
+183:* **8.1.2 每日抽驗**：Crosswalk 與 Gate 抽驗 \[Spartoi｜台股當沖隔日沖\_RUNBOOK\&WI\_v2.0.0.md\]。
+196:* **APPX-D. Gate Templates**：8 Gate 詳細規格 \[Spartoi｜SubP1-LITE+MVP\_藍圖v1.2.2.md\]。  
+254:  * **驗收閉環 PASS**：所有 Required Checks、GateKit 與 E2E Smoke Test 皆通過。  
+255:  * **EXECUTE 鎖定**：高風險的 `CA-EXECUTE` 路徑預設為 `HITL`（人機介入）或 `EXECUTE_DISABLED`（禁用），且受 Kill-Switch 保護。  
+267:* **HITL 強制介入**：涉及資金操作的節點（SF-11），必須有人類操作員（Human-in-the-Loop）明確簽核，禁止 AI 自主決策。  
+297:3. **無法裁決即阻斷**：若依據上述規則仍無法判定，必須登記 `CR_OPEN` 並執行 `Fail-Closed`（預設阻斷發布），禁止擅自解讀。
+308:  * **職責**：定義 Authority Stack、Conflict Rule、Scope-Lock、Gate Policy (三態) 與 Stopline。  
+318:* Runbook 不得定義「Gate 有哪幾類」，只能引用藍圖的 `[BP-7-GATE-CLASSES]`。  
+338:  * 違規者將在 Gate 檢查（如 `G-SRC` 來源完整性 Gate）中被標記為 **BLOCK\_RELEASE**,。  
+356:  * **本地職責**：CA-WATCH 負責產生入場提醒與 WatchScore；CA-EXECUTE 負責產生委託指令（Order Instructions）與 HITL 交接包（hitl\_handoff.json）。本地代碼**嚴禁**直接呼叫券商 API 進行下單 \[Spartoi｜P1\_ARCH\_v6.0.0-r5.md\]\[Spartoi｜P1\_SRS\_v7.0.0.md\]。  
+361:  * 所有涉及資金的操作（進場、加碼、減碼、平倉）必須經過 SF-11 HITL Gate 的人工確認 \[Spartoi｜P1\_ARCH\_v6.0.0-r5.md\]\[Spartoi｜SubP1-LITE+MVP\_藍圖v1.2.2.md\]。  
+383:#### **1.3.3 HITL 強制介入 (Human-In-The-Loop Mandatory Intervention)**
+387:* **SF-11 HITL Gate**：
+389:  * **定位**：SF-11 不是一個子系統，而是流程中的「強制決策閘門（Gate）」。它位於 CA-WATCH（監控）與 CA-EXECUTE（執行）之間 \[Spartoi｜P1\_ARCH\_v6.0.0-r5.md\]\[Spartoi｜P1\_SRS\_v7.0.0.md\]。  
+393:  * **Decision Package**：每個 HITL 決策點必須生成完整的決策包，包含 `decision_id`、`options`、`recommended_default`、`override_reason` 與 `evidence_refs` \[Spartoi｜P1\_SRS\_v7.0.0.md\]\[Spartoi｜P1\_ARCH\_v6.0.0-r5.md\]。  
+397:  * 若無 HITL 確認紀錄（`hitl_confirmed` 為 false 或缺失），CA-EXECUTE 必須拒絕產生執行指令，系統強制進入 **EXECUTE\_DISABLED** 狀態 \[Spartoi｜SubP1-LITE+MVP\_總控控制平面\_v1.0.1.md\]\[Spartoi｜台股當沖隔日沖\_RUNBOOK\&WI\_v2.0.0.md\]。
+403:* **Gate Policy 三態體系**：
+407:  * **EXECUTE\_DISABLED**：系統可運行但禁止任何交易執行相關動作。適用於：Kill Switch 觸發、HITL 未確認、關鍵資料源中斷 \[Spartoi｜P1\_SRS\_v7.0.0.md\]\[Spartoi｜SubP1-LITE+MVP\_總控控制平面\_v1.0.1.md\]。  
+415:  * GateRunner 執行器在遇到未知錯誤（Unknown Error）時，必須返回非零退出碼（Exit Code ≠ 0），觸發 CI/CD 的失敗狀態 \[Spartoi｜SubP1-LITE+MVP 開發 RUNBOOK & WI\_v1.4.0.md\]。
+423:本章節定義 Spartoi-OMOC 系統的**控制平面 (Control Plane)** 物理基礎。依據「方案 B」戰略，我們不自研治理平台，而是利用 GitHub 的原生機制（Rulesets, Merge Queue, Attestations）建立不可協商的「鐵閘門 (Iron Gates)」。此基礎設施的唯一目標是實現「Fail-Closed (預設阻斷)」，確保所有由執行平面（OMOC Agents）產出的工件，必須通過機械驗證才能進入主幹。  
+447:3. **Require a pull request**：啟用。禁止直接 Push 到主幹，強制所有變更走 PR 流程以觸發 CI Gate。  
+464:name: CI Governance Gate  
+569:  * **定義**：是否強制要求所有產物經過完整人工審查（HITL）。  
+571:  * **行為**：若為 `true`，GateRunner 在執行 G-HITL-LOG 時，必須檢查 `hitl_handoff.json` 中的 `operator_signature` 欄位。  
+594:| **DG-AUTO-01** | LLM API 連續 3 次調用失敗或超時 | **FALLBACK\_LOCAL** | 禁止進入高風險操作（`EXECUTE_DISABLED`），僅允許本地規則引擎運行 | `error_logdegrade_event` |  |
+595:| **DG-AUTO-02** | 資料品質 Gate (`GATE-DQ`) 驗證失敗（如資料缺漏、格式錯誤） | **BLOCK\_BACKTEST** | 禁止進入回測與訊號生成流程，防止 GIGO (Garbage In, Garbage Out) | `dq_reportgate_fail` |  |
+652:## **2.3 Gate 體系 (GateKit)**
+654:本章節詳述 Spartoi-OMOC 架構中的核心治理機制——GateKit。依據「方案 B」的戰略定義，GateKit 不是一個自研的複雜平台，而是一組基於 **GitHub Actions Reusable Workflows** 與 **Composite Actions** 的標準化檢核邏輯。其核心目標是實現「人工只看 PASS」，並透過「雙層架構」與「固定模板」確保所有產出物（Artifacts）皆符合 Fail-Closed 的嚴格標準。  
+657:### **2.3.1 Gate 分層架構 (Policy & Check Separation)**
+661:#### **1\. Layer 1: 裁決層 (Gate Policy)**
+669:| **EXECUTE\_DISABLED** | **禁用執行**。系統可運行但禁用高風險動作（如 Kill-Switch 觸發、HITL 未確認）。此狀態下，交易功能被物理鎖死。 | Kill-Switch 觸發、台股微結構（TWMS）三軸檢查失敗。 |  |
+671:#### **2\. Layer 2: 檢核層 (Gate Check)**
+678:### **2.3.2 8 Gate 模板 (The 8 Templates)**
+680:為了防止治理體系無限膨脹，本架構 **鎖定** 使用 8 個標準化 Gate 模板。不得新增第 9 個模板，任何新的檢查需求必須歸類至現有模板中。
+684:| Gate ID | 名稱 | 核心檢核邏輯 (Judgment Logic) | Fail-Closed 行為 | 對應 GMA/OMOC 機制 | 來源 |
+686:| **G-SRC** | **來源完整性 Gate** | 檢查 `No-Source-No-Norm`、必填欄位存在、引用鏈（Citation Chain）可解析。 | **BLOCK\_RELEASE** | G0 Input Seal / Provenance |  |
+687:| **G-SCHEMA** | **Schema 合規 Gate** | 執行 JSON Schema 校驗，確保 `additionalProperties: false`（無非法欄位）。 | **Fail-Closed** (阻斷) | Contract-First / Spec Mode |  |
+688:| **G-BT-H** | **回測健康度 Gate** | 檢查回測報告存在、口徑一致、無前視偏誤（Lookahead Bias）或數據洩漏。 | **CONDITIONAL** (警告) | Reliability / Test Gate |  |
+689:| **G-SEG-L** | **語意保真 Gate** | 透過 Golden Set 抽樣比對，確保蒸餾/轉譯過程無關鍵矛盾或遺漏。 | **Fail \+ Drift Log** | Semantic Fidelity |  |
+690:| **G-CONF-L** | **覆蓋率/信賴度 Gate** | 檢查準確度（Accuracy）是否達標、最小樣本量（N\_min）是否足夠。 | **CONDITIONAL** (CR\_OPEN) | Confidence Score |  |
+691:| **G-XQ-PARITY** | **XQ 一致性 Gate** | 驗證 XS 腳本可編譯、訊號與本地邏輯等價（Signal Parity）、模擬交易通過。 | **Fail-Closed** | TVE (Translation-Verification) |  |
+692:| **G-HITL-LOG** | **HITL 日誌 Gate** | 檢查 `hitl_handoff` 文件存在，且包含人工確認紀錄（APPROVED/REJECTED）。 | **BLOCK\_RELEASE** | Human-in-the-Loop / Safety |  |
+693:| **G-RUN** | **可執行 Gate** | 確保流程可一鍵跑通、環境指紋（Env Fingerprint）一致、符合 No-API 基線。 | **Fail-Closed** | Reproducibility / Build Gate |  |
+695:### **2.3.3 GateRunner (最薄執行器)**
+697:GateRunner 是 GateKit 的執行引擎。在「方案 B」架構下，它不是一個龐大的平台，而是一個輕量級的 Python 腳本或 Composite Action，負責執行檢核並產出標準化證據。
+701:GateRunner 嚴格遵循「讀取 → 執行 → 產出」的單向流程：
+704:2. **執行**：依據指定的 Gate 模板（如 `G-SCHEMA`）載入對應的 Schema 或腳本進行檢核。  
+709:每次 Gate 執行 **必須** 產出以下三份文件，缺一即視為 Fail-Closed：
+717:GateRunner 的實體檔案結構應位於專案根目錄的 `/gates/` 下：
+719:/gates/  
+721:├── runner/           \# 執行腳本 (gate\_runner.py, run\_gates.ps1)  
+722:├── templates/        \# 8 個 Gate 的 YAML 定義檔 (G-SRC.template.yaml 等)  
+728:GateRunner 必須具備明確的錯誤代碼與恢復流程：
+730:* **ERR-GR-001 (Manifest 解析失敗)**：阻斷所有下游 Gate。  
+731:* **ERR-GR-003 (證據檔案缺失)**：阻斷該 Gate。  
+735:透過此三層結構（分層架構、8 模板、GateRunner），Spartoi-OMOC 實現了將業務邏輯（如台股規則）與執行工具（OpenCode/GitHub Actions）的完美解耦與強制治理。
+829:  * **`vibe.md` (Vibe Mode)**：探索與原型模式。低 Gate，允許快速迭代與發散思考，適用於 POC 階段。  
+832:  * **`ops.md` (Ops Mode)**：運維與發布模式。權限較高，掛載 Release 技能，但在 Spartoi 架構中受到最嚴格的 HITL (Human-in-the-Loop) 限制。
+877:  * **HITL 強制介入**：所有涉及 `CA-EXECUTE` 或資金操作的步驟，必須經過人工確認。
+911:  * **權限限制**：Skills **禁止** 直接判定 PASS/FAIL。判定的權力專屬於 **GateRunner** 與 **GateKit**。若 Skills 輸出包含判定結果，該結果僅視為參考，不具備合規效力。  
+914:   | Skill ID | 用途 | 狀態 | Gate 綁定 | 來源 | | :--- | :--- | :--- | :--- | :--- | | **spartoi-schema** | **Schema 驗證**。自動校驗 JSON/YAML 是否符合 ICD 規範。 | **定案 (DEFINED)** | G-SCHEMA | | | **spartoi-evidencepack-builder** | **三件套組裝**。自動彙整 manifest, gate\_report, artifacts。 | **CR\_OPEN-019** (暫結案) | G-RUN | | | **spartoi-gatekit-runner** | **Gate 執行**。呼叫 GateRunner 執行檢核邏輯。 | **CR\_OPEN-021** (候選) | G-RUN | |
+1010:  4. **`gate_binding`**：指定該工作站必須通過的 Gate ID（如 `G-XQ-PARITY`），用於 GateRunner 執行驗收 \[Spartoi｜P1\_LBP-A(SIR)\_v6.0.0-r2.md\]。  
+1037:* **Gate 綁定**：  
+1101:  * **Process**：執行 LLM 蒸餾（Sparse → Enrich → Multi-view）、執行 SGF Gate (SEG-Lite) 驗證。  
+1106:  * **SGF Gate**：檢查蒸餾產物對原教材的語意忠實度。若 `fidelity_score` 低於門檻（Candidate 值需經 CR\_OPEN 確認），則標記為 FAIL \[Spartoi｜P1\_ARCH\_v6.0.0-r5.md\]\[Spartoi｜P1\_LBP-C(ADR)\_v2.0.1.txt\]。  
+1156:  * 所有 Gate 必須 PASS（或標記 RADAR\_ONLY）。  
+1187:* **Gate 驗證**：
+1189:  * **MSC Gate (Method-Semantics Conformance)**：驗證方法卡是否符合 Schema、DbC 斷言是否通過、RTM 雙向覆蓋率是否達標 \[Spartoi｜P1\_ARCH\_v6.0.0-r5.md\]\[Spartoi｜P1\_LBP-A(SIR)\_v6.0.0-r2.md\]。  
+1211:* **Gate 驗證**：
+1213:  * **G-BT-H (Backtest Health Gate)**：檢查回測報告是否存在、口徑是否一致、是否通過防前視檢查。若失敗則阻斷 StrategyPack 產出 \[Spartoi｜SubP1-LITE+MVP\_藍圖v1.2.2.md\]\[Spartoi｜P1\_LBP-A(SIR)\_v6.0.0-r2.md\]。
+1231:  * 若 G-BT-H 或 MSC Gate 失敗，系統自動 **BLOCK** StrategyPack 的發布，防止瑕疵策略流入下游 \[Spartoi｜SubP1-LITE+MVP\_總控控制平面\_v1.0.1.md\]\[Spartoi｜P1\_LBP-A(SIR)\_v6.0.0-r2.md\]。
+1251:  * `market_data`：市場行情資料（需符合 Data Quality Gate 標準） \[Spartoi｜台股當沖隔日沖\_RUNBOOK\&WI\_v2.0.0.md\]。  
+1259:* **Gate 綁定**：
+1261:  * **G-CONF-L (Confidence/Coverage Gate)**：驗證分析覆蓋率與信賴度 \[Spartoi｜SubP1-LITE+MVP 開發 RUNBOOK & WI\_v1.4.0.md\]。  
+1289:* **Gate 綁定**：
+1326:* **Gate 綁定**：
+1328:  * **G-XQ-PARITY (XQ Consistency Gate)**：  
+1353:  * **WatchScore 計算**：依據信號品質計算 WatchScore，供 HITL 決策參考 \[Spartoi｜台股當沖隔日沖\_RUNBOOK\&WI\_v2.0.0.md\]。  
+1356:  * **Watch 不下單**：CA-WATCH 的輸出僅限於提醒、訊號與證跡。任何嘗試呼叫下單 API 的行為將觸發 Gate 阻斷 \[Spartoi｜台股當沖隔日沖\_RUNBOOK\&WI\_v2.0.0.md\]\[Spartoi｜P1\_LBP-C(ADR)\_v2.0.1.txt\]。  
+1362:  * **Gate**: 通過 `G-RUN` 確保監控服務正常啟動 \[Spartoi｜SubP1-LITE+MVP 開發 RUNBOOK & WI\_v1.4.0.md\]。
+1366:CA-EXECUTE 是系統中風險最高的組件，負責生成最終的交易指令。依據「XQ 唯一下單端」原則，其產出僅為「指令文件」，實際資金操作需經 HITL 確認後在 XQ 端執行。
+1370:  * **指令生成**：接收經過 HITL 確認的 `hitl_handoff.json`，生成標準化的委託指令（Order Instructions）\[Spartoi｜P1\_SRS\_v7.0.0.md\]。  
+1380:  * **HITL 強制**：所有進場、加碼、清倉指令必須有對應的 `hitl_confirmed: true` 標記 \[Spartoi｜P1\_ARCH\_v6.0.0-r5.md\]。  
+1385:  * **Gate**: `G-HITL-LOG` 驗證 HITL 簽核紀錄 \[Spartoi｜SubP1-LITE+MVP 開發 RUNBOOK & WI\_v1.4.0.md\]。
+1411:  * **Gate 執行**：調度 Validators 與 Evals Runner，執行各階段的 Gate Check 並產出 `gate_result.json` \[Spartoi｜P1\_ARCH\_v6.0.0-r5.md\]。  
+1426:  * **HITL 介面**：顯示待確認的 `hitl_handoff`，提供 Approve/Reject 按鈕，並將決策回寫至系統 \[Spartoi｜P1\_SRS\_v7.0.0.md\]。  
+1477:| **SF-00** | SF-G00 | **Preflight / Evidence Gate** | CA-GOVERN | 執行日開始前的證據門檢查、環境指紋驗證。 |  |
+1486:| **SF-09** | SF-T09 | **轉譯 (Translate)** | CA-TRANSLATE | XS/XQ 語法轉譯、TVE Gate 驗證。 |  |
+1488:| **SF-11** | SF-T11 | **HITL 決策門 (Decision Gate)** | **HITL (Gate)** | 人工決策確認點。**SF-11 是 Gate，不是子系統**。 |  |
+1536:  * **INVALID/BLOCKED**：若 JobCard 驗證失敗或被 Gate 阻斷，不得進入執行狀態。  
+1595:* **Gate 綁定與護欄 (Gates & Guardrails)**：
+1624:* **Gate 綁定與護欄 (Gates & Guardrails)**：
+1655:* **Gate 綁定與護欄 (Gates & Guardrails)**：
+1659:  * **G-HITL-LOG (HITL日誌)**：確保包含人工確認的檢查點 \[Spartoi｜SubP1-LITE+MVP\_藍圖v1.2.2.md\]。  
+1676:  * 建立 `.github/workflows/_reusable_ca.yml`，封裝通用的 Setup、OMOC Init、Evidence Collect、Gate Check 步驟。  
+1680:  * Pipeline 執行結束後，自動產出 `SSOT.patch.md`。例如 Pipeline A 完成後，產出更新後的 `P1_LBP-A(SIR).md` 的更新建議，經 HITL 確認後合併，實現「跑一次就補一點」的文檔生長 \[Spartoi-OMOC\_開發實作方案.md\]。  
+1683:  * 任何 Pipeline 執行過程中，若遇到 Gate 失敗、Evidence 缺失或 Schema 驗證錯誤，系統必須立即 **BLOCK\_RELEASE**（阻斷發布）或 **STOP**（停止流程），不得繼續執行下游任務 \[Spartoi｜P1\_SRS\_v7.0.0.md\]\[Spartoi｜SubP1-LITE+MVP 開發 RUNBOOK & WI\_v1.4.0.md\]。
+1734:   * **Composite Actions**：將重複性的步驟（如安裝 OpenCode、執行 GateRunner）進一步封裝為 Composite Actions，以降低維護成本並確保執行的一致性。  
+1740:     * **Verdict**：明確的 PASS/FAIL 判定結果，供 GateRunner 讀取。  
+1776:   * 若偵測到強依賴付費 API 才能運行的情況，Gate 將阻斷發布。  
+1779:   * Orchestrator 預設運行於「有人值守（Attended）」模式。對於關鍵決策節點（尤其是涉及資金或破壞性操作），必須暫停並等待人類確認（HITL），禁止無人值守的全自動執行。
+1832:  * **緊急處置**：觸發 KS-003 後，系統進入 `EMERGENCY_STOP` 狀態，並透過 CA-UI 發出最高級別告警，要求人工（HITL）立即介入處理。  
+1921:* 若偵測到 `order_log` 或 `risk_report` 中混雜了 T0 與 T1 的數據（例如 T0 帳本出現隔夜部位），視為治理失控，Gate 必須 **BLOCK\_RELEASE**。
+1951:Pipeline 在執行時會讀取 `mode` 參數，並根據上述矩陣動態載入對應的 Config 與 Gate 規則，確保「單一流水線」能同時滿足雙模運行的需求,。
+1978:* **綁定升級路徑**：`PLACEHOLDER` → `BOUND`。當 CA-METHOD 產出對應 MethodCard，且通過 SEM³ 三 Gate 驗證與回測（GATE-BACKTEST-PASS）後，方可更新為實際 ID。
+2081:這是控制平面的「判決書」，記錄所有 Gate 的檢核結果。
+2083:* **生成者**：由 **GateRunner**（運行於控制平面）執行檢核後產出，嚴禁由 LLM 自行撰寫。  
+2085:  * `gate_id`: 對應的 Gate ID（如 `G-SRC`, `G-SCHEMA`）。  
+2147:│   ├── gate\_report.json        \# 核心：Gate 判定結果  
+2150:│   ├── gates/  
+2152:│   │       └── gate\_report.json \# 個別 Gate 的詳細報告  
+2163:* **讀取**：GateRunner 讀取此目錄進行驗證。若目錄結構不符或關鍵檔案缺失，GateRunner 直接回報 **FAIL**。
+2169:驗收體系由三大支柱構成：**MAI (主驗收索引)** 負責將每一條需求綁定至具體的驗收工件；**RTM (需求追溯矩陣)** 負責確保上游需求無遺漏地映射至實作；**Fitness Functions (適應度函數)** 負責量化系統的架構品質與演進方向。  
+2172:### **7.2.1 MAI (Master Acceptance Index)：主驗收索引**
+2174:MAI 是系統驗收的「唯一真理索引」，它強制規定每一條 SRS 需求（Requirement）都必須對應一個可被檢核的驗收工件（Acceptance Artifact）與驗證方法。
+2176:#### **1\. MAI 結構定義 (Structure Definition)**
+2178:依據 P1\_SRS v7.0.0，MAI 條目必須包含以下核心欄位，缺一不可：
+2180:* **mai\_id**: MAI 唯一識別碼 (如 `MAI-SF-001`)。  
+2184:* **gate\_ref**: 關聯的 Gate ID，用於自動化阻斷 \[SRS v7.0.0 §10.1\]。
+2188:MAI 依需求類型分為五大索引，確保不同維度的需求皆被覆蓋：
+2192:* **SF 主流程**: `MAI-SF-001` 驗證 `sf_coverage_report.json` (Inspection) \[SRS v7.0.0 §10.2\]。  
+2193:* **JobCard**: `MAI-JOBCARD-001` 驗證 `jobcard_schema_validation.json` (Test) \[SRS v7.0.0 §10.2\]。  
+2194:* **WRC 教材**: `MAI-WRC-001` 驗證 `wrc_source_report.json` (Test) \[SRS v7.0.0 §10.2\]。  
+2195:* **SEM³ 驗證**: `MAI-SEM3-001` 驗證 `sem3_gate_report.json` (Test) \[SRS v7.0.0 §10.2\]。  
+2196:* **HITL (人機迴圈)**: `MAI-HITL-DP-001` 驗證 `decision_package_schema_test.json` (Inspection) \[SRS v7.0.0 §10.2\]。
+2200:* **延遲**: `MAI-LAT-001` 驗證 `latency_report.json` (Test) \[SRS v7.0.0 §10.3\]。  
+2201:* **安全性**: `MAI-NFR-SEC-001` 驗證 `security_audit.json` (Inspection) \[SRS v7.0.0 §10.3\]。  
+2202:* **可觀測性**: `MAI-NFR-OBS-001` 驗證 `observability_report.json` (Analysis) \[SRS v7.0.0 §10.3\]。  
+2203:* **LLM 可靠度**: `MAI-LLM-001` 驗證 `llm_dependency_audit.json` (Inspection) \[SRS v7.0.0 §10.3\]。
+2207:* **控制面三件套**: `MAI-CTRL-001` 驗證 `ctrl_trio_validation.json` (Test) \[SRS v7.0.0 §10.4\]。  
+2208:* **降級矩陣**: `MAI-DEGRADE-001` 驗證 `degrade_matrix.json` (Inspection) \[SRS v7.0.0 §10.4\]。  
+2209:* **XQ 整合**: `MAI-XQ-001` 驗證 `xq_integration_test.json` (Test) \[SRS v7.0.0 §10.4\]。
+2213:* **Route-Out 政策**: `MAI-GOV-001` 驗證 `routeout_audit.json` (Inspection) \[SRS v7.0.0 §10.5\]。  
+2214:* **ICD Token**: `MAI-GOV-003` 驗證 `icd_token_check.json` (Inspection) \[SRS v7.0.0 §10.5\]。  
+2215:* **設計假說驗證 (H1-H8)**: 例如 `MAI-HYP-H1-001` (SEM³) 驗證 `sem3_pipeline_test.json` \[SRS v7.0.0 §10.5\]。
+2219:* **Win Rate**: `MAI-WIN-001` 對應 `win_rate_report.json` (BLOCK\_RELEASE) \[SRS v7.0.0 §10.6\]。  
+2220:* **TVE 驗證**: `MAI-TVE-001` 對應 `tve_report.json` (BLOCK\_RELEASE) \[SRS v7.0.0 §10.6\]。
+2222:#### **3\. MAI 同步驗證機制 (Synchronization & Fail-Closed)**
+2224:為防止 MAI 與實際需求脫鉤，系統執行以下硬性同步檢查：
+2226:* **SRS-MAI-SYNC-001**: 若 MAI 以外掛檔案承載，系統 MUST 驗證外掛存在、Hash 一致且與正文統計相符。任一不一致觸發 **Fail-Closed (BLOCK\_RELEASE)** \[SRS v7.0.0 §10.7\]。  
+2227:* **SRS-MAI-VERIFY-001**: MAI 條目數必須等於 SRS 需求條文數，確保 100% 覆蓋 \[SRS v7.0.0 §10.7\]。
+2240:* **範例**: 任務 `a` (教材蒐集+蒸餾) 映射至 `SF-00`, `CA-WRC`, `CA-CORPUS`, `CA-DISTILL`，Gate 為 `GATE-RL-001` \[SRS v7.0.0 §12.1\]。
+2280:每條 Fitness Function 包含 `ff_id`、品質屬性、訊號定義、Pass/Fail 規則與 Gate 掛鉤。 \[LBP-E v3.0.1 §4\]
+2282:| ff\_id | 品質屬性 | 訊號定義 (Signal Definition) | Pass/Fail 規則 (Fail-Closed) | Gate 掛鉤 |
+2328:本章節定義系統運維的標準作業程序（SOP）與異常處理機制。依據《Spartoi-OMOC\_開發實作方案.md》，運維層的操作必須嚴格遵循「方案 B」的單一流水線（Single Pipeline）架構，透過參數化（CA\_ID）與 GitHub Matrix 來驅動 15 個 CA 工作站，並確保所有高風險操作符合「XQ 唯一下單端」與「HITL（Human-In-The-Loop）」的硬性約束。  
+2356:| **k** | **手動確認進場→自動操盤** | **SF-06, SF-10** | CA-EXECUTE (HITL) | `orchestrate --ca CA-EXECUTE --mode ops` | `hitl_handoff.jsonexecution_log.json` |  |
+2374:   * 針對任務 **j (盯盤)** 與 **k (操盤)**，本地系統 **僅允許** 產出訊號文件（`watch_plan.json`）與 HITL 交接包（`hitl_handoff.json`）。  
+2389:* **執行工具**：CA-GOVERN (via GateRunner)。  
+2487:| **RB-001** | **Phase-N Gate FAIL** | 回退至 Phase-(N-1) 的最後成功狀態。 | `gate_report.json` 顯示前一階段為 PASS。 |  |
+2492:| **RB-006** | **資料落盤失敗** | 重試 3 次後若仍失敗，觸發人工介入（HITL）。 | 系統進入 `RADAR_ONLY` 模式，不執行新交易。 |  |
+2499:  3. 執行 `G-ROLLBACK` Gate（歸類於 G5-F Execution），必須為 PASS。  
+2528:| **EXECUTE\_DISABLED** | 運行期禁用特定高風險動作（如自動下單）。 | Kill Switch 觸發、HITL 未確認、高風險 CR 未關閉。 |
+2550:* **關單條件**：必須滿足 Evidence Acquisition Protocol（每條至少 2 筆證據，含 1 筆外部來源），並經由 Gate 驗證通過（PASS）。  
+2562:4. **XQ 邊界守護**：所有自動化流程在接觸到下單指令時，均正確觸發了 HITL 或阻斷機制，無自動下單漏洞。
+2604:| **SCN-006** | 盯盤 HITL | **SF-10, SF-11** | CA-WATCH | CA-EXECUTE, CA-UI | DF6 盯盤 |
+2630:| SS-11 | (Gate) | **SF-11 HITL Gate** (非子系統) | ACTIVE |
+2660:    {"entry\_id": "ICT-M010", "ict\_module\_id": "\#10", "ict\_module\_name": "Eco-Gate (08:30 embargo)", "sf\_ref": "SF-02", "slot\_key": "ECO\_GATE", "status": "ACTIVE"},  
+2693:    {"entry\_id": "ICT-M043", "ict\_module\_id": "\#43", "ict\_module\_name": "Entry-Gate (5 Factor)", "sf\_ref": "SF-11", "slot\_key": "ENTRY\_GATE", "status": "ACTIVE"},  
+2773:  * **Fail-Closed**：單日失敗 $\\ge$ 3 條觸發 Gate Fail；連續 3 日同一條目失敗則 BLOCK\_RELEASE。  
+2833:| **CL-RW-010** | **HITL 簽核** | 5 欄位 | SRS v7.0 §6 | **7 欄位** | 增加 `evidence_ptr` 與 `risk_check` 等必填欄位。 | \[Spartoi｜台股當沖隔日沖\_RUNBOOK\&WI\_v2.0.0.md\] |
+2845:| **CL-SIR-005** | **ICT 熱插拔** | SIR v6.0.0 (default=true) | Gate 裁決 (Safe Default) | **false** | `ict_hot_swap_enabled` 默認值修正為 **false**，遵循 Safe Default 原則。 | \[Spartoi｜P1\_LBP-A(SIR)\_v6.0.0-r2.md\] |
+2846:| **CL-SIR-006** | **Gate 定義** | 舊版 (不分層) | Gate 裁決 (Policy/Check) | **分層架構** | Gate 必須分為 **Policy** (裁決層，三態) 與 **Check** (檢核層，gate\_id) 分離。 | \[Spartoi｜P1\_LBP-A(SIR)\_v6.0.0-r2.md\] |
+2871:2. **CR\_OPEN 關聯**：若裁決結果為「無法裁決」或「待驗證」，必須關聯一個有效的 `CR_OPEN_ID`，並設定 `Fail-Closed` 行為。  
+2879:本附錄是 Spartoi 系統中所有「未經驗證假設」、「待補全規格」與「未授權門檻」的集中登錄地。依據《Spartoi-OMOC\_開發實作方案.md》定義的「Fail-Closed」原則，任何未在正文中定案的規格，**必須** 轉化為 CR\_OPEN 條目，並綁定阻斷性 Gate 政策（BLOCK\_RELEASE / RADAR\_ONLY），嚴禁以模糊的「Candidate」或「TODO」形式殘留在正文中 \[Spartoi-OMOC\_開發實作方案.md\]\[Spartoi｜P1\_SRS\_v7[.0.0.md](http://.0.0.md)\]。  
+2895:| Gate Policy | 行為定義 | 適用場景 | 來源 |
+2899:| **EXECUTE\_DISABLED** | **禁用執行**。運行期禁用特定高風險動作（如自動下單）。 | Kill Switch 觸發、HITL 未確認、高風險 CR 未關閉。 | \[Spartoi｜SubP1-LITE+MVP 開發 RUNBOOK & WI\_v1.4.0.md\] |
+2913:  cr\_id: "CR-{DOMAIN}-{SEQ}"       \# 唯一識別碼 (如 CR-SRS-001)  
+2918:  gate\_id: "GATE-{CATEGORY}-{SEQ}" \# 關聯的 Gate ID  
+2940:| CR\_ID | 標題 | 缺口描述 | Gate Policy | 關單計畫 |
+2957:| CR\_ID | 標題 | 缺口描述 | Gate Policy | 關單計畫 |
+2970:| CR\_ID | 標題 | 缺口描述 | Gate Policy | 關單計畫 |
+2984:| CR\_ID | 標題 | 缺口描述 | Gate Policy | 關單計畫 |
+2990:| **CR-CP-005** | **Ops Cowork 例外** | Ops 模式下啟用 Cowork 的審批流程未定 | **REMAINS-OPEN** | 定義例外授權流程 |
+2999:2. **Gate 驗證**：GateRunner 執行對應的 Gate (如 `GATE-RL-003`)，檢查是否滿足關單條件。  
+3007:# **APPX-D. Gate Templates (8 Gate 詳細規格)**
+3009:本附錄定義 Spartoi 系統中 **不可協商的 8 組標準 Gate 模板**。依據《Spartoi-OMOC\_開發實作方案.md》與「方案 B」的自動化原則，這些模板是控制平面（Control Plane）實施「Fail-Closed（預設阻斷）」與「Layer-1 機械裁決」的唯一依據。系統嚴禁新增第 9 個 Gate 模板，所有驗證邏輯必須歸類於此 8 類之中。  
+3014:所有 Gate 模板文件（`G-*.template.yaml`）必須位於 `/gates/templates/` 目錄下，並嚴格遵循以下欄位定義 \[Spartoi｜SubP1-LITE+MVP 開發 RUNBOOK & WI\_v1.4.0.md\]\[Spartoi｜MVP Spine / Walking Skeleton Pack v0\_最小實作包v1.3.0.md\]。
+3019:| **gate\_name** | YES | 人類可讀名稱（如：來源完整性 Gate）。 | \[Spartoi｜SubP1-LITE+MVP\_藍圖v1.2.2.md\] |
+3026:| **fail\_action** | YES | 失敗時的處置：`BLOCK_RELEASE` / `RADAR_ONLY` / `EXECUTE_DISABLED`。 | \[Spartoi｜SubP1-LITE+MVP\_藍圖v1.2.2.md\] |
+3027:| **owner** | YES | 負責人角色（HITL / Reviewer-LLM / Auto）。 | \[Spartoi｜SubP1-LITE+MVP 開發 RUNBOOK & WI\_v1.4.0.md\] |
+3031:### **D.2 8 大標準 Gate 規格 (The 8 Standard Gates)**
+3033:本節詳述 8 個標準 Gate 的邏輯與行為。任何子系統的驗收需求，均須映射至以下模板之一 \[Spartoi｜SubP1-LITE+MVP\_藍圖v1.2.2.md\]。
+3035:#### **1\. G-SRC：來源完整性 Gate (Source Integrity)**
+3037:* **Gate Class**: **G5-A** (Source/Spec Integrity)  
+3047:#### **2\. G-SCHEMA：Schema 合規 Gate (Schema Compliance)**
+3049:* **Gate Class**: **G5-C** (Artifact Contract & Schema)  
+3058:#### **3\. G-BT-H：回測健康度 Gate (Backtest Health)**
+3060:* **Gate Class**: **G5-G** (Performance & TCA)  
+3070:#### **4\. G-SEG-L：語意保真 Gate (Semantic Fidelity)**
+3072:* **Gate Class**: **G5-E** (LLM Output Quality)  
+3081:#### **5\. G-CONF-L：信賴度 Gate (Confidence/Coverage)**
+3083:* **Gate Class**: **G5-E** (LLM Output Quality)  
+3092:#### **6\. G-XQ-PARITY：XQ 一致性 Gate (XQ Parity)**
+3094:* **Gate Class**: **G5-F** (Execution & Observability)  
+3104:#### **7\. G-HITL-LOG：HITL 日誌 Gate (Human-In-The-Loop Log)**
+3106:* **Gate Class**: **G5-D** (Safety & Fail-Closed)  
+3115:#### **8\. G-RUN：可執行 Gate (Runnable)**
+3117:* **Gate Class**: **G5-F** (Execution & Observability)  
+3131:本節定義上述 Gate 模板在專案目錄中的實體位置與執行方式 \[Spartoi｜MVP Spine / Walking Skeleton Pack v0\_最小實作包v1.3.0.md\]。
+3133:* **目錄位置**: `/gates/templates/`  
+3141:  * `G-HITL-LOG.template.json`  
+3143:* **執行器**: `GateRunner` (位於 `/gates/runner/gate_runner.py`) 負責讀取上述模板，比對 `manifest.json` 與 `artifacts/`，並產出 `gate_report.json`。
+3176:| **WE-CW-002** | **Anthropic launches Cowork**Cowork 約 1.5 週用 Claude Code 建置；macOS only；快速開發可能安全不足。 | Fortune | 2026-01-13 | **B** | 快速迭代可能隱含測試覆蓋率不足，系統需建立更嚴謹的 Gate 防線。 | \[Spartoi｜SubP1-LITE+MVP\_總控控制平面\_v1.0.1.md\] |
+3257:* **Fail-Closed 驗證**：若 Route-Out 指向的錨點不存在或版本不匹配，視為斷鏈，Gate 必須 **BLOCK\_RELEASE** \[Spartoi｜P1\_SRS\_v7.0.0.md\]。
+3272:| **RO-008** | **Gate 執行器實作** | **ARCH v6.0.0** | `[ARCH-GATE-EXECUTOR]` | §6.1 | **ROUTE\_OUT** |
+3291:  * **驗證**：GateRunner 需驗證目標錨點是否存在 \[Spartoi｜台股當沖隔日沖\_RUNBOOK\&WI\_v2.0.0.md\]。  
+3303:本附錄的完整性與正確性由以下 Gate 進行機械化驗收：
+3306:   * 掃描所有 Route-Out 的 `Upstream Anchor`。若目標文件更新導致錨點失效，Gate 回報 **FAIL** 並阻斷發布 \[Spartoi｜P1\_SRS\_v7.0.0.md\]。  

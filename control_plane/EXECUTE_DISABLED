@@ -1,0 +1,3 @@
+EXECUTE_DISABLED: true
+MODE: RADAR_ONLY
+NOTE: This file is a repository-level SSOT to indicate trading execution is disabled. It is required for acceptance.

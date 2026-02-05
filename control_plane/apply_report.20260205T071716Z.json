@@ -1,0 +1,224 @@
+{
+  "updated_entries": 0,
+  "applied": [],
+  "skipped": [
+    {
+      "mai_id": "Maintenance",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAINTENANCE-RULES",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAINT-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAINT-002",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-GATE-LAYER-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-GATE-NAMING-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-WRC-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-TWMS-002",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-TWMS-003",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-RAG-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-DISTILL-003",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-METHOD-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-METHOD-002",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-BACKTEST-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-BACKTEST-003",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-TA-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-HITL-DP-002",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-PERFORM-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-CAUI-003",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-CAUI-004",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-UI-002",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-LLM-004",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-POL-LLM-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-POL-LLM-002",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-RC-002",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-RC-005",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-THR-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-THR-002",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-NFR-DATA-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-NFR-OBS-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-NFR-SEC-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAINT",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-CTRL-TRIO-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-CTRL-TRIO-002",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-CTRL-TRIO-003",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-CTRL-TRIO-004",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-MANIFEST-002",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-XSAT-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-XQ-002",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-EXT-003",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-EXT-004",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-HYP-H1-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-HYP-H2-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-HYP-H8-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-ICRU-002",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-DEGRADE-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-ICD-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-SYNC-REQUIRED",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-SYNC-002",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-MAI-VERIFY-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-RTM-A-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-CROPEN-001",
+      "reason": "pass_criteria identical"
+    },
+    {
+      "mai_id": "MAI-EVID-002",
+      "reason": "pass_criteria identical"
+    }
+  ],
+  "skipped_gate_refs": [
+    {
+      "mai_id": "MAI-RTM-A-001",
+      "candidate_gate": "BLOCK_RELEASE"
+    }
+  ]
+}

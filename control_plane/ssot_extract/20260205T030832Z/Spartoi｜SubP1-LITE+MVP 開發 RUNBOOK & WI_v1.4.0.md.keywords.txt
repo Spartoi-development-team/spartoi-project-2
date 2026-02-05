@@ -1,0 +1,389 @@
+27:2. 新增CR_OPEN狀態對齊表（§10）
+28:3. 新增Solo-Mode HITL操作規範（§6.8.7）
+82:	GateKit 工程層 /gates/ 目錄結構
+94:	CR_OPEN 登記
+136:	Gate與EvidencePack規範
+138:	8Gate模板齊全、GateKit結構明確
+148:	CR_OPEN Register
+150:	Candidate→CR_OPEN遷移規則明確
+152:	8 Gate模板詳細規格
+154:	每Gate含judgment_logic/evidence_schema
+184:	CR_OPEN詳細清單
+250:	GateKit
+253:	GateKit工程層
+301:	CR_OPEN
+310:	Gate模板
+334:4. 遇到缺口：查 §10 CR_OPEN Register，禁止臆測補洞
+390:	數值門檻只能在 CR_OPEN/Evidence_Refs
+392:	Gate/Flag/Policy名稱必須與上游SSOT一致
+395:	8 Gate模板固定
+412:6. HITL停止線：所有涉及資金操作之步驟必須經人工確認（Human-In-The-Loop），禁止unattended自動下單
+538:	Authority Stack、Conflict Rule、Scope-Lock、Gate policy/Stopline定義、One-rule-one-place規則歸屬
+549:	需要理解G5 GateKit工程規約的開發者
+550:	§7 Gate規範
+576:	HITL
+579:	GateKit
+580:	G5共享Gate模板+執行器+報告格式
+605:	所有資金操作必須HITL人工確認
+708:	G5/GateKit/GateRunner最終定案
+730:3. 若仍無法裁決 → 登記CR_OPEN + Fail-Closed
+739:	Gate失敗
+744:	CR_OPEN + 只記錄不判定
+748:	標記BLOCKED + 登記CR_OPEN
+749:	Gate Policy 三態定義
+756:	關鍵安全/合規Gate
+759:	非關鍵品質Gate
+760:	EXECUTE_DISABLED
+762:	實驗性功能Gate
+779:	Gate/檢查點
+799:	Gate分類/模板定義（7類+8模板）
+812:	→ CR_OPEN
+814:	→ CR_OPEN/Evidence_Refs
+825:- 主路徑：No-API模式（純GateRunner + HITL）
+826:- API例外：需經CR_OPEN-022審批
+847:Phase 4: GateKit + Regression Suite
+892:│      ▼ (HITL)                                                           │
+941:	Gate綁定
+942:	對應Gate ID
+976:	Gate綁定
+990:  - 若藍圖錨點不存在 → 標記BLOCKED + 登記CR_OPEN
+1040:	Gate綁定
+1080:  - 若多次失敗 → 標記BLOCKED + 登記CR_OPEN
+1117:	Gate綁定
+1173:	Gate綁定
+1175:	§4.5 Phase 4: GateKit + Regression Suite
+1182:	GateKit + Regression Suite
+1184:	/gates/目錄結構完成、8個Gate模板齊全、GateRunner可執行
+1190:	Step 4.1 建立/gates/目錄結構；Step 4.2 建立8個Gate模板；Step 4.3 建立GateRunner；Step 4.4 執行Regression Suite
+1192:	/gates/目錄、gate_manifest.json
+1194:	8個Gate模板存在、GateRunner可執行、golden_set通過
+1196:	Gate失敗 → 診斷 → 修正 → 重跑
+1198:	/evidence/gates/{run_id}/
+1200:	任一Gate模板缺失 → STOP
+1202:	GateKit未落地視為G5未完成
+1205:	Gate綁定
+1216:	15子系統全部通過Gate、E2E smoke成功、acceptance_status = COMPLETE
+1220:	所有子系統產物、所有Gate報告
+1237:	Gate綁定
+1391:  - HITL人工確認
+1482:    - 數值門檻硬編碼（Route-Out至CR_OPEN）
+1521:    - Gate綁定
+1574:	建立GateKit
+1577:	建立GateRunner
+1621:  - 若需恢復完整卡集，可開CR_OPEN
+1699:  - gates[]
+1749:  - gates[]
+1797:  - PERFORM-Gate
+1831:  - gates[]
+1843:  - G-HITL-LOG（HITL日誌）
+1905:  escalation_on_timeout: HITL  # 超時升級處置（HITL/AUTO_REJECT/QUEUE）
+1923:    4. HITL升級：發送通知 + 等待人工決定
+1931:  - 超過max_retry且無HITL介入 → BLOCK下游Pipeline
+1962:	HITL裁決
+2037:1. 危險命令 → HITL審批
+2067:| 強制推送 | `git push --force`, `git push -f`, `git reset --hard origin/*` | BLOCK + 需HITL審批 |
+2075:### 灰名單（需HITL審批後執行）
+2078:| Git合併 | `git merge`, `git rebase` | 產生PR → HITL審批 → 執行 |
+2079:| 發布類 | `npm publish`, `pip upload`, `docker push` | 需明確HITL確認 |
+2080:| Evidence刪除 | `rm /evidence/*` | 需記錄刪除原因 + HITL確認 |
+2081:| 配置變更 | 修改 `config/*.yaml`, `.env` | 需diff審核 + HITL確認 |
+2082:| 外部API調用 | 非白名單域的HTTP請求 | 需HITL審批域名 |
+2095:3. 若命中灰名單 → 暫停執行 + 發送HITL審批請求
+2118:- 禁止自創Gate類別
+2120:- 禁止繞過HITL
+2138:	rm -rf、force push → HITL審批
+2173:| 直接覆寫SSOT | 繞過Gate審核 | BLOCK_RELEASE |
+2182:- 經Gate PASS後才可合併主線
+2208:| 操作類型 | 說明 | Gate綁定 |
+2211:| 自動化GateKit執行 | Skills觸發GateRunner | G-RUN |
+2212:| Pipeline護欄 | 三管線品質檢查 | 對應Pipeline Gate |
+2219:- PASS/FAIL判定：一律回到GateKit/GateRunner
+2220:- 違反處置：移除判定，走Gate審核
+2224:| Pipeline | Skills用途 | Gate驗證 |
+2238:| spartoi-evidencepack-builder | 三件套組裝 | CR_OPEN候選 |
+2239:| spartoi-gatekit-runner | Gate執行 | CR_OPEN候選 |
+2282:Gate觸發
+2303:| 1 | spartoi-evidencepack-builder | HITL降級 | 最高優先 |
+2305:| 3 | spartoi-authority-scope-lock | HITL降級 | |
+2339:| skill_id | failure_mode | action | CR_OPEN_ref |
+2341:| evidencepack-builder | HITL | 標記INCOMPLETE，人工補齊 | CR_OPEN-019 |
+2342:| gatekit-runner | BLOCK | BLOCK_RELEASE，登記CR_OPEN | CR_OPEN-021 |
+2343:| authority-scope-lock | HITL | 標記NEEDS_REVIEW，人工裁決 | CR_OPEN-021 |
+2344:| pipeline-guardrails | BLOCK | BLOCK_RELEASE，標記越界點 | CR_OPEN-021 |
+2352:| Skills直接宣告PASS/FAIL | 裁判權屬於GateKit |
+2353:| Skills輸出直接變Normative | 必須經Gate驗證 |
+2354:| Skills取代GateRunner | 定位是製作工，不是裁判 |
+2371:| Dev | Cowork+Claude Code | 文件整理、格式轉換 | 直接覆寫SSOT、Ops任務 | staging/{run_id}/ | 破壞性操作需HITL | G-RUN | TW-008 | Verified |
+2372:| Dev | Skills+GateRunner | Schema驗證、Pipeline護欄 | PASS/FAIL判定 | gate_report.json | Skills輸出需Gate | G-SCHEMA | TW-009 | Verified |
+2375:| Dev | Skills+Pipeline | 三管線自動化 | 跳過Gate | evidence/{run_id}/ | Gate FAIL即BLOCK | 對應Gate | TW-009 | Verified |
+2383:- ❌ Cowork取代GateRunner
+2425:      - 所有Gate狀態非FAIL（或有RADAR_ONLY標記）
+2432:    action: 把XS語法匯入XQ（盤中手動HITL確認進場）
+2435:      - HITL確認紀錄存在（hitl_handoff.json）
+2439:    stopline: 無HITL紀錄 → 禁止進場
+2458:      - 回測通過G-BT-H Gate
+2460:    rollback: 若分析失敗 → 保留原方法 → 登記CR_OPEN
+2479:    - Gate報告是否覆蓋要求節點
+2567:    - HITL_POLICY_PASS
+2568:    - CR_OPEN-024_CLOSED  # 目前未關閉
+2572:目前CR_OPEN-024未關閉 → Ops禁用Cowork**持續生效**
+2578:- 其他需經CR_OPEN流程新增
+2719:    - 登記CR_OPEN
+2744:**Gate分類**：歸類於 G5-C Artifact Contract
+2770:| 保留期限 | 7天（經Gate後可清理） |
+2772:| 升級條件 | 經Gate PASS後升級為L0並可合併主線 |
+2776:Cowork產出 → staging → Gate → HITL approve → 合併SSOT
+2816:**Gate分類**：歸類於 G5-D Data Integrity
+2878:§6.8.5 Gate掛鉤
+2881:- Destructive操作必須綁定 **G-HITL-LOG**
+2882:- Gate檢查項：
+2899:§6.8.7 Solo-Mode HITL操作規範
+2900:[ANCHOR:SPLMVP-SOLO-HITL-OPS]
+2903:**引用藍圖**：[BP-SOLO-HITL-SPEC]
+2941:# GateRunner驗證
+2969:| risk_level=HIGH | 無HITL_CONFIRM | BLOCK_RELEASE |
+2995:| 角色 | Skills/Cowork | GateKit/GateRunner |
+3000:| 可稽核性 | 需經Gate驗證 | 直接可稽核 |
+3003:⚠️ **Skills/Cowork輸出禁止直接標記PASS/FAIL，必須經GateRunner驗證**
+3009:| Skill ID | 版本 | 用途 | 狀態 | Gate綁定 |
+3014:### §6.9.3 CR_OPEN候選Skills清單
+3017:| Skill ID | 用途 | Runbook對應 | CR_OPEN狀態 |
+3019:| spartoi-evidencepack-builder | 三件套組裝 | §7.6 | CR_OPEN-019 |
+3020:| spartoi-gatekit-runner | Gate執行 | §7.5 | CR_OPEN候選 |
+3021:| spartoi-authority-scope-lock | 規範引用檢查 | §2 | CR_OPEN候選 |
+3022:| pipeline-a-specpack-guardrails | Pipeline A護欄 | §6.1.1 | CR_OPEN-021 |
+3023:| pipeline-b-strategypack-guardrails | Pipeline B護欄 | §6.1.2 | CR_OPEN-021 |
+3024:| pipeline-c-xspack-guardrails | Pipeline C護欄 | §6.1.3 | CR_OPEN-021 |
+3025:| spartoi-agent-command-acl | 命令ACL檢查 | §6.3.4 | CR_OPEN候選 |
+3026:| spartoi-third-party-reviewer-kit | 第三方審查 | §6.4.2 | CR_OPEN候選 |
+3030:新增Skill提議 ↓ 登記CR_OPEN 
+3057:§7 Gate與EvidencePack規範
+3059:本節DoD：8 Gate模板齊全、GateKit結構明確、EvidencePack三件套定義
+3060:§7.1 Gate體系分層
+3076:	⚠️ One-rule-one-place：Gate分類與模板定義在藍圖SSOT，本RUNBOOK只定義工程落地。
+3077:§7.2 7類Gate分類（引用藍圖）
+3082:	對應模板Gate
+3094:	G-HITL-LOG
+3104:	§7.3 8個固定模板Gate（引用藍圖）
+3112:	來源完整性Gate
+3116:	Schema合規Gate
+3120:	回測健康度Gate
+3124:	語意保真Gate
+3128:	覆蓋率/信賴度Gate
+3132:	XQ一致性Gate
+3135:	G-HITL-LOG
+3136:	HITL日誌Gate
+3140:	可執行Gate
+3143:	§7.4 Gate模板固定欄位
+3145:每個Gate模板必須包含以下欄位：
+3146:# Gate模板固定欄位
+3148:gate_name: {Gate名稱}
+3160:fail_action: BLOCK_RELEASE | RADAR_ONLY | EXECUTE_DISABLED
+3161:owner: HITL | Reviewer-LLM | Auto
+3170:§7.5 GateKit工程層落地
+3172:§7.5.1 /gates/目錄結構
+3173:/gates/
+3179:│   ├── run_gates.ps1
+3180:│   ├── run_gates.py
+3189:│   ├── G-HITL-LOG.template.yaml
+3200:§7.5.2 GateRunner最小行為
+3206:GateRunner不做：
+3212:§7.5.3 GateRunner異常處理
+3219:ERR-GR-001        manifest解析失敗        BLOCK + 記錄error_log        檢查manifest格式 → 修正 → 重跑        阻斷所有下游Gate
+3220:ERR-GR-002        Gate模板不存在        BLOCK + 登記CR_OPEN        確認模板路徑 → 補齊模板 → 重跑        阻斷該Gate及其下游
+3221:ERR-GR-003        證據檔案缺失        BLOCK + 記錄missing_evidence        檢查evidence_ptr → 補產證據 → 重跑        阻斷該Gate
+3222:ERR-GR-004        Schema校驗失敗        fail-closed + 記錄validation_error        檢查Schema定義 → 修正數據 → 重跑        阻斷該Gate
+3224:ERR-GR-006        執行超時        BLOCK + 記錄timeout_log        檢查資源 → 增加timeout → 重跑        阻斷該Gate
+3225:ERR-GR-007        環境指紋不一致        BLOCK + 記錄env_mismatch        重建環境 → 更新fingerprint → 重跑        阻斷G-RUN Gate
+3226:ERR-GR-008        權限不足        BLOCK + 記錄permission_denied        檢查ACL → 申請權限 → 重跑        阻斷該Gate
+3228:ERR-GR-010        未知錯誤        BLOCK + 記錄unknown_error + 登記CR_OPEN        人工診斷 → 登記CR_OPEN → 裁決        阻斷全流程
+3243:  "escalation": "CR_OPEN-REF-XXX",
+3254:  escalation_threshold: 3  # 超過3次自動重試 → 升級至HITL
+3259:    3. 若可自動恢復 → 執行恢復流程 → 重跑Gate
+3260:    4. 若不可自動恢復 → 升級至HITL或登記CR_OPEN
+3271:每次pipeline/Gate執行必產EvidencePack三件套：
+3277:	每個Gate的PASS/FAIL、關鍵數值、evidence_ptr
+3301:  "gates": [
+3319:  "gates": [
+3322:      "gate_name": "來源完整性Gate",
+3338:  "blocking_gates": []
+3349:**Gate分類**：歸類於 G5-F Fail-Safe
+3391:#### Gate掛鉤
+3394:| Gate | 檢查項 |
+3398:| G-HITL-LOG | destructive操作有核准 |
+3406:| Gate FAIL | 運行rollback_script.sh | rollback_execution_log.json |
+3545:      若需數值化，見 CR_OPEN-REF-001
+3583:      若需調整覆蓋率門檻，見 CR_OPEN-REF-002
+3620:      - Golden set抽樣數量：見 CR_OPEN-003（建議10-30條）
+3623:      具體數值由 CR_OPEN-003 配置
+3651:    - Schema結構完整（AST/Schema Gate通過）
+3661:      若需數值化驗證，見 CR_OPEN-REF-003
+3699:      若需風險報酬數值門檻，見 CR_OPEN-REF-004
+3736:      - 回測健康度：見 G-BT-H Gate
+3737:      - 勝率門檻：見 CR_OPEN-002（建議口徑：隔日方向正確）
+3738:      - 樣本數：見 CR_OPEN-001（建議N_min=30）
+3740:      具體數值由 CR_OPEN-001/002 配置
+3777:      - TA準確度門檻：見 CR_OPEN-006（建議40%）
+3778:      - ICT模組覆蓋：見 CR_OPEN-REF-005
+3780:      具體數值由 CR_OPEN-006 配置
+3817:      - Hit@K門檻：見 CR_OPEN-005（建議2/5）
+3820:      具體數值由 CR_OPEN-005 配置
+3860:      - Signal parity門檻：見 CR_OPEN-004（建議95%）
+3862:      具體數值由 CR_OPEN-004 配置
+3910:  gate_binding: G-HITL-LOG
+3920:  - 維護HITL handoff紀錄
+3925:mvp_position: 執行層（HITL必須）
+3936:    - 若無HITL紀錄 → STOP，禁止任何下單動作
+3942:      - HITL確認：必須存在（零容忍）
+3945:      HITL為安全停止線，不可配置降級
+3952:  gate_binding: G-HITL-LOG
+3979:    - 若建議與方法卡矛盾 → STOP，進入HITL裁決
+3992:  gate_binding: PERFORM-Gate
+4025:      - Schema合規：見 G-SCHEMA Gate
+4066:      - 匯入驗證：必須通過G-SCHEMA Gate
+4107:      - 環境指紋：見 G-RUN Gate
+4131:本節DoD：Top 10風險已識別、每個風險有<=2句防線、可落地到WI或Gate
+4146:	GateRunner變成平台
+4147:	GateRunner只做「讀manifest→執行→產三件套」
+4166:	HITL被繞過
+4167:	CA-EXECUTE stopline：無HITL紀錄 → BLOCK
+4189:	把GateRunner做成平台
+4191:	GateRunner只做「讀manifest→執行→產三件套」
+4199:§10 CR_OPEN Register
+4201:本節DoD：Candidate→CR_OPEN遷移規則明確、待決項目有預設值、Fail-Closed Default明確
+4202:##### CR_OPEN狀態對齊（引用藍圖SSOT v1.2.2）
+4211:| CR_OPEN-015 | TEMP_CLOSED_FOR_MVP_TEST | WE-003,WE-011,WE-012,WE-013; WE-002=UNVERIFIED不可支撐normative | **PRIORITY**; Cowork/Skills效率增益量化 |
+4212:| CR_OPEN-019 | TEMP_CLOSED_FOR_MVP_TEST | - | spartoi-evidencepack-builder |
+4213:| CR_OPEN-021 | TEMP_CLOSED_FOR_MVP_TEST | WE-006 | Pipeline Skills (a/b/c) |
+4214:| CR_OPEN-023 | TEMP_CLOSED_FOR_MVP_TEST | - | skills_used Schema |
+4215:| CR_OPEN-024 | **OPEN** | WE-003,WE-015 | **Ops Cowork仍禁用**；預設視為事故 |
+4229:Candidate → CR_OPEN 遷移條件
+4234:CR_OPEN 處置方式
+4252:	§10.2 CR_OPEN Ledger
+4257:# CR_OPEN Schema（與藍圖統一）
+4274:CR_OPEN Ledger（完整展開）
+4276:CR_OPEN-001        THRESHOLD        N_min（最小樣本數）        統計門檻的最小樣本量，用於G-CONF-L Gate        30        YES        CONFIGURE        RADAR_ONLY        /evidence/cr_open/CR_OPEN-001.json        OPEN
+4277:CR_OPEN-002        THRESHOLD        勝率門檻具體口徑        accuracy/precision/hit-rate的定義方式        隔日方向正確        YES        CONFIGURE        RADAR_ONLY        /evidence/cr_open/CR_OPEN-002.json        OPEN
+4278:CR_OPEN-003        THRESHOLD        Golden set抽樣數量        蒸餾/語意比對的抽樣集大小，用於G-SEG-L Gate        10-30        YES        CONFIGURE        RADAR_ONLY        /evidence/cr_open/CR_OPEN-003.json        OPEN
+4279:CR_OPEN-004        THRESHOLD        Signal parity門檻        XS轉譯parity最低要求，用於G-XQ-PARITY Gate        95%        YES        CONFIGURE        RADAR_ONLY        /evidence/cr_open/CR_OPEN-004.json        OPEN
+4280:CR_OPEN-005        THRESHOLD        Hit@K門檻        選股Hit@K最低要求，用於G-CONF-L Gate        2/5        YES        CONFIGURE        RADAR_ONLY        /evidence/cr_open/CR_OPEN-005.json        OPEN
+4281:CR_OPEN-006        THRESHOLD        TA準確度門檻        技術分析準確度最低要求，用於G-CONF-L Gate        40%        YES        CONFIGURE        RADAR_ONLY        /evidence/cr_open/CR_OPEN-006.json        OPEN
+4284:CR_OPEN Reference Index（新增）
+4286:CR_OPEN-REF-001        §8.2.1 CA-WRC threshold_note        WRC數值化閾值引用
+4287:CR_OPEN-REF-002        §8.2.2 CA-CORPUS threshold_note        CORPUS覆蓋率門檻引用
+4288:CR_OPEN-REF-003        §8.2.4 CA-DSL threshold_note        DSL數值化驗證引用
+4289:CR_OPEN-REF-004        §8.2.5 CA-METHOD threshold_note        METHOD風險報酬門檻引用
+4290:CR_OPEN-REF-005        §8.2.7 CA-TA threshold_note        TA ICT模組覆蓋引用
+4292:### CR_OPEN新增項（v1.2.1對齊）
+4295:| CR_OPEN_ID | 內容 | 來源 | 狀態 | 關閉條件 |
+4297:| CR_OPEN-018 | Cowork Audit Log整合 | BP-V121 | OPEN | Anthropic提供Compliance API |
+4298:| CR_OPEN-019 | TEMP_CLOSED_FOR_MVP_TEST | 同步 | spartoi-evidencepack-builder |
+4299:| CR_OPEN-020 | 白名單域名具體清單 | BP-V121 | OPEN | 安全審計完成 |
+4300:| CR_OPEN-021 | TEMP_CLOSED_FOR_MVP_TEST | 同步 | Pipeline Skills (a/b/c) |
+4301:| CR_OPEN-022 | API Exception Gate | BP-V121 | OPEN | No-API例外審批流程定義 |
+4302:| CR_OPEN-023 | TEMP_CLOSED_FOR_MVP_TEST | 同步 | skills_used Schema |
+4303:| CR_OPEN-024 | OPEN | 同步 | Ops Cowork仍禁用 |
+4306:CR_OPEN 處置流程（與藍圖一致）
+4334:附錄A：8 Gate模板詳細規格
+4336:G-SRC 來源完整性Gate
+4338:gate_name: 來源完整性Gate
+4379:    resolution: ACCEPT | REJECT | CR_OPEN
+4383:G-SCHEMA Schema合規Gate
+4385:gate_name: Schema合規Gate
+4427:    resolution: ACCEPT | REJECT | CR_OPEN
+4431:G-BT-H 回測健康度Gate
+4433:gate_name: 回測健康度Gate
+4450:owner: HITL
+4481:    resolution: ACCEPT | REJECT | CR_OPEN
+4485:G-SEG-L 語意保真Gate
+4487:gate_name: 語意保真Gate
+4502:owner: HITL
+4534:    resolution: ACCEPT | REJECT | CR_OPEN
+4538:G-CONF-L 覆蓋率/信賴度Gate
+4540:gate_name: 覆蓋率/信賴度Gate
+4584:    resolution: ACCEPT | REJECT | CR_OPEN
+4602:| RISK-003 | 誤覆寫SSOT | HIGH | Staging-only+兩段式+HITL | §6.7, §6.8 |
+4603:| RISK-004 | Cowork當裁判 | HIGH | 不得當裁判原則+Gate強制 | §6.9 |
+4607:| RISK-008 | 白名單繞過 | MED | allowlist強制 | CR_OPEN-020 |
+4618:| TW-009 | Skills規範越界 | grep「Skills輸出.*Normative」 | 補Gate驗證 |
+4620:| TW-011 | UNVERIFIED偷渡 | grep「UNVERIFIED」無CR_OPEN | 補CR_OPEN-ID |
+4621:| TW-012 | Web入規範 | Web-Delta引用到Normative | 補CR_OPEN |
+4628:⚠️ **本附錄為Non-normative，不作PASS/FAIL依據。若要入規範需走CR_OPEN機制。**
+4646:1. 登記CR_OPEN
+4648:3. 關閉CR_OPEN後方可引用
+4658:| 報告 | 總項數 | 採納 | Non-normative | CR_OPEN | 不採納 |
+4672:| 採納 | Skills封裝流程、Cowork Dev限定、HITL強制 | 符合藍圖v1.2.1 |
+4673:| Non-normative | 效率增益數值、Token消耗數值 | UNVERIFIED需CR_OPEN-015 |
+4674:| CR_OPEN | 三階段導入、Skills Pack完整清單 | 待藍圖CR_OPEN關閉 |
+4681:G-XQ-PARITY XQ一致性Gate
+4683:gate_name: XQ一致性Gate
+4699:owner: HITL
+4730:    resolution: ACCEPT | REJECT | CR_OPEN
+4734:G-HITL-LOG HITL日誌Gate
+4735:gate_id: G-HITL-LOG
+4736:gate_name: HITL日誌Gate
+4749:owner: HITL
+4778:    resolution: ACCEPT | REJECT | CR_OPEN
+4782:G-RUN 可執行Gate
+4784:gate_name: 可執行Gate
+4828:    resolution: ACCEPT | REJECT | CR_OPEN
+4867:	建立GateKit
+4871:	建立GateRunner
+4916:4. **Gate Run**：執行 gate checks，exit 3 if gate fail
+4970:gates:
+4992:	FAIL/BLOCKED + HITL_REQUEST.json
+4995:	FAIL/BLOCKED + HITL_REQUEST.json
+4998:	FAIL/BLOCKED + HITL_REQUEST.json
+5044:  "required": ["run_id", "timestamp", "pipeline_id", "inputs", "outputs", "gates"],
+5075:    "gates": {
+5136:	7 Gate分類
+5141:	8 Gate模板
+5146:	GateRunner
+5171:	HITL停止線
+5172:	BP-HITL-STOPLINE
+5196:	CR_OPEN
+5206:需求ID        需求摘要        RUNBOOK落點        Gate        狀態
+5215:A-9        最小行為綁最小Gate        §8.2 gate_binding欄位        -        COVERED
+5218:A-12        8個固定模板Gate        §7.3 SPLMVP-8-GATE-TEMPLATES + 附錄A        -        COVERED
+5223:A-17        單人作坊精品級Gate最小集        §7.3 SPLMVP-8-GATE-TEMPLATES        -        COVERED
+5224:A-18        GateKit共享模組        §7.5 SPLMVP-GATEKIT-ENG        -        COVERED
+5225:A-19        GateRunner超薄執行器        §7.5.2 SPLMVP-GATERUNNER        -        COVERED
+5233:A-27        HITL停止線        §8.2.11 CA-EXECUTE stopline        G-HITL-LOG        COVERED
+5235:A-29        CR_OPEN待決登記        §10 SPLMVP-S10-CR-OPEN        -        COVERED
+5247:需求ID        需求摘要        RUNBOOK落點        Gate        狀態
+5257:B-10        盯盤MVP行為        §8.2.10 CA-WATCH        G-HITL-LOG        COVERED
+5258:B-11        操盤MVP行為        §8.2.11 CA-EXECUTE        G-HITL-LOG        COVERED
+5265:B-18        HITL人工確認        §8.2.11 stopline        G-HITL-LOG        COVERED
+5279:需求ID        需求摘要        RUNBOOK落點        Gate        狀態
+5280:101        15子系統核心功能可交付        §8 SPLMVP-S8-SUBSYS        各子系統Gate        COVERED
+5292:106        勝率>40%統計門檻        §10.2 CR_OPEN-006        G-CONF-L        Route-Out
+5293:107        8個Gate模板        §7.3 + 附錄A        -        COVERED
+5294:108        GateRunner不做平台化        §7.5.2 不做清單        -        COVERED
+5301:115        WATCH絕對可用定義        §8.2.10 verify_min        G-HITL-LOG        COVERED
+5302:116        EXECUTE絕對可用定義        §8.2.11 verify_min        G-HITL-LOG        COVERED
+5314:128        Gate report schema        附錄C gate_report schema        G-SCHEMA        COVERED
+5370:	7 Gate分類
+5375:	8 Gate模板
+5378:	比對Gate清單 → 應一致
+5441:	新增四大高槓桿Skills執行指引（§6.3.8.2）、CR_OPEN狀態對齊表（§10）、Solo-Mode HITL操作規範（§6.8.7）、Web Evidence Index引用（附錄M）、Verified Status處置SOP（附錄N）
+5460:	HITL
+5462:	GateKit
+5463:	G5共享Gate模板+執行器+報告格式
+5464:	GateRunner
+5481:	Gate Policy：阻斷發布，不得進入下游
+5483:	Gate Policy：記錄但不阻斷，標記風險
+5484:	EXECUTE_DISABLED
+5485:	Gate Policy：禁止執行但可研究/回測
+5486:	CR_OPEN
+5507:	GateRunner異常錯誤碼（ERR-GR-001~010）
+5522:	HITL
+5549:	契約/Gate
+5579:	對應Gate
+5624:附錄I：CR_OPEN詳細清單
+5626:詳見 §10.2 CR_OPEN Ledger。
+5673:	§7 Gate與EvidencePack
+5688:	§10 CR_OPEN Register
+5693:	附錄A 8 Gate模板
+5830:當需要驗證CR_OPEN的evidence_refs時：
+5851:CR_OPEN 驗證流程 
+5883:# 從CR_OPEN記錄中提取evidence_refs

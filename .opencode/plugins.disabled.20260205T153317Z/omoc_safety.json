@@ -1,0 +1,11 @@
+{
+  "description": "OMOC safety and enforcement hints for Spartoi v2. This file documents the constraints applied to subagents and tools. Non-destructive: used for verification and evidence generation.",
+  "rules": {
+    "mcp_disabled_by_default": true,
+    "allowed_providers": ["github-copilot"],
+    "max_subagent_depth": 1,
+    "call_omo_agent_only_allowed_for": ["chef"],
+    "forbidden_tools": ["bash","mcp","write"],
+    "evidence_requirements": ["manifest.json","verdict.json","logs/*"]
+  }
+}

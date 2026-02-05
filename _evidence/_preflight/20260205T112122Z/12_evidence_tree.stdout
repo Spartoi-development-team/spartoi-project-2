@@ -1,0 +1,249 @@
+_evidence:
+total 12
+drwxrwxrwx+  3 codespace codespace 4096 Feb  5 11:21 .
+drwxrwxrwx+ 18 codespace root      4096 Feb  5 11:21 ..
+drwxrwxrwx+  3 codespace codespace 4096 Feb  5 11:21 _preflight
+
+evidence:
+total 184
+drwxrwxrwx+  24 codespace codespace  4096 Feb  5 09:38 .
+drwxrwxrwx+  18 codespace root       4096 Feb  5 11:21 ..
+-rw-rw-rw-    1 codespace codespace    48 Feb  4 15:06 .gitkeep
+drwxrwxrwx+ 238 codespace codespace 12288 Feb  5 10:55 _acceptance
+drwxrwxrwx+   2 codespace codespace  4096 Feb  4 14:51 _b1
+drwxrwxrwx+   3 codespace codespace  4096 Feb  4 14:39 _b2_proof
+drwxrwxrwx+   3 codespace codespace  4096 Feb  4 14:21 _ci_forensics
+drwxrwxrwx+   3 codespace codespace  4096 Feb  5 03:55 _fallback
+drwxrwxrwx+   4 codespace codespace  4096 Feb  5 07:02 _model_forensics
+drwxrwxrwx+   9 codespace codespace  4096 Feb  5 10:56 _omoc_verify
+drwxrwxrwx+  70 codespace codespace  4096 Feb  5 10:55 _opencode_safe
+drwxrwxrwx+   2 codespace codespace  4096 Feb  4 13:18 _panic
+drwxrwxrwx+   2 codespace codespace  4096 Feb  4 13:26 _panic_mq
+drwxrwxrwx+  13 codespace codespace  4096 Feb  5 10:28 _preflight
+drwxrwxrwx+   2 codespace codespace  4096 Feb  4 11:55 _share
+drwxrwxrwx+ 109 codespace codespace  4096 Feb  5 10:55 _ssot_scan
+drwxrwxrwx+   2 codespace codespace  4096 Feb  4 13:29 _verify
+drwxrwxrwx+   3 codespace codespace  4096 Feb  4 15:06 acceptance
+-rw-rw-rw-    1 codespace codespace   387 Feb  4 15:06 b0_ledger.json
+-rw-rw-rw-    1 codespace codespace   285 Feb  4 15:06 b0_ledger.md
+drwxrwxrwx+   2 codespace codespace  4096 Feb  4 15:06 b1
+drwxrwxrwx+   3 codespace codespace  4096 Feb  4 13:20 b2
+-rw-rw-rw-    1 codespace codespace  1002 Feb  4 15:06 branch_protection_main.http
+-rw-rw-rw-    1 codespace codespace   378 Feb  4 15:07 evidence_index.json
+drwxrwxrwx+   2 codespace codespace  4096 Feb  4 12:12 github
+-rw-rw-rw-    1 codespace codespace   928 Feb  4 10:45 install_vale.log
+drwxrwxrwx+   2 codespace codespace  4096 Feb  4 15:06 local-20260203-054858
+drwxrwxrwx+   2 codespace codespace  4096 Feb  4 10:32 local-verify
+-rw-rw-rw-    1 codespace codespace  1380 Feb  4 10:44 path.txt
+drwxrwxrwx+   2 codespace codespace  4096 Feb  4 12:11 policy
+drwxrwxrwx+   2 codespace codespace  4096 Feb  4 15:06 preflight
+-rw-rw-rw-    1 codespace codespace     3 Feb  4 15:06 repo_meta.json
+-rw-rw-rw-    1 codespace codespace   542 Feb  4 15:06 ruleset_12397271.json
+-rw-rw-rw-    1 codespace codespace  1057 Feb  4 15:06 ruleset_12397323.json
+-rw-rw-rw-    1 codespace codespace   818 Feb  4 15:06 ruleset_12397484.json
+-rw-rw-rw-    1 codespace codespace 13471 Feb  4 15:06 ruleset_bootstrap.log
+-rwxrwxrwx    1 codespace codespace  1172 Feb  4 15:06 ruleset_bootstrap.sh
+-rw-rw-rw-    1 codespace codespace  1251 Feb  4 15:06 ruleset_patch.sh
+-rw-rw-rw-    1 codespace codespace  2705 Feb  4 15:06 rulesets_list.http
+-rw-rw-rw-    1 codespace codespace    20 Feb  4 10:44 vale_version.txt
+-rw-rw-rw-    1 codespace codespace  3170 Feb  4 15:06 verify_ruleset_and_pr.log
+evidence/_fallback/20260205T035549Z/_timeline.log
+evidence/_fallback/20260205T035549Z/step_01.stdout.log
+evidence/_fallback/20260205T035549Z/step_02.stdout.log
+evidence/_fallback/20260205T035549Z/step_03.stderr.log
+evidence/_fallback/20260205T035549Z/step_02.exit_code.txt
+evidence/_fallback/20260205T035549Z/step_03.stdout.log
+evidence/_fallback/20260205T035549Z/step_03.exit_code.txt
+evidence/_fallback/20260205T035549Z/step_01.stderr.log
+evidence/_fallback/20260205T035549Z/step_02.stderr.log
+evidence/_fallback/20260205T035549Z/step_01.exit_code.txt
+evidence/_acceptance/20260205T041752Z/control_plane/snapshot.exit_code.txt
+evidence/_acceptance/20260205T041752Z/control_plane/rules_main.json
+evidence/_acceptance/20260205T041752Z/control_plane/check_run_names.txt
+evidence/_acceptance/20260205T041752Z/control_plane/snapshot.txt
+evidence/_acceptance/20260205T041752Z/control_plane/ruleset_12397323.json
+evidence/_acceptance/20260205T074647Z/control_plane/rules_effective_main.json
+evidence/_acceptance/20260205T074647Z/control_plane/latest_merge_group_runs.json
+evidence/_acceptance/20260205T074647Z/control_plane/rules.exit_code.txt
+evidence/_acceptance/20260205T074647Z/control_plane/latest_pr_run.json
+evidence/_acceptance/20260205T074647Z/control_plane/main_runs.exit_code.txt
+evidence/_acceptance/20260205T074647Z/control_plane/snapshot.exit_code.txt
+evidence/_acceptance/20260205T074647Z/control_plane/mq_runs.exit_code.txt
+evidence/_acceptance/20260205T074647Z/control_plane/EXECUTE_DISABLED
+evidence/_acceptance/20260205T074647Z/control_plane/latest_merge_group_run.json
+evidence/_acceptance/20260205T074647Z/control_plane/rules_main.json
+evidence/_acceptance/20260205T074647Z/control_plane/pr11_url.txt
+evidence/_acceptance/20260205T074647Z/control_plane/latest_main_runs.json
+evidence/_acceptance/20260205T074647Z/control_plane/check_run_names.txt
+evidence/_acceptance/20260205T074647Z/control_plane/snapshot.txt
+evidence/_acceptance/20260205T074647Z/control_plane/ruleset_12397323.json
+evidence/_acceptance/20260205T062936Z/control_plane/rules_effective_main.json
+evidence/_acceptance/20260205T062936Z/control_plane/latest_merge_group_runs.json
+evidence/_acceptance/20260205T062936Z/control_plane/rules.exit_code.txt
+evidence/_acceptance/20260205T062936Z/control_plane/latest_pr_run.json
+evidence/_acceptance/20260205T062936Z/control_plane/main_runs.exit_code.txt
+evidence/_acceptance/20260205T062936Z/control_plane/trace_map.json
+evidence/_acceptance/20260205T062936Z/control_plane/snapshot.exit_code.txt
+evidence/_acceptance/20260205T062936Z/control_plane/mq_runs.exit_code.txt
+evidence/_acceptance/20260205T062936Z/control_plane/doc_index.json
+evidence/_acceptance/20260205T062936Z/control_plane/latest_merge_group_run.json
+evidence/_acceptance/20260205T062936Z/control_plane/rules_main.json
+evidence/_acceptance/20260205T062936Z/control_plane/pr11_url.txt
+evidence/_acceptance/20260205T062936Z/control_plane/latest_main_runs.json
+evidence/_acceptance/20260205T062936Z/control_plane/check_run_names.txt
+evidence/_acceptance/20260205T062936Z/control_plane/snapshot.txt
+evidence/_acceptance/20260205T062936Z/control_plane/ruleset_12397323.json
+evidence/_acceptance/20260205T062936Z/final/verdict.json
+evidence/_acceptance/20260205T062936Z/final/checks_present.txt
+evidence/_acceptance/20260205T062936Z/final/verdict.txt
+evidence/_acceptance/20260205T062936Z/final/verdict.exit_code
+evidence/_acceptance/20260205T064707Z/control_plane/rules_effective_main.json
+evidence/_acceptance/20260205T064707Z/control_plane/latest_merge_group_runs.json
+evidence/_acceptance/20260205T064707Z/control_plane/rules.exit_code.txt
+evidence/_acceptance/20260205T064707Z/control_plane/latest_pr_run.json
+evidence/_acceptance/20260205T064707Z/control_plane/main_runs.exit_code.txt
+evidence/_acceptance/20260205T064707Z/control_plane/snapshot.exit_code.txt
+evidence/_acceptance/20260205T064707Z/control_plane/mq_runs.exit_code.txt
+evidence/_acceptance/20260205T064707Z/control_plane/latest_merge_group_run.json
+evidence/_acceptance/20260205T064707Z/control_plane/rules_main.json
+evidence/_acceptance/20260205T064707Z/control_plane/pr11_url.txt
+evidence/_acceptance/20260205T064707Z/control_plane/latest_main_runs.json
+evidence/_acceptance/20260205T064707Z/control_plane/check_run_names.txt
+evidence/_acceptance/20260205T064707Z/control_plane/snapshot.txt
+evidence/_acceptance/20260205T064707Z/control_plane/ruleset_12397323.json
+evidence/_acceptance/pr10_checks_latest.json
+evidence/_acceptance/20260205T035942Z/control_plane/ruleset_12397323.json
+evidence/_acceptance/20260205T042309Z/pr10_checks_latest.json
+evidence/_acceptance/20260205T042309Z/gh_runs_list.json
+evidence/_acceptance/20260205T042309Z/control_plane/branch_protection.err
+evidence/_acceptance/20260205T042309Z/control_plane/branch_protection_main.json
+evidence/_acceptance/20260205T042309Z/control_plane/required_contexts_array.json
+evidence/_acceptance/20260205T042309Z/acceptance_stderr.log
+evidence/_acceptance/20260205T042309Z/acceptance_stdout.log
+evidence/_acceptance/20260205T061946Z/control_plane/rules_effective_main.json
+evidence/_acceptance/20260205T061946Z/control_plane/latest_merge_group_runs.json
+evidence/_acceptance/20260205T061946Z/control_plane/rules.exit_code.txt
+evidence/_acceptance/20260205T061946Z/control_plane/latest_pr_run.json
+evidence/_acceptance/20260205T061946Z/control_plane/main_runs.exit_code.txt
+evidence/_acceptance/20260205T061946Z/control_plane/trace_map.json
+evidence/_acceptance/20260205T061946Z/control_plane/snapshot.exit_code.txt
+evidence/_acceptance/20260205T061946Z/control_plane/mq_runs.exit_code.txt
+evidence/_acceptance/20260205T061946Z/control_plane/doc_index.json
+evidence/_acceptance/20260205T061946Z/control_plane/latest_merge_group_run.json
+evidence/_acceptance/20260205T061946Z/control_plane/rules_main.json
+evidence/_acceptance/20260205T061946Z/control_plane/pr11_url.txt
+evidence/_acceptance/20260205T061946Z/control_plane/latest_main_runs.json
+evidence/_acceptance/20260205T061946Z/control_plane/check_run_names.txt
+evidence/_acceptance/20260205T061946Z/control_plane/snapshot.txt
+evidence/_acceptance/20260205T061946Z/control_plane/ruleset_12397323.json
+evidence/_acceptance/20260205T061946Z/final/verdict.json
+evidence/_acceptance/20260205T061946Z/final/checks_present.txt
+evidence/_acceptance/20260205T061946Z/final/verdict.txt
+evidence/_acceptance/20260205T061946Z/final/verdict.exit_code
+evidence/_acceptance/20260205T041802Z/control_plane/snapshot.exit_code.txt
+evidence/_acceptance/20260205T041802Z/control_plane/doc_index.json
+evidence/_acceptance/20260205T041802Z/control_plane/rules_main.json
+evidence/_acceptance/20260205T041802Z/control_plane/check_run_names.txt
+evidence/_acceptance/20260205T041802Z/control_plane/snapshot.txt
+evidence/_acceptance/20260205T041802Z/control_plane/ruleset_12397323.json
+evidence/_acceptance/20260205T041802Z/final/verdict.json
+evidence/_acceptance/20260205T053959Z/control_plane/rules_effective_main.exit_code.txt
+evidence/_acceptance/20260205T053959Z/control_plane/rules_effective_main.json
+evidence/_acceptance/20260205T053959Z/control_plane/rules_effective_main.stderr
+evidence/_acceptance/20260205T095132Z/control_plane/rules_effective_main.json
+evidence/_acceptance/20260205T095132Z/control_plane/latest_merge_group_runs.json
+evidence/_acceptance/20260205T095132Z/control_plane/rules.exit_code.txt
+evidence/_acceptance/20260205T095132Z/control_plane/latest_pr_run.json
+evidence/_acceptance/20260205T095132Z/control_plane/main_runs.exit_code.txt
+evidence/_acceptance/20260205T095132Z/control_plane/trace_map.json
+evidence/_acceptance/20260205T095132Z/control_plane/snapshot.exit_code.txt
+evidence/_acceptance/20260205T095132Z/control_plane/mq_runs.exit_code.txt
+evidence/_acceptance/20260205T095132Z/control_plane/EXECUTE_DISABLED
+evidence/_acceptance/20260205T095132Z/control_plane/doc_index.json
+evidence/_acceptance/20260205T095132Z/control_plane/latest_merge_group_run.json
+evidence/_acceptance/20260205T095132Z/control_plane/rules_main.json
+evidence/_acceptance/20260205T095132Z/control_plane/pr11_url.txt
+evidence/_acceptance/20260205T095132Z/control_plane/latest_main_runs.json
+evidence/_acceptance/20260205T095132Z/control_plane/check_run_names.txt
+evidence/_acceptance/20260205T095132Z/control_plane/snapshot.txt
+evidence/_acceptance/20260205T095132Z/control_plane/ruleset_12397323.json
+evidence/_acceptance/20260205T095132Z/final/verdict.json
+evidence/_acceptance/20260205T095132Z/final/checks_present.txt
+evidence/_acceptance/20260205T095132Z/final/verdict.txt
+evidence/_acceptance/20260205T095132Z/final/verdict.exit_code
+evidence/_acceptance/20260205T054914Z/control_plane/rules_effective_main.json
+evidence/_acceptance/20260205T054914Z/control_plane/latest_merge_group_runs.json
+evidence/_acceptance/20260205T054914Z/control_plane/rules.exit_code.txt
+evidence/_acceptance/20260205T054914Z/control_plane/latest_pr_run.json
+evidence/_acceptance/20260205T054914Z/control_plane/main_runs.exit_code.txt
+evidence/_acceptance/20260205T054914Z/control_plane/snapshot.exit_code.txt
+evidence/_acceptance/20260205T054914Z/control_plane/mq_runs.exit_code.txt
+evidence/_acceptance/20260205T054914Z/control_plane/latest_merge_group_run.json
+evidence/_acceptance/20260205T054914Z/control_plane/rules_main.json
+evidence/_acceptance/20260205T054914Z/control_plane/pr11_url.txt
+evidence/_acceptance/20260205T054914Z/control_plane/latest_main_runs.json
+evidence/_acceptance/20260205T054914Z/control_plane/check_run_names.txt
+evidence/_acceptance/20260205T054914Z/control_plane/snapshot.txt
+evidence/_acceptance/20260205T054914Z/control_plane/ruleset_12397323.json
+evidence/_acceptance/20260205T074608Z/control_plane/rules_effective_main.json
+evidence/_acceptance/20260205T074608Z/control_plane/latest_merge_group_runs.json
+evidence/_acceptance/20260205T074608Z/control_plane/rules.exit_code.txt
+evidence/_acceptance/20260205T074608Z/control_plane/latest_pr_run.json
+evidence/_acceptance/20260205T074608Z/control_plane/main_runs.exit_code.txt
+evidence/_acceptance/20260205T074608Z/control_plane/trace_map.json
+evidence/_acceptance/20260205T074608Z/control_plane/snapshot.exit_code.txt
+evidence/_acceptance/20260205T074608Z/control_plane/mq_runs.exit_code.txt
+evidence/_acceptance/20260205T074608Z/control_plane/EXECUTE_DISABLED
+evidence/_acceptance/20260205T074608Z/control_plane/doc_index.json
+evidence/_acceptance/20260205T074608Z/control_plane/latest_merge_group_run.json
+evidence/_acceptance/20260205T074608Z/control_plane/CR_OPEN.md
+evidence/_acceptance/20260205T074608Z/control_plane/rules_main.json
+evidence/_acceptance/20260205T074608Z/control_plane/pr11_url.txt
+evidence/_acceptance/20260205T074608Z/control_plane/latest_main_runs.json
+evidence/_acceptance/20260205T074608Z/control_plane/check_run_names.txt
+evidence/_acceptance/20260205T074608Z/control_plane/snapshot.txt
+evidence/_acceptance/20260205T074608Z/control_plane/ruleset_12397323.json
+evidence/_acceptance/20260205T074608Z/final/final_status.txt
+evidence/_acceptance/20260205T074608Z/final/verdict.json
+evidence/_acceptance/20260205T074608Z/final/repair_plan.md
+evidence/_acceptance/20260205T074608Z/final/checks_present.txt
+evidence/_acceptance/20260205T074608Z/final/verdict.txt
+evidence/_acceptance/20260205T074608Z/final/verdict.exit_code
+evidence/_acceptance/20260205T105324Z/control_plane/rules_effective_main.json
+evidence/_acceptance/20260205T105324Z/control_plane/latest_merge_group_runs.json
+evidence/_acceptance/20260205T105324Z/control_plane/rules.exit_code.txt
+evidence/_acceptance/20260205T105324Z/control_plane/latest_pr_run.json
+evidence/_acceptance/20260205T105324Z/control_plane/main_runs.exit_code.txt
+evidence/_acceptance/20260205T105324Z/control_plane/trace_map.json
+evidence/_acceptance/20260205T105324Z/control_plane/snapshot.exit_code.txt
+evidence/_acceptance/20260205T105324Z/control_plane/mq_runs.exit_code.txt
+evidence/_acceptance/20260205T105324Z/control_plane/EXECUTE_DISABLED
+evidence/_acceptance/20260205T105324Z/control_plane/doc_index.json
+evidence/_acceptance/20260205T105324Z/control_plane/latest_merge_group_run.json
+evidence/_acceptance/20260205T105324Z/control_plane/rules_main.json
+evidence/_acceptance/20260205T105324Z/control_plane/pr11_url.txt
+evidence/_acceptance/20260205T105324Z/control_plane/latest_main_runs.json
+evidence/_acceptance/20260205T105324Z/control_plane/check_run_names.txt
+evidence/_acceptance/20260205T105324Z/control_plane/snapshot.txt
+evidence/_acceptance/20260205T105324Z/control_plane/ruleset_12397323.json
+evidence/_acceptance/20260205T105324Z/final/verdict.json
+evidence/_acceptance/20260205T105324Z/final/checks_present.txt
+evidence/_acceptance/20260205T105324Z/final/verdict.txt
+evidence/_acceptance/20260205T105324Z/final/verdict.exit_code
+evidence/_acceptance/20260205T062149Z/control_plane/rules_effective_main.json
+evidence/_acceptance/20260205T062149Z/control_plane/latest_merge_group_runs.json
+evidence/_acceptance/20260205T062149Z/control_plane/rules.exit_code.txt
+evidence/_acceptance/20260205T062149Z/control_plane/latest_pr_run.json
+evidence/_acceptance/20260205T062149Z/control_plane/main_runs.exit_code.txt
+evidence/_acceptance/20260205T062149Z/control_plane/snapshot.exit_code.txt
+evidence/_acceptance/20260205T062149Z/control_plane/mq_runs.exit_code.txt
+evidence/_acceptance/20260205T062149Z/control_plane/latest_merge_group_run.json
+evidence/_acceptance/20260205T062149Z/control_plane/rules_main.json
+evidence/_acceptance/20260205T062149Z/control_plane/pr11_url.txt
+evidence/_acceptance/20260205T062149Z/control_plane/latest_main_runs.json
+evidence/_acceptance/20260205T062149Z/control_plane/check_run_names.txt
+evidence/_acceptance/20260205T062149Z/control_plane/snapshot.txt
+evidence/_acceptance/20260205T062149Z/control_plane/ruleset_12397323.json
+evidence/_acceptance/20260205T060844Z/control_plane/rules_effective_main.json
+evidence/_acceptance/20260205T060844Z/control_plane/latest_merge_group_runs.json
+evidence/_acceptance/20260205T060844Z/control_plane/rules.exit_code.txt

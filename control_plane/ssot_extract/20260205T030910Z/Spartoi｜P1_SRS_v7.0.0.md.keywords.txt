@@ -1,0 +1,601 @@
+23:	本版完全取代 v6.1.0 及所有更早版本；使用者無需回看舊版即可完成審查/開發/驗收。本版依據《Spartoi｜P1_SRS_v6.1.0_升級方案v3》執行全域面升級，整合7份審查報告90條Issue + 15條Canonical Candidate CR_OPEN + 47個Patch，達成完全無Candidate缺口與阻斷。
+25:	MAJOR升級(v6→v7)：(1)全量整合7份審查報告Issue並全部關單；(2)依《Candidate處置規則_v2》將全部Candidate轉為CR_OPEN條文+Fail-Closed Gate；(3)整合《Candidate缺口補完整合版》15條CR_OPEN；(4)補齊ICT模組需求框架、控制面三件套、RTM-A/RTM-REQ21實質表格、APPX完整內容；(5)防倒退對齊v5.0.1升級內容與升級藍圖；(6)建立可定位、可回放、可稽核、可阻斷上線的合格條件。
+81:	15條CR_OPEN
+166:7. 全部 Candidate 轉為 CR_OPEN 條文 + Fail-Closed Gate
+178:   * 若發現任何舊版曾存在之「工件級需求 / Gate / 合約欄位」在本版缺失：
+179:      * MUST 開立 CR_OPEN
+180:      * Gate：BLOCK_RELEASE（見 §0.4）
+185:[ANCHOR:SRS-V700-MAINTENANCE-RULES]
+186:SRS-GOV-MAINT-001: 不可降階規則
+187:* 本 SRS 內已存在且可驗收的需求條文（含欄位清單、Gate、工件契約），不得以「摘要/口號」取代
+192:   4. Gate：RADAR_ONLY（至少一版），未完成補償前不得 Release
+193:SRS-GOV-MAINT-002: 新增需求必帶驗收鉤子
+195:   * MAI（§10）中的 acceptance_hook
+197:* 缺一即視為未完成：Gate：BLOCK_RELEASE
+198:SRS-GOV-MAINT-003: Candidate處置規則
+199:* 任何 Candidate/候選門檻/候選規則 MUST 以 CR_OPEN + Fail-Closed 方式存在
+200:* CR_OPEN 的 normative 區塊嚴禁出現任何門檻數值或比較式（<, >, <=, >=, Pxx 等）
+213:3. 再讀 Gate Dictionary（§0.4）：理解 Fail-Closed 行為
+216:6. 查找驗收時用 MAI（§10）：每條需求都有獨立驗收工件
+217:7. 查找Candidate狀態用 CR_OPEN Register（§13.4）：所有Candidate已轉為CR_OPEN
+220:* ❌ 禁止把 Candidate 當 Gate：Candidate 已全部轉為 CR_OPEN，門檻值不得用於 Fail-Closed 判定
+222:* ❌ 禁止把 CR_OPEN 當已覆蓋：CR_OPEN 代表待承接，必須檢查對應 Gate
+223:* ❌ 禁止省略 disposition：每條上游需求都必須有明確 disposition（Covered/Route_Out/CR_OPEN/Defer/Reject）
+241:	§13.4 CR_OPEN Register
+243:	§10 MAI
+245:	§13.4 CR_OPEN Register + APPX-I
+266:* §0.4 Gate Dictionary [#SRS-V700-GATE-DICTIONARY]
+267:   * §0.4.0 Gate分層架構（全域級原則）[#SRS-V700-GATE-LAYERING]
+268:   * §0.4.1 Gate Policy定義（裁決層）[#SRS-V700-GATE-POLICY]
+269:   * §0.4.2 Gate ID索引表（檢核層）[#SRS-V700-GATE-ID-INDEX]
+270:   * §0.4.3 Gate判定可重現性規則 [#SRS-V700-GATE-REPRODUCIBILITY]
+271:   * §0.4.4 Gate執行與驗證機制 [#SRS-V700-GATE-EXECUTION]
+325:* §4.9 可維護性需求 [#SRS-V700-NFR-MAINTAINABILITY]
+340:* §6.3 ICD Token Existence Gate [#SRS-V700-GOV-ICDGATE]
+349:§10 Master Acceptance Index（MAI）
+350:* §10.1 MAI 結構說明 [#SRS-V700-MAI-STRUCTURE]
+351:* §10.2 FR 驗收索引 [#SRS-V700-MAI-FR]
+352:* §10.3 NFR 驗收索引 [#SRS-V700-MAI-NFR]
+353:* §10.4 IR 驗收索引 [#SRS-V700-MAI-IR]
+354:* §10.5 GOV 驗收索引 [#SRS-V700-MAI-GOV]
+355:* §10.6 CR_OPEN 驗收索引 [#SRS-V700-MAI-CROPEN]
+356:* §10.7 MAI 外掛驗證機制 [#SRS-V700-MAI-VERIFY]
+374:* §13.4 CR_OPEN Register [#SRS-V700-APPX-CROPEN]
+381:* APPX-MAI：Master Acceptance Index 完整版
+480:2. 稽核時：以 SRS 條文 + MAI 驗收鉤子為判定依據
+481:3. 衝突時：登錄 Conflict Ledger，Gate: BLOCK_RELEASE 直到裁決完成
+490:   4. 若升版：Gate: BLOCK_RELEASE 直到完成
+574:§0.4 Gate Dictionary
+576:§0.4.0 Gate分層架構（全域級原則）
+578:SRS-GOV-GATE-LAYER-001: Gate分層硬規則
+584:	Gate體系MUST分成「裁決（Policy）」與「檢核（Check）」兩層，MUST NOT混用
+596:	MAI-GATE-LAYER-001
+597:	Gate分層定義（Normative）：
+599:│  Layer 1: Gate Policy（裁決層）                              │
+604:│  • EXECUTE_DISABLED - 運行期禁用高風險動作（Kill-Switch/HITL） │
+606:│  Layer 2: Gate ID（檢核層）                                  │
+620:* gate_id: 檢核碼（對應Gate Dictionary定義）
+625:      "acceptance_id": "MAI-XXX-001",
+635:§0.4.1 Gate Policy定義（裁決層 - 固定三態）
+637:Gate Policy語義定義（Normative，不得修改）：
+653:	MAJOR級問題、門檻未驗證、CR_OPEN未關單
+656:	EXECUTE_DISABLED
+659:	Kill-Switch觸發、HITL未確認、緊急降級
+663:* P1責任：產出「合約與證據鏈」（控制面三件套 + MAI/RTM/hook），寫入gate_result.json
+666:§0.4.2 Gate ID索引表（檢核層）
+668:Gate ID → Gate Policy映射表（Normative）：
+689:	MAI完整度
+694:	CR_OPEN關單
+695:	無BLOCKER級CR_OPEN
+752:	MAI-SRS一致
+753:	count(MAI)==count(SRS_REQ)
+757:	MAI-Anchor對應
+758:	每條MAI有SRS anchor
+772:	MAI Hash同步
+787:	CR_OPEN對應
+824:	EXECUTE_DISABLED
+845:	Gate分層合規
+869:	HITL確認
+872:	EXECUTE_DISABLED
+874:	Kill-Switch狀態
+877:	EXECUTE_DISABLED
+882:	EXECUTE_DISABLED
+883:	§0.4.3 Gate判定可重現性規則
+885:SRS-GATE-REPRO-001: Gate判定可重現性
+903:	MAI-GATE-REPRO-001
+904:	SRS-GATE-NAMING-001: Gate命名防混淆
+922:	MAI-GATE-NAMING-001
+923:	§0.4.4 Gate執行與驗證機制
+925:Gate執行流程（Normative）：
+943:* overall_policy (enum: BLOCK_RELEASE/RADAR_ONLY/EXECUTE_DISABLED/PASS)
+944:* blocked_gates[] (array of gate_id that failed)
+971:	MAI-SSOT-001
+993:	MAI-SAFE-001
+1027:	MAI-TIER-001
+1046:	MAI-TIER-002
+1047:	原則四：Gate分層
+1049:SRS-PRINCIPLE-GATE-001: Gate分層硬規則
+1055:	Gate體系MUST分成「裁決（Policy）」與「檢核（Check）」兩層；嚴禁混用
+1057:	1) gate_policy只有三態（BLOCK_RELEASE/RADAR_ONLY/EXECUTE_DISABLED）；2) 每個gate_id映射唯一gate_policy
+1067:	MAI-GATE-001
+1068:	Gate分層硬規則表：
+1106:	MAI-P1P2-001
+1111:	Gate定義
+1114:	Gate執行
+1124:	✅ MAI/RTM/hook/三件套
+1147:	15條Canonical Candidate轉為CR_OPEN條文
+1165:	Gate Dictionary強化（判定可重現性）
+1177:	Gate體系整合（RC1~RC5 + GATE-RL-001~005）
+1206:	Cross-Doc Consistency Gates 12個定義
+1230:	MarketProfile Parity Gate定義
+1253:	v7.0.0-patch2 (2026-01-09) - Gate分層與旗標設計重構
+1259:	Gate分層架構（Policy/Check分離）
+1263:	Gate Policy固定三態（BLOCK_RELEASE/RADAR_ONLY/EXECUTE_DISABLED）
+1267:	Gate ID索引表（30+檢核碼）
+1353:	Candidate CR_OPEN補丁
+1387:	MAI外掛同步驗證機制
+1392:	Candidate/RC Gates治理
+1402:	Gate Dictionary可重現性
+1445:	Gate
+1452:	MAI/RTM/Ledger
+1464:* MAI hook與SRS需求條文MUST一對一對應
+1465:* RTM覆蓋率MUST = 100%（或有CR_OPEN + Fail-Closed）
+1535:	CR_OPEN
+1536:	待承接需求，必綁Fail-Closed Gate
+1542:	阻斷發布Gate策略
+1545:	僅觀測不執行Gate策略
+1547:	EXECUTE_DISABLED
+1548:	禁用執行Gate策略
+1553:	MAI
+1633:* 違反→Gate: BLOCK_RELEASE
+1655:	MAI-SFHB-001
+1657:* ✅ 允許引用：SF-00~SF-31定義、SF-11（HITL）定位聲明
+1668:* 無過度治理/冗餘Gate
+1825:* ❌ 繞過HITL Gate
+1897:	可執行高風險（需HITL）
+1898:	ACML-2 + 下單（經HITL批准）
+1899:	SRS-AGENT-008: HITL Checkpoint持久化
+1938:SRS-SF-003: SF語義唯一性 SF-00只能用於Preflight；SF-14只能用於Kill Switch；語義混用→Gate: BLOCK_RELEASE
+1946:	Preflight/Evidence Gate
+1990:	HITL
+2021:* SF-11（HITL決策門）是流程節點
+2306:	SGF Gate通過
+2334:	MAI-WRC-001
+2351:	MAI-WRC-002
+2368:	MAI-WRC-003
+2431:	SRS-FR-DSL-004: MarketProfile Parity Gate
+2491:	MAI-TWMS-001
+2521:	MAI-TWMS-002
+2537:	overall_verdict=FAIL→EXECUTE_DISABLED；WARNING→RADAR_ONLY
+2545:	MAI-TWMS-003
+2567:	MAI-RAG-001
+2584:	MAI-RAG-002
+2606:	MAI-DISTILL-001
+2607:	SRS-FR-DISTILL-002: SGF Gate
+2613:	蒸餾後MUST通過SGF（Semantic Fidelity Gate）；SGF失敗→RADAR_ONLY
+2623:	MAI-DISTILL-002
+2624:	SRS-FR-DISTILL-003: 覆蓋率與保真（CR_OPEN）
+2638:	CR_OPEN
+2642:	MAI-DISTILL-003
+2665:	MAI-METHOD-001
+2666:	SRS-FR-METHOD-002: MSC Gate
+2672:	方法卡MUST通過MSC（Method-Strategy Consistency Gate）；MSC失敗→禁止進入回測
+2682:	MAI-METHOD-002
+2699:	MAI-METHOD-003
+2721:	MAI-BACKTEST-001
+2738:	MAI-BACKTEST-002
+2755:	MAI-BACKTEST-003
+2777:	MAI-TA-001
+2799:	MAI-SELECT-001
+2803:§3.15 盯盤與HITL
+2804:[ANCHOR:SRS-V700-WATCH-HITL-REQUIREMENTS]
+2821:	MAI-WATCH-001
+2822:	SRS-FR-HITL-001: HITL交接
+2826:	SRS-FR-HITL-001
+2828:	盯盤訊號MUST經過HITL（人工確認）；HITLMUST產出交接包
+2836:	GATE-HITL
+2838:	MAI-HITL-001
+2839:	§3.15.1 SF-11（HITL）定位聲明
+2840:[ANCHOR:SRS-V700-SF11-HITL-POSITION]
+2841:SRS-FR-HITL-TERM-001: SF-11是流程節點 SF-11僅代表「人類確認/介入」的流程關口。其UI/操作面由桌面應用提供，但桌面應用≠SF-11；SF-11≠桌面應用。
+2842:SRS-FR-HITL-TERM-002: HITL Gate的最小行為 任一進入EXECUTE路徑的動作（進場/加碼/清倉）MUST經過HITL Gate。 HITL Gate必須產生可追溯的操作證據（audit trail），包含：
+2846:Gate失敗→MUST停留在EXECUTE_DISABLED或RADAR_ONLY（不得自動下單）
+2847:SRS-FR-HITL-TERM-003: 不可偷渡自動化 若系統在未獲HITL明確確認下自動觸發交易→視為嚴重違規→Gate: BLOCK_RELEASE
+2850:SRS-FR-HITL-DP-001: Decision Package最小欄位（Normative）
+2854:	SRS-FR-HITL-DP-001
+2856:	系統MUST為每個HITL決策點生成Decision Package
+2866:	MAI-HITL-DP-001
+2882:* 任一必需欄位缺失→Gate: BLOCK_RELEASE
+2884:* 若decision≠recommended_default且override_reason為空→Gate: BLOCK_RELEASE
+2885:SRS-FR-HITL-DP-002: Decision Package落盤與回放
+2889:	SRS-FR-HITL-DP-002
+2901:	MAI-HITL-DP-002
+2913:	系統MUST提供操盤能力（自動執行）；預設EXECUTE_DISABLED
+2923:	MAI-EXECUTE-001
+2930:	EXECUTE路徑MUST經過：TVE Gate→HITL Gate→TWMS Axis Gate；任一失敗→EXECUTE_DISABLED
+2940:	MAI-EXECUTE-002
+2962:	MAI-PERFORM-001
+2974:	Desktop AppMUST不負責產生策略決策（買/賣/加碼/清倉）；僅能：顯示輸入/輸出/證據、觸發流程（以JobCard驅動）、提供HITL操作介面
+2984:	MAI-CAUI-001
+3001:	MAI-CAUI-002
+3018:	MAI-CAUI-003
+3035:	MAI-CAUI-004
+3038:SRS-CAUI-IC-001: UI觸發任一執行流程MUST生成/引用run_config_snapshot.json SRS-CAUI-IC-002: UI必須將本次輸入工件納入release_bundle_manifest.json（含input_digest） SRS-CAUI-IC-003: UI必須顯示以下Gate評估結果：GATE-RL-001~005（發布準備度）、RC1~RC5（蒸餾質量） SRS-CAUI-IC-004: EXECUTE預設禁用：UI初始狀態MUST為EXECUTE_DISABLED或RADAR_ONLY；只有在RC Gate全數PASS且HITL明確確認後才允許切換
+3060:	MAI-UI-001
+3078:	MAI-UI-002
+3083:* items[]: capability_id, ui_entry, invoke_contract, required_gates[], required_artifacts[], fallback_path
+3100:	MAI-UI-003
+3257:	CR_OPEN
+3275:	三階段Gate皆可執行
+3303:	CR_OPEN
+3331:SRS-NFR-LAT-001: 閉環延遲量測（CR_OPEN）
+3347:	CR_OPEN
+3418:SRS-SQM-EQA-001: EQA100指標（CR_OPEN）
+3434:	CR_OPEN
+3449:	SRS-SQM-S3-WIN-001: 勝率量測（CR_OPEN）
+3465:	CR_OPEN
+3477:	SRS-SQM-S3-SHARPE-001: Sharpe Ratio量測（CR_OPEN）
+3493:	CR_OPEN
+3494:	SRS-SQM-S6-EXEC-001: 執行品質量測（CR_OPEN）
+3508:	EXECUTE_DISABLED
+3510:	CR_OPEN
+3511:	SRS-SQM-S6-SLIP-001: 滑價量測（CR_OPEN）
+3527:	CR_OPEN
+3528:	SRS-SQM-S7-DD-001: 最大回撤量測（CR_OPEN）
+3544:	CR_OPEN
+3545:	SRS-SQM-PBO-001: 回測過擬合偵測（CR_OPEN）
+3561:	CR_OPEN
+3585:	MAI-LLM-001
+3620:	MAI-LLM-002
+3651:	MAI-LLM-003
+3687:	MAI-LLM-004
+3717:	MAI-POL-LLM-001
+3734:	MAI-POL-LLM-002
+3743:§4.6 蒸餾/轉譯質量Gate（RC1~RC5）
+3748:* 發布準備度Gate使用GATE-RL-001~005（見§0.4）
+3767:	MAI-RC-001
+3797:	MAI-RC-002
+3822:	MAI-RC-003
+3847:	MAI-RC-004
+3872:	MAI-RC-005
+3887:* 未達標→Gate: RADAR_ONLY（允許觀測但不可進入EXECUTE模式）
+3889:* 任一工件缺失或欄位不齊→Gate: BLOCK_RELEASE
+3913:	MAI-THR-001
+3940:	MAI-THR-002
+3944:* CR_OPEN（未驗證不得上線）
+3966:	MAI-NFR-DATA-001
+3983:	MAI-NFR-REPLAY-001
+4000:	MAI-NFR-OBS-001
+4017:	MAI-NFR-SEC-001
+4018:	SRS-NFR-MAINT-001: 可維護性
+4022:	SRS-NFR-MAINT-001
+4030:	RS-B SR-MAINT-*
+4034:	MAI-NFR-MAINT-001
+4058:	MAI-CTRL-TRIO-001
+4075:	檔案存在；最小欄位齊備；每個hook可對應到MAI/RTM的條目；hook指向之工件hash可在manifest追溯
+4083:	MAI-CTRL-TRIO-002
+4097:	每筆evidence_ref具備可定位資訊（title/source/date/locator/hash或等價）；且能對應到RTM/MAI/CR_OPEN條目
+4105:	MAI-CTRL-TRIO-003
+4127:	MAI-CTRL-TRIO-004
+4140:│  狀態：全部CR_OPEN，P1不升格                                       │
+4146:│  狀態：CR_OPEN或P2 Flag                                           │
+4173:	Tier-1 模式/能力旗標（CR_OPEN，P1不升格）：
+4183:	CR_OPEN
+4188:	CR_OPEN
+4193:	CR_OPEN
+4194:	Tier-2 交易域限制旗標（CR_OPEN/P2 Flag）：
+4204:	CR_OPEN
+4209:	CR_OPEN
+4235:	MAI-FLAG-GOV-001
+4254:	MAI-FLAG-GOV-002
+4273:	MAI-FLAG-GOV-003
+4286:      "status": "ACTIVE|CR_OPEN|P2_FLAG|DEPRECATED",
+4318:	MAI-CTRL-TRIO-005
+4375:	禁止高風險操作（EXECUTE_DISABLED）
+4378:	資料品質Gate失敗
+4481:	MAI-MANIFEST-001
+4507:	MAI-MANIFEST-002
+4524:	MAI-MANIFEST-003
+4525:	SRS-IR-MANIFEST-010: 外掛工件必須進入Manifest（RTM/MAI/RSB）
+4531:	所有外掛驗收關鍵工件（至少含RTM-A/RTM-B/MAI/RSB）MUST以output_artifacts條目記錄於release_bundle_manifest.json（含artifact_id/file_path/hash）；缺任一者MUSTFail-Closed
+4541:	MAI-MANIFEST-010
+4555:	APPX-MAI
+4584:	MAI-XQ-001
+4601:	MAI-XS-001
+4618:	MAI-XSAT-001
+4619:	SRS-IR-XQ-002: HITL Handoff Package
+4625:	進入XQ執行前MUST產出HITL交接包（hitl_handoff.json）
+4633:	GATE-HITL
+4635:	MAI-XQ-002
+4657:	MAI-EXT-001
+4674:	MAI-EXT-002
+4691:	MAI-EXT-003
+4708:	MAI-EXT-004
+4730:	MAI-RSB-INDEX-001
+4793:	HITL/操盤
+4908:§6.3 ICD Token Existence Gate
+4930:SRS-GOV-CAND-001: Candidate轉CR_OPEN
+4936:	所有CandidateMUST轉為CR_OPEN條文+Fail-Closed Gate
+4951:	CR_OPEN Normative區塊嚴禁數值門檻
+4971:	每條Candidate-derived CR_OPENMUST至少2筆Evidence
+5070:	每層有獨立Gate與驗收標準；sem3_pipeline_test.json Pass
+5080:	MAI-HYP-H1-001
+5101:	MAI-HYP-H2-001
+5122:	MAI-HYP-H3-001
+5141:	MAI-HYP-H4-001
+5164:	MAI-HYP-H5-001
+5183:	MAI-HYP-H6-001
+5202:	MAI-HYP-H7-001
+5223:	MAI-HYP-H8-001
+5229:	Gate
+5285:	Gate
+5288:	MAI-SEC-001
+5295:	CR_OPEN（加密方式待定）
+5296:	Gate
+5299:	MAI-SEC-002
+5311:	Gate
+5314:	MAI-COMP-001
+5320:	Gate
+5323:	MAI-COMP-002
+5334:	Gate
+5337:	MAI-PRIV-001
+5374:	見§2.2各MAI
+5415:	見§7.4各MAI
+5432:	MAI-ICRU-001
+5441:	MAI-ICRU-002
+5443:* EQA100整合（CR_OPEN）
+5450:	MAI-ICRU-003
+5452:* TVE Gate強化
+5453:* HITL流程優化
+5460:	MAI-ICRU-004
+5464:§10 Master Acceptance Index（MAI）
+5466:§10.1 MAI 結構說明
+5467:[ANCHOR:SRS-V700-MAI-STRUCTURE]
+5468:MAI為本SRS的驗收工件索引，每條需求對應一個acceptance_hook。
+5469:MAI欄位結構：
+5473:	MAI唯一識別碼
+5483:	關聯Gate
+5488:[ANCHOR:SRS-V700-MAI-FR]
+5489:核心FR驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-FR）：
+5494:	MAI-SF-001
+5498:	MAI-P0TASK-001
+5502:	MAI-JOBCARD-001
+5506:	MAI-WRC-001
+5510:	MAI-CORPUS-001
+5514:	MAI-DISTILL-001
+5518:	MAI-RAG-001
+5522:	MAI-RAG-002
+5526:	MAI-METHOD-001
+5530:	MAI-METHOD-002
+5534:	MAI-BACKTEST-001
+5538:	MAI-BACKTEST-002
+5542:	MAI-TA-001
+5546:	MAI-SELECT-001
+5550:	MAI-WATCH-001
+5554:	MAI-HITL-001
+5555:	SRS-FR-HITL-001
+5558:	MAI-HITL-DP-001
+5559:	SRS-FR-HITL-DP-001
+5562:	MAI-HITL-DP-002
+5563:	SRS-FR-HITL-DP-002
+5566:	MAI-EXECUTE-001
+5570:	MAI-EXECUTE-002
+5574:	MAI-PERFORM-001
+5578:	MAI-CAUI-001
+5582:	MAI-CAUI-002
+5586:	MAI-CAUI-003
+5590:	MAI-UI-001
+5594:	MAI-UI-002
+5598:	MAI-UI-003
+5602:	MAI-ICT-001
+5606:	MAI-ICT-002
+5610:	MAI-ICT-003
+5614:	MAI-ICT-HP-001
+5618:	MAI-TVE-001
+5622:	MAI-SEM3-001
+5626:	MAI-TWMS-001
+5630:	MAI-TWMS-002
+5634:	MAI-TWMS-003
+5642:[ANCHOR:SRS-V700-MAI-NFR]
+5643:核心NFR驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-NFR）：
+5648:	MAI-LAT-001
+5652:	MAI-AVAIL-001
+5656:	MAI-AUDIT-001
+5660:	MAI-EQA-001
+5664:	MAI-WIN-001
+5668:	MAI-SHARP-001
+5672:	MAI-EXEC-001
+5676:	MAI-SQM-S6-001
+5680:	MAI-DD-001
+5684:	MAI-PBO-001
+5688:	MAI-LLM-001
+5692:	MAI-LLM-002
+5696:	MAI-LLM-003
+5700:	MAI-LLM-004
+5704:	MAI-RC-001
+5708:	MAI-RC-002
+5712:	MAI-RC-003
+5716:	MAI-RC-004
+5720:	MAI-RC-005
+5724:	MAI-THR-001
+5728:	MAI-THR-002
+5732:	MAI-NFR-DATA-001
+5736:	MAI-NFR-REPLAY-001
+5740:	MAI-NFR-OBS-001
+5744:	MAI-NFR-SEC-001
+5748:	MAI-NFR-MAINT-001
+5749:	SRS-NFR-MAINT-001
+5756:[ANCHOR:SRS-V700-MAI-IR]
+5757:核心IR驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-IR）：
+5762:	MAI-CTRL-001
+5766:	MAI-CTRL-002
+5770:	MAI-CTRL-003
+5774:	MAI-DEGRADE-001
+5778:	MAI-KILL-001
+5782:	MAI-MANIFEST-001
+5786:	MAI-MANIFEST-002
+5790:	MAI-MANIFEST-003
+5794:	MAI-XQ-001
+5798:	MAI-XS-001
+5802:	MAI-XSAT-001
+5806:	MAI-XQ-002
+5810:	MAI-EXT-001
+5814:	MAI-EXT-002
+5818:	MAI-EXT-003
+5822:	MAI-EXT-004
+5826:	MAI-ICD-001
+5834:[ANCHOR:SRS-V700-MAI-GOV]
+5835:核心GOV驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-GOV）：
+5840:	MAI-GOV-001
+5844:	MAI-GOV-002
+5848:	MAI-GOV-003
+5852:	MAI-GOV-004
+5856:	MAI-GOV-005
+5860:	MAI-HYP-H1-001
+5864:	MAI-HYP-H2-001
+5868:	MAI-HYP-H3-001
+5872:	MAI-HYP-H4-001
+5876:	MAI-HYP-H5-001
+5880:	MAI-HYP-H6-001
+5884:	MAI-HYP-H7-001
+5888:	MAI-HYP-H8-001
+5892:	MAI-SEC-001
+5896:	MAI-COMP-001
+5900:	MAI-COMP-002
+5904:	MAI-PRIV-001
+5911:§10.6 CR_OPEN 驗收索引
+5912:[ANCHOR:SRS-V700-MAI-CROPEN]
+5913:本節列出所有Candidate-derived CR_OPEN的驗收鉤子：
+5919:	MAI-LAT-001
+5923:	CR_OPEN
+5924:	MAI-EQA-001
+5928:	CR_OPEN
+5929:	MAI-WIN-001
+5933:	CR_OPEN
+5934:	MAI-DD-001
+5938:	CR_OPEN
+5939:	MAI-SHARP-001
+5943:	CR_OPEN
+5944:	MAI-EXEC-001
+5946:	EXECUTE_DISABLED
+5948:	CR_OPEN
+5949:	MAI-TVE-001
+5953:	CR_OPEN
+5954:	MAI-ICT-002
+5958:	CR_OPEN
+5959:	MAI-SIZE-001
+5963:	CR_OPEN
+5964:	MAI-ICT-HP-001
+5968:	CR_OPEN
+5969:	MAI-PBO-001
+5973:	CR_OPEN
+5974:	MAI-RC-002
+5978:	CR_OPEN
+5979:	MAI-SQM-S6-001
+5983:	CR_OPEN
+5984:	MAI-NFR-PERF-001
+5988:	CR_OPEN
+5989:	MAI-CTRL-006
+5993:	CR_OPEN
+5997:§10.7 MAI 外掛驗證機制
+5998:[ANCHOR:SRS-V700-MAI-VERIFY]
+5999:SRS-MAI-SYNC-001: MAI外掛同步驗證（Fail-Closed）
+6003:	SRS-MAI-SYNC-001
+6005:	若MAI以外掛承載，系統MUST對MAI外掛執行同步驗證：外掛存在、hash記錄於Manifest、且與正文宣告的統計一致；任一不一致MUSTFail-Closed
+6007:	MAI外掛存在；manifest含該工件hash；正文MAI覆蓋統計與外掛一致
+6011:	升級方案v3（MAI-SYNC-REQUIRED）
+6015:	MAI-MAI-SYNC-001
+6016:	SRS-MAI-SYNC-002: MAI命名一致性（避免"你說有、我找不到"）
+6020:	SRS-MAI-SYNC-002
+6022:	系統MUST使用單一命名規則引用MAI外掛（檔名、artifact_id、schema_id）；任一不一致MUST視為不同工件並Fail-Closed
+6024:	SRS/Manifest/validation_hook的MAI引用三者一致
+6032:	MAI-MAI-SYNC-002
+6033:	SRS-MAI-VERIFY-001: MAI同步驗證
+6037:	SRS-MAI-VERIFY-001
+6039:	MAI與SRS需求條文MUST保持同步
+6041:	MAI條目數 = SRS需求條文數；正文統計與外掛一致
+6047:	MAI-MAI-VERIFY-001
+6048:	MAI驗證統計：
+6049:* 正文MAI條目宣告：見§10.2~§10.6
+6050:* 外掛MAI條目數：需與正文一致
+6051:* 外掛檔案：APPX-BUNDLE-CORE-A6.md [APPX-MAI]
+6053:完整MAI見外掛合冊：APPX-BUNDLE-CORE-A6.md [APPX-MAI]
+6081:	Gate
+6084:	MAI-ICD-001
+6097:	SRSMUST產出EvidencePack Manifest工件，整合所有CR_OPEN條文的Evidence
+6277:* 每條CR_OPEN皆≥2筆Evidence ✅
+6296:1. 最小配額：每條CR_OPENMUST有≥2筆Evidence
+6322:	CR_OPEN
+6360:	覆蓋率： 100%（含CR_OPEN）
+6457:	MAI-RTM-A-001
+6464:	RTM-AMUST提供每條REQ21的disposition（Covered/Route-Out/CR_OPEN），且每條MUST能回指SRS anchor或Route-Out指標
+6470:	升級藍圖（假覆蓋風險：Missing=0；CR_OPEN必BLOCK_RELEASE）
+6474:	MAI-RTM-A-002
+6500:	CR_OPEN
+6540:	CR_OPEN
+6588:	CR_OPEN
+6633:	CR_OPEN
+6685:	MAI-RTM-B-001
+6702:	MAI-RTM-B-002
+6707:* CR_OPEN：32
+6775:* Gate: RTM-BUNDLE-SYNC（BLOCK_RELEASE on mismatch）
+6807:	Candidate CR_OPEN
+6836:	CR_OPEN
+6844:	MAI
+6890:	驗證失敗時阻斷發布的Gate政策
+6894:	僅觀測記錄不阻斷的Gate政策
+6896:	EXECUTE_DISABLED
+6898:	停用相關功能的Gate政策
+6941:Gate: GATE-RL-003（Conflict Ledger驗證）
+6957:	CR_OPEN
+6958:	延遲閾值從硬值改為CR_OPEN
+6964:	CR_OPEN
+6965:	勝率閾值從硬值改為CR_OPEN
+6983:1. 所有Candidate→CR_OPEN轉換必須登錄
+6986:Gate: GATE-RL-004（Drift Ledger同步）
+6990:§13.4 CR_OPEN 登錄簿（CR_OPEN Register）
+7000:	正文中不得以"Candidate/待定/先這樣"形式保留未驗證門檻或規則；所有此類項MUST轉為CR_OPEN條文並綁定Fail-Closed gate_policy
+7002:	正文Candidate字樣0命中（允許僅存在於非規範ledger註記）；每條CR_OPEN具gate_policy
+7010:	MAI-CAND-001
+7011:	SRS-CAND-GOV-002: CR_OPEN規範區禁數值/比較符號
+7017:	任何CR_OPEN的規範性區塊MUST NOT包含數值門檻、百分比、或比較符號；若需要數值，僅可置於non-normative的Evidence/Rationale區塊並附來源
+7019:	CR_OPEN規範區數值/比較符號0命中
+7027:	MAI-CAND-002
+7028:	SRS-CR-OPEN-REG-001: CR_OPEN Register必備欄位（機器可稽核）
+7034:	CR_OPEN RegisterMUST為每條CR_OPEN記錄：cr_open_id/srs_anchor/gate_policy/evidence_refs/validation_plan/route_out_ptr；任一缺失MUSTFail-Closed
+7040:	升級藍圖（CR_OPEN必BLOCK_RELEASE；Fail-Closed不得被掏空）
+7044:	MAI-CROPEN-001
+7045:	CR_OPEN登錄表
+7090:	EXECUTE_DISABLED
+7174:	CR_OPEN統計：
+7178:* EXECUTE_DISABLED：1
+7179:Gate: GATE-RL-005（CR_OPEN Register同步）
+7230:	法遵確認後解除Gate
+7237:Gate: GAP-RISK-SYNC
+7255:	升級藍圖（假覆蓋風險：Missing=0；CR_OPEN必阻斷）
+7259:	MAI-ISSUE-001
+7343:	Gate: ISSUE-CLOSURE-COMPLETE
+7391:	Gate體系
+7419:	15條全轉CR_OPEN
+7456:	HITL Gate
+7490:Gate: ANTI-REGRESSION-PASS
+7606:	APPX-J MAI外掛
+7610:	MAI驗證
+7612:	Gate Dictionary
+7616:	Gate定義
+7630:	LAT-001 CR_OPEN
+7636:	EQA-001 CR_OPEN
+7642:	WIN-001 CR_OPEN
+7648:	SHARPE-001 CR_OPEN
+7654:	EXEC-001 CR_OPEN
+7660:	SLIP-001 CR_OPEN
+7666:	DD-001 CR_OPEN
+7672:	PBO-001 CR_OPEN
+7678:	SIZE-001 CR_OPEN
+7684:	PERF-001 CR_OPEN
+7690:	TVE-001 CR_OPEN
+7696:	PLAYWRIGHT CR_OPEN
+7702:	COVER-001 CR_OPEN
+7708:	RECOVER-001 CR_OPEN
+7714:	CONSIST-001 CR_OPEN
+7720:	CR_OPEN Register
+7741:Gate: PATCH-COVERAGE-COMPLETE
+7766:	Candidate全量轉換為CR_OPEN
+7779:Gate: LEGACY-CROSSWALK-SYNC
+7803:	MAI-EVID-001
+7810:	外部搜尋結果僅可作Evidence；不得單獨成為MUST/SHALL依據；若缺上游Norm支撐則必須CR_OPEN
+7820:	MAI-EVID-002
+7839:* 每條CR_OPEN MUST 有≥2筆Evidence（P0_OR_LEGACY≥1 + EXTERNAL≥1）
+7864:* 所有數值建議僅出現在各CR_OPEN條文的Rationale區塊（non-normative）
+7866:本帳冊記錄所有Candidate條文向CR_OPEN的正式遷移，依《Candidate處置規則_v2》執行。
+7906:	EXECUTE_DISABLED
+7985:1. 所有Candidate MUST轉換為CR_OPEN
+7986:2. CR_OPEN normative block FORBIDDEN包含數值閾值（<, >, <=, >=, Pxx）
+7988:4. 每條CR_OPEN MUST有≥2筆Evidence（P0_OR_LEGACY≥1 + EXTERNAL≥1）
+7989:5. Gate政策必須與風險等級對應（BLOCK_RELEASE/RADAR_ONLY/EXECUTE_DISABLED）
+7990:Gate: APPX-I-MIGRATION-COMPLETE
+8005:* Candidate遷移：15條 CR_OPEN ✅
+8007:* MAI覆蓋：全量索引 ✅
+8011:Gate狀態：
+8012:* GATE-RL-001（MAI完備）：✅ PASS
+8016:* GATE-RL-005（CR_OPEN Register）：✅ PASS
