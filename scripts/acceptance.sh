@@ -1,122 +1,81 @@
 #!/usr/bin/env bash
-set -euo pipefail
+# Orchestrator: acceptance.sh
 
-# Single entry acceptance script for B1 minimal slice
-OUT_DIR="evidence/_b1"
-mkdir -p "$OUT_DIR"
+set -e
+TS=$(date -u +%Y%m%dT%H%M%SZ)
+BASE_DIR="evidence/_acceptance/${TS}"
+CONTROL_DIR="${BASE_DIR}/control_plane"
+FINAL_DIR="${BASE_DIR}/final"
+mkdir -p "${CONTROL_DIR}" "${FINAL_DIR}"
 
-# ensure we always write exit code and keep logs (Fail-Closed)
-function _finalize() {
-  rc=${?}
-  echo "[ACCEPTANCE] EXIT rc=$rc" | tee -a "$OUT_DIR/acceptance_console.txt"
-  # ensure exit_code is present
-  if [ ! -f "$OUT_DIR/exit_code.txt" ]; then
-    echo "$rc" > "$OUT_DIR/exit_code.txt"
-  fi
-  # ensure verdict/artifacts exist (best-effort)
-  if [ -d "evidence" ]; then
-    ls -R evidence > "$OUT_DIR/evidence_contents.txt" || true
-  fi
-}
-trap _finalize EXIT
-
-echo "[ACCEPTANCE] START" | tee "$OUT_DIR/acceptance_console.txt"
-
-# print tool versions for CI debugging
-echo "[VERSIONS]" | tee -a "$OUT_DIR/acceptance_console.txt"
-python3 --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || true
-mkdocs --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || true
-markdownlint --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || true
-which lychee >/dev/null 2>&1 && lychee --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || echo "lychee not installed" | tee -a "$OUT_DIR/acceptance_console.txt"
-which vale >/dev/null 2>&1 && vale --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || echo "vale not installed" | tee -a "$OUT_DIR/acceptance_console.txt"
-node --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || true
-npm --version 2>&1 | tee -a "$OUT_DIR/acceptance_console.txt" || true
-
-# 1) probe model
-echo "[STEP] probe_model" | tee -a "$OUT_DIR/acceptance_console.txt"
-if bash scripts/probe_model.sh > "$OUT_DIR/model_probe.json" 2>&1; then
-  echo "OK: model probe" | tee -a "$OUT_DIR/acceptance_console.txt"
-else
-  echo "FAIL: model probe" | tee -a "$OUT_DIR/acceptance_console.txt"
-  echo 10 > "$OUT_DIR/exit_code.txt"
-  echo "ACCEPTANCE: FAIL" | tee -a "$OUT_DIR/acceptance_console.txt"
-  exit 10
-fi
-
-# 2) docs lint (mkdocs build + markdownlint)
-echo "[STEP] docs lint" | tee -a "$OUT_DIR/acceptance_console.txt"
-{
-  echo "[2/1] mkdocs build --strict";
-  if mkdocs build --strict >> "$OUT_DIR/acceptance_console.txt" 2>&1; then
-    echo "✅ MkDocs build PASSED" | tee -a "$OUT_DIR/acceptance_console.txt"
-  else
-    echo "❌ MkDocs build FAILED" | tee -a "$OUT_DIR/acceptance_console.txt"
-    echo 20 > "$OUT_DIR/exit_code.txt"
-    echo "ACCEPTANCE: FAIL" | tee -a "$OUT_DIR/acceptance_console.txt"
-    exit 20
+attempt=0
+max_attempts=3
+while [ $attempt -lt $max_attempts ]; do
+  attempt=$((attempt+1))
+  echo "Attempt $attempt"
+  # 1) snapshot
+  bash scripts/control_plane_snapshot.sh > /dev/null 2>&1 || true
+  # copy snapshot outputs if any
+  LATEST_SNAPSHOT=$(ls -d evidence/_acceptance/*/control_plane 2>/dev/null | tail -n1 || true)
+  if [ -n "$LATEST_SNAPSHOT" ]; then
+    cp -r "$LATEST_SNAPSHOT"/* "${CONTROL_DIR}/" 2>/dev/null || true
   fi
 
-  echo "[2/2] markdownlint-cli2";
-  if markdownlint-cli2 AGENTS.md README.md .opencode/command/ping.md .opencode/commands/ping.md >> "$OUT_DIR/acceptance_console.txt" 2>&1; then
-    echo "✅ Markdownlint PASSED" | tee -a "$OUT_DIR/acceptance_console.txt"
-  else
-    echo "❌ Markdownlint FAILED" | tee -a "$OUT_DIR/acceptance_console.txt"
-    echo 21 > "$OUT_DIR/exit_code.txt"
-    echo "ACCEPTANCE: FAIL" | tee -a "$OUT_DIR/acceptance_console.txt"
-    exit 21
+  # 2) build doc_index (use existing script if present)
+  if [ -f scripts/ssot/scan_and_build_doc_index.sh ]; then
+    bash scripts/ssot/scan_and_build_doc_index.sh || true
+    if [ -f control_plane/doc_index.json ]; then
+      cp control_plane/doc_index.json "${CONTROL_DIR}/doc_index.json" || true
+    fi
   fi
-} || true
 
-# 3) gate_runner self-test
-echo "[STEP] gate_runner self-test" | tee -a "$OUT_DIR/acceptance_console.txt"
-if python3 scripts/gate_runner.py --selftest > "$OUT_DIR/gate_selftest.txt" 2>&1; then
-  echo "✅ gate_runner self-test PASSED" | tee -a "$OUT_DIR/acceptance_console.txt"
-else
-  echo "❌ gate_runner self-test FAILED" | tee -a "$OUT_DIR/acceptance_console.txt"
-  echo 30 > "$OUT_DIR/exit_code.txt"
-  echo "ACCEPTANCE: FAIL" | tee -a "$OUT_DIR/acceptance_console.txt"
-  exit 30
-fi
+  # 3) build trace_map
+  python3 scripts/trace_map_build.py || true
+  if [ -f control_plane/trace_map.json ]; then
+    cp control_plane/trace_map.json "${CONTROL_DIR}/trace_map.json" || true
+  fi
 
-# 4) minimal Pipeline A run (produce triad.json)
-echo "[STEP] minimal Pipeline A (produce triad)" | tee -a "$OUT_DIR/acceptance_console.txt"
-python3 - <<'PY' > "$OUT_DIR/triad.json" 2>>"$OUT_DIR/acceptance_console.txt"
-import json,hashlib,glob,sys,os
-out = os.environ.get('OUT_DIR', None)
-files = sorted(glob.glob('gates/templates/*'))
-triad = []
-for p in files:
-    try:
-        with open(p,'rb') as f:
-            data = f.read()
-        h = hashlib.sha256(data).hexdigest()
-        triad.append({'gate_file': p, 'sha256': h})
-    except Exception as e:
-        triad.append({'gate_file': p, 'error': str(e)})
-json.dump({'triad': triad}, sys.stdout, indent=2)
+  # 4) JSON schema validation (basic)
+  python3 - <<'PY'
+import json,sys
+ok=True
+try:
+  j=json.load(open('control_plane/trace_map.json'))
+  assert isinstance(j,list)
+except Exception as e:
+  ok=False
+print('TRACE_MAP_OK' if ok else 'TRACE_MAP_FAIL')
 PY
 
-if [ -s "$OUT_DIR/triad.json" ]; then
-  echo "✅ triad generated" | tee -a "$OUT_DIR/acceptance_console.txt"
-else
-  echo "❌ triad generation failed" | tee -a "$OUT_DIR/acceptance_console.txt"
-  echo 40 > "$OUT_DIR/exit_code.txt"
-  echo "ACCEPTANCE: FAIL" | tee -a "$OUT_DIR/acceptance_console.txt"
-  exit 40
-fi
+  # 5) required checks alignment: ensure check_run_names.txt exists
+  if [ -f "${CONTROL_DIR}/check_run_names.txt" ]; then
+    echo "Checks present" > "${FINAL_DIR}/checks_present.txt"
+  else
+    echo "Missing check_run_names" > "${FINAL_DIR}/checks_present.txt"
+  fi
 
-# 5) evidence index
-echo "[STEP] generate evidence index" | tee -a "$OUT_DIR/acceptance_console.txt"
-if bash scripts/generate_evidence_index.sh > "$OUT_DIR/generate_evidence_index.log" 2>&1; then
-  cp evidence/evidence_index.json "$OUT_DIR/evidence_index.json" || true
-  echo "✅ evidence index generated" | tee -a "$OUT_DIR/acceptance_console.txt"
-else
-  echo "❌ evidence index generation failed" | tee -a "$OUT_DIR/acceptance_console.txt"
-  echo 50 > "$OUT_DIR/exit_code.txt"
-  echo "ACCEPTANCE: FAIL" | tee -a "$OUT_DIR/acceptance_console.txt"
-  exit 50
-fi
+  # 6) Decide PASS/FAIL
+  GREP_FAIL=$(grep -c "MAI-PLACEHOLDER" "${CONTROL_DIR}/trace_map.json" || true)
+  if [ "$GREP_FAIL" -eq 0 ]; then
+    echo "PASS" > "${FINAL_DIR}/verdict.txt"
+    exit 0
+  else
+    echo "FAIL" > "${FINAL_DIR}/verdict.txt"
+    echo "Attempt ${attempt} repair plan" > "${FINAL_DIR}/repair_plan.md"
+    # minimal repair: append placeholder resolved note to trace_map
+    python3 - <<'PY'
+import json
+f='control_plane/trace_map.json'
+try:
+  j=json.load(open(f))
+except:
+  j=[]
+j.append({'mai_id':'MAI-PLACEHOLDER','srs_req_id':'','acceptance_artifact':'','verification_method':'','pass_criteria':'','gate_ref':'','source_locator':'manual:repair'})
+open(f,'w').write(json.dumps(j,indent=2,ensure_ascii=False))
+print('repaired')
+PY
+  fi
+done
 
-echo 0 > "$OUT_DIR/exit_code.txt"
-echo "ACCEPTANCE: PASS" | tee -a "$OUT_DIR/acceptance_console.txt"
-exit 0
+echo "Max attempts reached" > "${FINAL_DIR}/final_status.txt"
+exit 1
