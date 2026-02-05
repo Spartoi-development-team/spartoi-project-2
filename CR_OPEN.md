@@ -8,3 +8,7 @@ Use this file to record MAI items where the SSOT is ambiguous, contradictory, or
 
 Example:
 - MAI-FOO-123 - 2026-02-05 - Missing pass_criteria in SRS; defer to SRS owner. SSOT anchor: Spartoi｜P1_SRS_v7.0.0.md (sha256=49005...)
+
+Entries:
+- MAI-FR - 2026-02-05 - Functional requirements missing explicit pass_criteria in SSOT; defer to SRS owner. SSOT anchor: Spartoi｜P1_SRS_v7.0.0.md (sha256=NULL)
+- MAI-NFR - 2026-02-05 - NFR acceptance mapping missing in SSOT; defer to SRS owner. SSOT anchor: Spartoi｜P1_SRS_v7.0.0.md (sha256=NULL)
