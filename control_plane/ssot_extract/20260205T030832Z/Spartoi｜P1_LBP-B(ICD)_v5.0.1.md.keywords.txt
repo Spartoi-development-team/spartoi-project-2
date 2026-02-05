@@ -1,0 +1,83 @@
+144:使用時無須回查前版。所有介面契約、Schema、事件日誌、控制面合約、降級矩陣、Gate 分層、Flag Tier 皆以本版為準。
+216:11. SCHEMA-AGENT-SESSION-V1（CR_OPEN）
+217:12. SCHEMA-T1-OVERNIGHT-V1（CR_OPEN）
+281:* ❌ RTM/MAI 全文 → SRS v7.0.0
+293:* ❌ 任何 Schema 外自創欄位（違反即 CR_OPEN + BLOCK_RELEASE）
+294:* ❌ 新增 Gate/DocType/子系統（需上游授權）
+310:8. 查 §8 CR_OPEN：理解缺口與阻斷
+334:	Gate 分層契約
+346:	CR_OPEN 登錄
+394:6. Gate-Layer-Separation：Gate Policy/Check 分離（ARCH-GATE-LAYER）
+396:8. SF-11-Is-Gate：SF-11 是 HITL Gate，不是子系統
+405:標記: CR_OPEN / 需要上游裁決
+406:阻斷策略: BLOCK_RELEASE / RADAR_ONLY / EXECUTE_DISABLED
+446:	Conflict Ledger & CR_OPEN Register
+544:	Gate Policy 契約
+547:	Gate Check 契約
+568:	Agent Session (CR_OPEN)
+571:	T1 Overnight (CR_OPEN)
+580:	衝突與 CR_OPEN
+645:	MAI 驗收
+647:	SRS-V700-MAI-*
+684:	BLOCK_RELEASE + CR_OPEN
+742:	Gate Policy 裁決
+750:	Gate Check 檢核
+774:	SGF Gate
+782:	MSC Gate
+790:	TVE Gate
+818:	Preflight / Evidence Gate
+873:	HITL Decision Gate
+874:	HITL (非子系統)
+1051:	HITL(SF-11)
+1054:	["SCHEMA-EVENT-WATCH-ALERT-v1", "SCHEMA-EVENT-HITL-DECISION-v1"]
+1057:	HITL(SF-11)
+1061:	["SCHEMA-EVENT-HITL-DECISION-v1", "SCHEMA-MSG-ORDER-v1"]
+1093:	需走 CR_OPEN → 需求審查 → BLOCK_RELEASE
+1113:	backward / NEW / CR_OPEN
+1126:	CR_OPEN
+1162:  "status": "enum(ACTIVE|CR_OPEN|P2_FLAG|DEPRECATED)"
+1181:	degrade_matrix 不可定位 → EXECUTE_DISABLED
+1236:5.2 Gate 分層契約
+1237:CONTRACT-GATE-POLICY-001: Gate Policy 契約
+1260:  "gate_policy_type": "enum(BLOCK_RELEASE|RADAR_ONLY|EXECUTE_DISABLED) (required)",
+1268:CONTRACT-GATE-CHECK-001: Gate Check 契約
+1404:	HITL-Safeguards
+1486:	Session 失效 → EXECUTE_DISABLED
+1540:5.8 Agent Session 契約（CR_OPEN）
+1550:	CR_OPEN
+1552:	EXECUTE_DISABLED
+1556:	Schema 未定義 → EXECUTE_DISABLED
+1564:	MAI-AGENT-SCHEMA-001
+1568:5.9 T1 Overnight 契約（CR_OPEN）
+1578:	CR_OPEN
+1592:	MAI-T1-SCHEMA-001
+1654:	⚠️ CR_OPEN
+1659:	⚠️ CR_OPEN
+1719:	MAI 驗收鉤子
+1720:	MAI-{category}-{id}
+1723:	Gate 引用
+1731:                     2. 驗收鉤子（MAI/Gate）
+1733:                        * validation_hook 指向 MAI 條目
+1734:                        * gate_ref 指向 Gate ID
+1742:§8 Conflict Ledger & CR_OPEN Register
+1781:	8.2 CR_OPEN Register（ICD 層級）
+1800:	EXECUTE_DISABLED
+1801:	MAI-AGENT-SCHEMA-001
+1806:	MAI-T1-SCHEMA-001
+1811:	MAI-MARKETPROFILE-001
+1816:	MAI-SEM3-THRESHOLD-001
+1821:	MAI-ARBITER-001
+1826:	MAI-SQM7-SCOPE-001
+1894:	新增 Gate Policy 契約
+1898:	新增 Gate Check 契約
+1985:	新增欄位 = 0 或有 CR_OPEN
+1993:	SF-11 = HITL Gate
+2000:	Gate 分層一致性
+2024:	CR_OPEN 全部登錄
+2096:	依藍圖 v1.1.0 全量升級：15 子系統、Gate 分層、Flag Tier、SQM-7、JobCard、XDOC
+2160:	SGF/MSC/TVE 三 Gate 獨立契約
+2255:	CONTRACT-SF10-001, CONTRACT-HITL-001
+2256:	SCHEMA-WATCH-SIGNAL, SCHEMA-HITL-HANDOFF
+2258:	HITL 交接包
+2396:                           9. ✅ Gate 分層架構：新增 Policy/Check 分離（2 契約）
+2403:                           16. ⚠️ Agent/T1 Schema：CR_OPEN 待上游定義

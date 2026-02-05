@@ -1,0 +1,17 @@
+5:**主要結論一句話：你選的方案 B（單一流水線 \+ CA\_ID 參數化 \+ GitHub reusable workflows/composite actions）是「最短工期、最低人工」的正解；但你對「直接做完整版」的疑慮是合理的——原 SSOT 明確把高風險運行期（尤其 EXECUTE）鎖在 HITL/禁用與 P1/P2 分工邊界，所以「完整版」必須拆成：（A）全量控制面+驗收閉環落地（可宣稱完成）** \+ **（B）運行期工程化（P2+，需 Route-Out/CR\_OPEN 管控，否則等於造輪子）**。
+20:* \*\*Gate polSE / RADAR\_ONLY / EXECUTE\_DISABLED），不允許偷加第四態；而且需求條文必須同時有 gate\_policy \+ gate\_id。  
+27:* SubP1-LITE+MVP 藍圖：把交付拆成可跑薄切片，其他 Route-Out；且明確要求 HITL、安全拓撲、工具導入邊界。-GMA Lite 實作指南：主張「先跑流水線骨架」與 v0 Trinity（Control Plane Spec / Runbook / ) 研究摘要（子題發現 \+ 可驗證引文）
+43:  * 藍圖明訂「XQ 唯一下單端 \+ HITL」，禁止自動下單。  
+45:1. **完整版（控制面+驗收閉環完整）**：可宣稱完成，EXECUTE 仍可被 Kill-Switch/HITL 鎖住。  
+46:2. **完整版（含運行期工程化自動交易）**：直接違反你自己的硬規則（HITL/XQ 限制）或必須改憲（高風險、近乎必然造輪子）。
+50:* Grkflow 也支援 `merge_group` 事件，否則 required check 不會被回報，併入會失敗。([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue?utm_source=chatgpt.com))  
+75:                   │   \- Gate policy 三態 / P1-P2 邊界 / HITL │  
+99:                   │ GateRunner \+ Index│  
+136:* 所有 workflow trigger 必須同時包含：`pull_request`、`push`、**`merge_group`**（配合 merge queue）。([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue?utm_source=chatgpt.com))cks 建議固定成少數穩定名稱（例如 `docops-gatekit` / `ca-pipeline` / `security-scorecard`），減少 rulesets 漂移。([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/available-rules-for-rulesets?utm_source=chatgpt.com))  
+156:**完整版＝控制面（P2）工程化 \+ 全 CA 工作站可跑 \+ 全驗收閉環 PASS \+ 高風險 EXECUTE 仍受 HITL/kill-switch/政策鎖定**。  
+160:* Gate policy 三態（可把未關單/未達門檻留在 RADAR\_ONLY/EXECUTE\_DISABLED）  
+165:「完整版＝自動下單、自動資金操作」：這直接撞上你藍圖硬規則（XQ 唯一下單端 \+ HITL）。除非你願意改憲法，否則不成立。
+175:* 緩解：workflow 加 `merge_group` 事件([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue?utm_source=chatgpt.com))  
+196:* 緩解：把 EXECUTE 鎖在 HITL；只輸出「指令文件/證據」給 XQ 手動執行  
+231:* workflows 支援 `pull_request` \+ `push` \+ `merge_group`([GitHub Docs](https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue?utm_source=chatgpt.com))  
+241:* 所有 EXECUTE 路徑默認 HITL / EXECUTE\_DISABLED，不得自動下單  

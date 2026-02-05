@@ -1,0 +1,264 @@
+== Spartoi-OMOC 工程實作指南.md ==
+1:# **Spartoi-OMOC 工程實作指南**
+5:## **目錄（TOC)**
+7:## **1\. 核心戰略與架構定義 (Strategy & Architecture)**
+11:### **1.1 核心價值與方案定義**
+23:### **1.2 權威堆疊與 SSOT (Authority Stack)**
+29:### **1.3 關鍵約束與紅線 (Constraints)**
+36:## **2\. 控制平面實作 (Control Plane Implementation)**
+40:### **2.1 基礎設施與環境**
+46:### **2.2 控制面三件套 (The Trio)**
+52:### **2.3 Gate 體系 (GateKit)**
+58:## **3\. 執行平面：OMOC 引擎配置 (Execution Plane)**
+62:### **3.1 環境與運行時**
+68:### **3.2 Agent 4 線模組化 (4-Lanes)**
+75:### **3.3 技能生態 (Skill Ecosystem)**
+81:## **4\. 領域實作：15 CA 工作站 (15 CA Stations)**
+85:### **4.1 工作站標準結構**
+90:### **4.2 知識管線 (Pipeline A: SpecPack)**
+97:### **4.3 策略管線 (Pipeline B: StrategyPack)**
+102:### **4.4 執行管線 (Pipeline C: XSPack)**
+108:### **4.5 運行與治理 (Runtime & Governance)**
+117:## **5\. 自動化流水線與任務編排 (Pipeline & Orchestration)**
+121:### **5.1 核心流程 (SF Keyspace)**
+126:### **5.2 三管線協作 (Pipeline A/B/C)**
+132:### **5.3 自動化執行**
+138:## **6\. 交易領域邏輯與時序 (Trading Domain & Timeline)**
+142:### **6.1 時序硬規則 (Invariants)**
+148:### **6.2 雙模運行 (T0/T1)**
+154:### **6.3 ICT 模組與熱插拔**
+160:## **7\. 證據鏈與驗收 (Evidence & Acceptance)**
+164:### **7.1 Evidence Pack**
+170:### **7.2 驗收體系**
+176:## **8\. 運維與故障處置 (Operations & Failure Handling)**
+180:### **8.1 日常作業**
+185:### **8.2 風險防線**
+191:## **9\. 附錄與索引 (Appendices)**
+202:# 1\. 核心戰略與架構定義 (Strategy & Architecture)
+207:## **1.1 核心價值與方案定義** ---
+209:#### **1.1.1 方案 B：單一流水線與參數化 (Plan B: Single Pipeline & Parameterization)**
+223:#### **1.1.2 雙平面架構模型 (Dual Plane Model)**
+246:#### **1.1.3 完整版定義 (Definition of Done)**
+261:#### **1.1.4 關鍵約束與紅線 (Constraints)**
+273:## **1.2 權威堆疊與 SSOT (Authority Stack)**
+278:### **1.2.1 權威順位 (Authority Precedence)**
+301:### **1.2.2 雙憲法降級 (Dual Constitution Demotion)**
+323:### **1.2.3 規則引用原則 (One-Rule-One-Place)**
+345:## 1.3 關鍵約束與紅線 (Constraints)
+350:#### **1.3.1 XQ 唯一下單端 (XQ Sole Order Endpoint)**
+367:#### **1.3.2 No-Paid-LLM-API (No Paid Cloud LLM API)**
+383:#### **1.3.3 HITL 強制介入 (Human-In-The-Loop Mandatory Intervention)**
+399:#### **1.3.4 Fail-Closed (預設阻斷)**
+417:# ---
+421:## **2.1 基礎設施與環境 (Infrastructure & Environment)**
+426:### **2.1.1 GitHub Rulesets：立法與強制執行 (The Legislation)**
+430:#### **A. 核心配置與鎖定 (Target & Configuration)**
+436:#### **B. 禁止繞過策略 (No Bypass Policy)**
+441:#### **C. 核心規則清單 (Core Rules)**
+450:### **2.1.2 Merge Queue：序列化合流與併發控制 (Serialized Merging)**
+454:#### **A. 核心機制：臨時合併分支**
+459:#### **B. Workflow 觸發配置 (Fail-Closed Critical)**
+478:#### **C. 環境約束與降級 (Constraints & Fallback)**
+483:### **2.1.3 Artifact Attestations：不可篡改的來源證明 (Provenance)**
+487:#### **A. 實作工具：`attest-build-provenance`**
+492:#### **B. 驗證指令**
+500:#### **C. 私有庫限制與對策**
+505:### **2.1.4 物理分離與 Fail-Closed 架構 (Physical Separation)**
+509:#### **A. 雙平面定義**
+516:#### **B. 物理鎖定 (Physical Lock)**
+521:#### **C. 輸入信任分級 (Input Trust Tier)**
+541:## **2.2 控制面三件套 (The Trio)**
+546:### **2.2.1 Flag Registry (旗標)：分層與 SSOT 治理**
+550:#### **1\. 旗標分層架構 (Flag Tiering)**
+560:#### **2\. 核心旗標定義與安全預設 (Safe Default)**
+577:#### **3\. 治理規則 (Governance Rules)**
+584:### **2.2.2 Degrade Matrix (降級)：自動化防線與 Fail-Closed**
+588:#### **1\. 降級規則表 (Degrade Rules)**
+598:#### **2\. 降級模式定義**
+603:#### **3\. 授權與變更**
+609:### **2.2.3 Run Config Snapshot：配置快照與可回放性**
+613:#### **1\. 核心欄位契約**
+640:#### **2\. 生成與使用機制**
+646:#### **3\. Agent 模式綁定**
+652:## **2.3 Gate 體系 (GateKit)**
+657:### **2.3.1 Gate 分層架構 (Policy & Check Separation)**
+661:#### **1\. Layer 1: 裁決層 (Gate Policy)**
+671:#### **2\. Layer 2: 檢核層 (Gate Check)**
+678:### **2.3.2 8 Gate 模板 (The 8 Templates)**
+695:### **2.3.3 GateRunner (最薄執行器)**
+699:#### **1\. 執行邏輯與職責**
+707:#### **2\. 證據三件套 (Evidence Triad)**
+715:#### **3\. 工程結構**
+726:#### **4\. 異常處理 (Error Handling)**
+739:## **3\. 執行平面：OMOC 引擎配置 (Execution Plane)**
+744:## 3.1 環境與運行時 (Environment & Runtime)
+749:#### **3.1.1 OpenCode CLI 安裝與依賴 (OpenCode CLI)**
+774:#### **3.1.2 配置文件規範 (Configuration: opencode.json)**
+805:#### **3.1.3 Codespaces 固化 (Codespaces Solidification)**
+818:## **3.2 Agent 4 線模組化配置 (4-Lanes via Modes)**
+823:### **3.2.1 配置結構 (Configuration Structure)**
+834:### **3.2.2 Spec Mode (規範)**
+848:### **3.2.3 Dev Mode (實作)**
+864:### **3.2.4 Ops Mode (運維)**
+881:## **3.3 技能生態 (Skill Ecosystem)**
+886:### **3.3.1 Skilz-CLI：套件管理與供應鏈治理 (Package Management & Governance)**
+904:### **3.3.2 Spartoi MVS：最小可行技能集 (Minimum Viable Skills)**
+921:### **3.3.3 Input Trust Tier：輸入信任分級策略 (Input Trust Tier Policy)**
+935:### **3.3.4 技能結構與動態編排 (Structure & Orchestration)**
+954:## **4\. 領域實作：15 CA 工作站 (15 CA Stations)** ---
+956:## 4.1 工作站標準結構 (Station Standard Structure)
+961:#### **4.1.1 目錄規範與適配層 (Directory Protocol & Adapter Layer)**
+979:#### **4.1.2 I/O 契約與證據三件套 (I/O Contract & Evidence Trinity)**
+1001:#### **4.1.3 參數化驅動與任務清單 (Parameterization & Task Manifest)**
+1020:## **4.2 知識管線 (Pipeline A: SpecPack)**
+1026:### **4.2.1 管線架構與職責定義 (Pipeline Architecture)**
+1044:### **4.2.2 CA-WRC 工作站：教材蒐集 (Source Ingestion)**
+1068:### **4.2.3 CA-CORPUS 工作站：語料庫構建 (Knowledge Base)**
+1094:### **4.2.4 CA-DISTILL 工作站：語意蒸餾 (Semantics Extraction)**
+1118:### **4.2.5 CA-DSL 工作站：原語標準化 (Primitive Standardization)**
+1141:### **4.2.6 Evidence Pack 與驗收 (Evidence & Acceptance)**
+1162:## 4.3 策略管線 (Pipeline B: StrategyPack)
+1167:#### **4.3.1 CA-METHOD (方法制定工作站)**
+1192:#### **4.3.2 CA-BACKTEST (回測驗證工作站)**
+1215:#### **4.3.3 StrategyPack 產出與交接**
+1235:## **4.4 執行管線 (Pipeline C: XSPack)**
+1240:### **4.4.1 CA-TA (技術分析工作站)**
+1270:### **4.4.2 CA-SELECT (選股工作站)**
+1299:### **4.4.3 CA-TRANSLATE (轉譯工作站)**
+1340:## **4.5 運行與治理 (Runtime & Governance)**
+1345:### **4.5.1 CA-WATCH (盯盤工作站)**
+1364:### **4.5.2 CA-EXECUTE (操盤工作站)**
+1387:### **4.5.3 CA-PERFORM (績效工作站)**
+1404:### **4.5.4 CA-GOVERN (治理工作站)**
+1419:### **4.5.5 CA-UI (入口工作站)**
+1433:### **4.5.6 CA-COLLAB (協作工作站)**
+1450:# 5\. 自動化流水線與任務編排 (Pipeline & Orchestration)
+1456:## 5.1 核心流程 (SF Keyspace)
+1461:#### **5.1.1 SF 主鍵體系 (SF Keyspace System)**
+1505:#### **5.1.2 JobCard 架構 (JobCard Architecture)**
+1557:#### **5.1.3 專線化輸入適配 (Specialized Input Adapters)**
+1567:## 5.2 三管線協作 (Pipeline A/B/C)
+1572:#### **5.2.1 Pipeline A: SpecPack (知識管線)**
+1605:#### **5.2.2 Pipeline B: StrategyPack (策略管線)**
+1634:#### **5.2.3 Pipeline C: XSPack (執行管線)**
+1662:#### **5.2.4 自動化路由實作 (Scheme B Implementation)**
+1687:## **5.3 自動化執行 (Automated Execution)**
+1692:### **5.3.1 Orchestrator：單一流水線入口 (Single Pipeline Entrypoint)**
+1711:### **5.3.2 參數化執行：方案 B 的矩陣策略 (Parameterized Execution via Matrix)**
+1746:### **5.3.3 文檔 Delta 回填：SSOT 的自動演進 (Document Delta Write-back)**
+1762:### **5.3.4 執行邊界與限制 (Execution Boundaries & Constraints)**
+1783:# 6\. 交易領域邏輯與時序 (Trading Domain & Timeline)
+1788:## 6.1 時序硬規則 (Invariants)
+1793:#### **6.1.1 INV-TIME-001：13:10 禁新倉 (No New Positions)**
+1819:#### **6.1.2 INV-TIME-002：13:20 強制清倉 (Force Close T0)**
+1844:#### **6.1.3 INV-TIME-003：13:25-13:30 ROD-Only**
+1873:## **6.2 雙模運行 (T0/T1 Dual Mode Operation)**
+1878:### **6.2.1 T0 當沖模式 (T0\_DAYTRADE)**
+1890:### **6.2.2 T1 隔日沖模式 (T1\_SWING)**
+1903:### **6.2.3 產物隔離與路由 (Artifact Isolation & Routing)**
+1923:### **6.2.4 子系統共用與分流矩陣 (Subsystem Split Matrix)**
+1955:## 6.3 ICT 模組與熱插拔 (ICT Modules & Hot-Swap)
+1960:#### **6.3.1 雙鍵綁定機制 (Dual-Key Binding)**
+1990:#### **6.3.2 四路徑熱插拔 (4-Path Hot-Swap)**
+2012:#### **6.3.3 模組索引 (Module Indexing \#1\~\#107)**
+2049:# ---
+2056:## **7.1 Evidence Pack (證據包)**
+2061:### **7.1.1 證據三件套 (The Evidence Triad)**
+2065:#### **1\. manifest.json (執行清單)**
+2079:#### **2\. gate\_report.json (閘門報告)**
+2090:#### **3\. artifacts/ (實體產物)**
+2101:### **7.1.2 裁決機制 (Verdict Mechanism)**
+2105:#### **1\. verdict.json (第一層機械裁決)**
+2113:#### **2\. 供應鏈簽章 (Artifact Attestations)**
+2118:### **7.1.3 回放契約 (Replay Contract)**
+2122:#### **L1-Audit (可追溯)**
+2128:#### **L2-Reproduce (可重現)**
+2134:#### **L3-Replay (可重跑)**
+2140:### **7.1.4 證據落盤與目錄結構**
+2167:## **7.2 驗收體系 (Acceptance System)**
+2172:### **7.2.1 MAI (Master Acceptance Index)：主驗收索引**
+2176:#### **1\. MAI 結構定義 (Structure Definition)**
+2186:#### **2\. 驗收索引分類 (Index Categories)**
+2222:#### **3\. MAI 同步驗證機制 (Synchronization & Fail-Closed)**
+2231:### **7.2.2 RTM (Traceability Matrix)：需求追溯矩陣**
+2235:#### **1\. RTM-P0 (P0-Q\&A 日常任務映射)**
+2242:#### **2\. RTM-A (StRS+SyRS 上位需求映射)**
+2249:#### **3\. RTM-REQ21 (核心 21 項需求映射)**
+2259:#### **4\. RTM-B (RS-B 補齊需求映射)**
+2266:#### **5\. 架構層 RTM 映射 (Architecture Mapping)**
+2274:### **7.2.3 Fitness Functions (適應度函數)**
+2278:#### **1\. Fitness Catalog (核心目錄)**
+2298:#### **2\. Evidence Hook (證據掛鉤)**
+2306:#### **3\. TVE 閾值定義 (TVE Threshold Specifics)**
+2313:#### **4\. CR\_OPEN 整合**
+2326:# 8\. 運維與故障處置 (Operations & Failure Handling)
+2331:## 8.1 日常作業 (Daily Operations)
+2336:#### **8.1.1 P0 任務映射 (P0 Task Mapping)**
+2381:#### **8.1.2 每日抽驗 (Daily Spot Checks)**
+2424:## **8.2 風險防線 (Risk Defense)**
+2429:### **8.2.1 Kill Switch：緊急熔斷機制 (Emergency Stop)**
+2433:#### **1\. 核心定義與權威來源**
+2439:#### **2\. Kill Switch 矩陣 (KS-001 \~ KS-007)**
+2453:#### **3\. 事件日誌與審計 (Evidence)**
+2465:### **8.2.2 Rollback：回滾與復原策略 (Rollback Strategy)**
+2469:#### **1\. 可回滾工件規格 (Snapshot Specification)**
+2481:#### **2\. 回滾矩陣 (RB-001 \~ RB-006)**
+2494:#### **3\. 執行流程與超時控制**
+2504:### **8.2.3 CR\_OPEN 管理：缺口與風險登記 (Gap & Risk Register)**
+2508:#### **1\. Candidate 遷移規則 (Governance Rule)**
+2520:#### **2\. Fail-Closed 默認行為**
+2530:#### **3\. CR\_OPEN 登記範例 (Evidence-Backed)**
+2548:#### **4\. 審計與關單 (Audit & Closure)**
+2555:### **8.2.4 章節驗收標準 (Acceptance Criteria)**
+2566:# **APPX-A. Crosswalk (Legacy & Mapping)**
+2571:### **A.1 目的與治理規約 (Purpose & Governance)**
+2577:### **A.2 Legacy Token Set (遺產符號集)**
+2593:### **A.3 流程主鍵映射 (Process Key Mapping)**
+2614:### **A.4 子系統映射 (Subsystem Mapping)**
+2640:### **A.5 ICT 模組註冊表 (ICT Module Registry 1\~107)**
+2763:### **A.6 驗證與同步策略 (Validation & Sync Policy)**
+2782:# **APPX-B. Conflict Ledger (衝突裁決台帳)**
+2787:### **B.1 裁決機制與權威堆疊 (Adjudication Mechanism)**
+2806:### **B.2 系統級衝突裁決 (System Level Conflicts)**
+2820:### **B.3 執行與操作層衝突 (Execution & Operations Conflicts)**
+2839:### **B.4 需求與規格層衝突 (Requirements & Specs Conflicts)**
+2854:### **B.5 平台與入口層衝突 (Platform Level Conflicts)**
+2866:### **B.6 驗收與稽核規則 (Validation Rules)**
+2877:# **APPX-C. CR\_OPEN Register (待決事項清單)**
+2882:### **C.1 治理與處置規則 (Governance & Disposition)**
+2886:#### **1\. 遷移規則 (Migration Rule)**
+2891:#### **2\. Fail-Closed 預設行為**
+2901:#### **3\. 關單標準 (Closure Criteria)**
+2908:### **C.2 登錄結構 (Schema Definition)**
+2932:### **C.3 全域待決事項清單 (Global Register)**
+2936:#### **C.3.1 核心需求與品質缺口 (From SRS & LBP-E)**
+2953:#### **C.3.2 架構與介面缺口 (From ARCH & ICD)**
+2966:#### **C.3.3 操作與參數缺口 (From Runbook)**
+2980:#### **C.3.4 控制平面缺口 (From Control Plane)**
+2994:### **C.4 關單與稽核流程 (Closure & Audit)**
+3007:# **APPX-D. Gate Templates (8 Gate 詳細規格)**
+3012:### **D.1 模板結構契約 (Template Structure Contract)**
+3031:### **D.2 8 大標準 Gate 規格 (The 8 Standard Gates)**
+3035:#### **1\. G-SRC：來源完整性 Gate (Source Integrity)**
+3047:#### **2\. G-SCHEMA：Schema 合規 Gate (Schema Compliance)**
+3058:#### **3\. G-BT-H：回測健康度 Gate (Backtest Health)**
+3070:#### **4\. G-SEG-L：語意保真 Gate (Semantic Fidelity)**
+3081:#### **5\. G-CONF-L：信賴度 Gate (Confidence/Coverage)**
+3092:#### **6\. G-XQ-PARITY：XQ 一致性 Gate (XQ Parity)**
+3104:#### **7\. G-HITL-LOG：HITL 日誌 Gate (Human-In-The-Loop Log)**
+3115:#### **8\. G-RUN：可執行 Gate (Runnable)**
+3129:### **D.3 工程落地結構 (Engineering Implementation)**
+3147:# APPX-E. Web Evidence Index (外部證據索引)
+3152:### **E.1 證據可信度評級規則 (Credibility Rating Rules)**
+3167:### **E.2 Web Evidence Registry (證據註冊表)**
+3171:#### **E.2.1 Agentic Workflow & Tooling (WE-CW/SK/CC)**
+3183:#### **E.2.2 Security & Risks (WE-CW-SEC/OW)**
+3194:#### **E.2.3 SRS Domain Evidence (EV-\*)**
+3210:### **E.3 URL Registry (連結註冊表)**
+3231:### **E.4 衝突與交叉驗證 (Conflict & Cross-Validation)**
+3248:# **APPX-F. Route-Out Register (跨文件路由表)**
+3253:### **F.1 Route-Out 治理原則 (Governance Principles)**
+3259:### **F.2 Route-Out 清單 (The Register)**
+3283:### **F.3 狀態說明 (Status Definitions)**
+3301:### **F.4 驗收與稽核 (Verification & Audit)**
+

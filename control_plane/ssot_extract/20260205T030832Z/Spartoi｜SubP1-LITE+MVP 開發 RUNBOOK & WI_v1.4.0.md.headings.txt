@@ -1,0 +1,108 @@
+== Spartoi｜SubP1-LITE+MVP 開發 RUNBOOK & WI_v1.4.0.md ==
+1248:# WI操作卡固定Schema
+1364:# T0_DAYTRADE 專屬區塊
+1376:# T1_SWING 專屬區塊
+1387:# BOTH（共用）區塊
+1415:# Mini Core Four Schema
+1447:# MC4-1: SS_README.md 驗收標準
+1470:# MC4-2: SS_SRS.md 驗收標準
+1493:# MC4-3: SS_ARCH.md 驗收標準
+1515:# MC4-4: SS_DELIVER.md 驗收標準
+1542:# MC4 整體完成判定
+1722:# B-Strategy
+1768:# B-Learn
+1869:# Handoff Artifact Schema v1.1.0
+1900:# [PATCH-004] 新增欄位（v1.2.1補丁）
+1965:# Codespaces配置
+1989:# Claude Code角色
+2013:# AGENTS.md
+2016:## 角色定義
+2022:## 權限矩陣
+2030:## 危險命令清單
+2036:## 審批流程
+2041:## Evidence產出規則
+2047:## 命令白名單/黑名單
+2051:### 白名單（允許Agent直接執行）
+2063:### 黑名單（禁止Agent執行，違反即BLOCK）
+2075:### 灰名單（需HITL審批後執行）
+2085:### 白名單域名（允許網路訪問）
+2092:### 違反處置流程
+2102:# CLAUDE.md
+2105:## 專案上下文
+2111:## 工作規則
+2117:## 禁止事項
+2124:## Slash Commands
+2157:#### 定位
+2161:#### 允許操作
+2170:#### 禁止操作
+2179:#### 輸出規範
+2185:#### Evidence要求
+2203:#### 定位
+2207:#### 允許操作
+2216:#### 「不得當裁判」原則
+2223:#### 三管線嵌入點
+2231:#### MVS（Minimum Viable Skills）
+2245:#### Evidence要求
+2264:##### 執行前檢查清單
+2294:#### §6.3.8.2 四大高槓桿Skills執行指引
+2298:##### 優先順序
+2309:##### 統一I/O契約
+2320:##### 執行範例
+2322:# evidencepack-builder 執行範例
+2327:# 執行技能後驗證輸出
+2329:# 預期：report.md result.json evidence_ptrs.json
+2332:# 若缺少任一檔案 → 觸發失敗處置
+2336:##### 失敗處置表
+2347:##### 禁止行為（引用藍圖 [BP-SKILLS-CONSTRAINTS-V121]）
+2366:#### 工具整合矩陣（Dev情境）
+2378:#### NOT DO清單（平台化禁止項）
+2396:# Daily Workflow with Verification Points
+2473:# 第三方驗收流程
+2546:#### 禁用宣告
+2555:#### 違反偵測
+2561:#### 啟用例外條件
+2575:#### 已驗證Skills允許清單
+2581:#### Evidence欄位
+2592:# Runner抽象層
+2602:# Entrypoint Mapping（讓新接手 AI 不會走錯門）
+2909:##### 操作步驟
+2914:# 生成 approval.json
+2931:# 審核後計算hash並簽章
+2933:# 將hash填入ack_hash欄位
+2941:# GateRunner驗證
+2948:# 驗證hash
+2961:##### Fail-Closed檢查點
+2972:##### evidence_ptr
+2992:### §6.9.1 「不得當裁判」原則
+3014:### §6.9.3 CR_OPEN候選Skills清單
+3146:# Gate模板固定欄位
+3352:#### Evidence Pack擴充結構
+3370:#### diff_report.json Schema
+3391:#### Gate掛鉤
+3401:#### 回滾觸發流程
+4202:##### CR_OPEN狀態對齊（引用藍圖SSOT v1.2.2）
+4257:# CR_OPEN Schema（與藍圖統一）
+4292:### CR_OPEN新增項（v1.2.1對齊）
+4588:## 附錄M：Cowork/Skills風險防線
+4595:### M.1 Top 10風險與防線
+4612:### M.2 Tripwires清單
+4624:## 附錄N：Web Delta（Non-normative）
+4631:### N.1 2026-01-17 Web資訊快照
+4642:### N.2 入規範需求
+4651:## 附錄O：研究報告要點決策表
+4655:### O.1 決策統計
+4667:### O.2 關鍵決策摘要
+4892:### WI-CSP-AGENT-CLOSED-LOOP（v1.4.0新增）
+4920:### SPLMVP-VERDICT-STAGE（v1.4.0新增）
+4950:### SPLMVP-JOBSPEC-TEMPLATE（v1.4.0新增）
+4959:# jobs/dev.job.yaml
+5008:## JobSpec 最小模板（jobs/*.job.yaml）
+5816:##### 引用指針
+5827:##### 操作時查閱流程
+5850:##### 處置流程圖
+5878:##### 操作步驟
+5883:# 從CR_OPEN記錄中提取evidence_refs
+5887:# 查詢每個evidence的verification_status
+5913:# 記錄至處置日誌
+5926:##### evidence_ptr
+

@@ -1,0 +1,12 @@
+== Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md ==
+1641:# 版本飄移掃描
+1643:# 預期結果：0
+1646:# Candidate 數值門檻掃描（Normative 區塊）
+1648:# 預期結果：0（排除 Evidence_Refs 區塊）
+1651:# Out-of-scope 掃描
+1653:# 預期結果：0
+1656:# Catalog 欄位完整性
+1658:# 預期結果：13（每條 FIT 一個表格）
+1661:# CR_OPEN Evidence_Refs 計數
+1663:# 預期結果：≥22（11 條 CR_OPEN × 2 筆）
+
