@@ -1,0 +1,6 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "logs": ["artifacts/logs/gate_all_local.stdout"],
+  "notes": "See artifacts/logs for details"
+}

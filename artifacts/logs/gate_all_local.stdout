@@ -1,0 +1,25 @@
+=== Docs Gate Check (Local) ===
+
+[1/2] Running mkdocs build --strict...
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /workspaces/spartoi-project-2/site
+INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
+  - assumption_ledger.md
+INFO    -  Documentation built in 0.80 seconds
+✅ MkDocs build PASSED
+
+[2/2] Running markdownlint-cli2 on project files...
+markdownlint-cli2 v0.20.0 (markdownlint v0.40.0)
+Finding: AGENTS.md README.md docs/index.md .opencode/command/ping.md .opencode/commands/ping.md
+Linting: 5 file(s)
+Summary: 0 error(s)
+✅ Markdownlint PASSED
+
+=== All Docs Gate Checks PASSED ===
+=== Links Gate Check (Local) ===
+🔍 0 Total (in 0s) ✅ 0 OK 🚫 0 Errors
+✅ Lychee PASSED
+=== Vale Gate Check (Local) ===
+✔ [31m0 errors[0m, [33m0 warnings[0m and [34m0 suggestions[0m in 7 files.
+✅ Vale PASSED
+=== ALL LOCAL GATES PASSED ===
