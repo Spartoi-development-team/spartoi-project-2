@@ -1,13 +1,36 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-bash scripts/docs_gate_local.sh
+# Minimal gate_all_local implementation used by CI when missing.
+# This script runs the individual gate checks under scripts/gates/*.sh
 
-# Fail-closed: these gates must exist and must run.
-[ -x scripts/links_gate_local.sh ] || { echo "❌ missing or not executable: scripts/links_gate_local.sh"; exit 1; }
-[ -x scripts/vale_gate_local.sh ]  || { echo "❌ missing or not executable: scripts/vale_gate_local.sh"; exit 1; }
+OUT_DIR="artifacts"
+mkdir -p "$OUT_DIR"
+mkdir -p "$OUT_DIR/logs"
 
-bash scripts/links_gate_local.sh
-bash scripts/vale_gate_local.sh
+echo "[gate_all_local] START" | tee "$OUT_DIR/logs/gate_all_local.stdout"
 
-echo "=== ALL LOCAL GATES PASSED ==="
+RC=0
+
+for g in scripts/gates/docs_gate.sh scripts/gates/links_gate.sh scripts/gates/vale_gate.sh; do
+  if [ -x "$g" ]; then
+    echo "[gate_all_local] running $g" | tee -a "$OUT_DIR/logs/gate_all_local.stdout"
+    if bash "$g" >>"$OUT_DIR/logs/gate_all_local.stdout" 2>&1; then
+      echo "[gate_all_local] $g: OK" | tee -a "$OUT_DIR/logs/gate_all_local.stdout"
+    else
+      echo "[gate_all_local] $g: FAIL" | tee -a "$OUT_DIR/logs/gate_all_local.stdout"
+      RC=1
+    fi
+  else
+    echo "[gate_all_local] $g not found or not executable; marking fail" | tee -a "$OUT_DIR/logs/gate_all_local.stdout"
+    RC=1
+  fi
+done
+
+if [ $RC -eq 0 ]; then
+  echo "[gate_all_local] ALL LOCAL GATES PASSED" | tee -a "$OUT_DIR/logs/gate_all_local.stdout"
+else
+  echo "[gate_all_local] SOME GATES FAILED rc=$RC" | tee -a "$OUT_DIR/logs/gate_all_local.stdout"
+fi
+
+exit $RC
