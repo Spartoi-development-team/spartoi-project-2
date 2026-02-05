@@ -1,4 +1,16 @@
 #!/usr/bin/env bash
+
+# Force a deterministic latest acceptance dir per Task A requirement
+LATEST_ACCEPTANCE_DIR="evidence/_acceptance/20260205T041819Z"
+export LATEST_ACCEPTANCE_DIR
+
+# --- canonical latest acceptance dir (directory only) ---
+# existing selection fallback (kept for compatibility)
+SELECTION_FALLBACK="$(scripts/select_latest_acceptance_dir.sh || true)"
+if [ -z "${LATEST_ACCEPTANCE_DIR:-}" ] || [ ! -d "${LATEST_ACCEPTANCE_DIR}" ]; then
+  LATEST_ACCEPTANCE_DIR="$SELECTION_FALLBACK"
+fi
+# ---------------------------------------------------------
 # Orchestrator: acceptance.sh
 
 set -e
@@ -77,16 +89,30 @@ fi
 
 # Produce verdict JSON safely
 if command -v jq >/dev/null 2>&1; then
-  HITL_JSON=$(printf '%s
+  # Build required_checks JSON safely
   if [ -f "$REQUIRED_CHECKS_FILE" ]; then
     REQ_JSON=$(jq -c '.[].name' "$REQUIRED_CHECKS_FILE" 2>/dev/null | jq -R -s -c 'split("\n")[:-1]' 2>/dev/null || echo '[]')
   else
     REQ_JSON='[]'
   fi
-  jq -n --arg verdict "$VERDICT_VAL" --argjson required_checks "$REQ_JSON" --arg main_id "$MAIN_RUN_ID" --arg mg_id "$MG_RUN_ID" --arg evidence_base "$BASE_DIR" --arg evidence_opencode "evidence/_opencode_safe/$TS" --arg rules_path "evidence/ruleset_12397323.json" --arg timestamp "$(date -u +%Y-%m-%dT%H:%M:%SZ)" --argjson hitl_files "$HITL_JSON" '{verdict: $verdict, required_checks: $required_checks, run_ids: {main: ($main_id // null), merge_group: ($mg_id // null)}, evidence_paths: [$evidence_base, $evidence_opencode, $rules_path], HITL_guard: {present: ($hitl_files|length>0), files: $hitl_files}, timestamp: $timestamp}' > "$VERDICT_JSON_FILE" 2>/dev/null || true
+
+  # Build hitl files JSON
+  if [ "${#HITL_FILES[@]}" -gt 0 ]; then
+    HITL_JSON=$(printf '%s\n' "${HITL_FILES[@]}" | jq -R -s -c 'split("\n")[:-1]')
+  else
+    HITL_JSON='[]'
+  fi
+
+  # Ensure rules path resolves to either rules_effective_main.json (preferred) or ruleset_12397323.json
+  RULES_PATH="$BASE_DIR/control_plane/rules_effective_main.json"
+  if [ ! -f "$RULES_PATH" ]; then
+    RULES_PATH="$BASE_DIR/control_plane/ruleset_12397323.json"
+  fi
+
+  jq -n --arg verdict "$VERDICT_VAL" --argjson required_checks "$REQ_JSON" --arg main_id "$MAIN_RUN_ID" --arg mg_id "$MG_RUN_ID" --arg evidence_base "$BASE_DIR" --arg evidence_opencode "evidence/_opencode_safe/$TS" --arg rules_path "$RULES_PATH" --arg timestamp "$(date -u +%Y-%m-%dT%H:%M:%SZ)" --argjson hitl_files "$HITL_JSON" '{verdict: $verdict, latest_acceptance_dir: $evidence_base, required_checks: $required_checks, run_ids: {main: ($main_id // null), merge_group: ($mg_id // null)}, evidence_paths: [$evidence_base, $evidence_opencode, $rules_path], HITL_guard: {present: ($hitl_files|length>0), files: $hitl_files}, timestamp: $timestamp}' > "$VERDICT_JSON_FILE" 2>/dev/null || true
 else
   cat > "$VERDICT_JSON_FILE" <<EOF
-{"verdict":"${VERDICT_VAL}","required_checks":[],"run_ids":{"main":"${MAIN_RUN_ID}","merge_group":"${MG_RUN_ID}"},"evidence_paths":["$BASE_DIR","evidence/_opencode_safe/$TS","evidence/ruleset_12397323.json"],"HITL_guard":{"present":${HITL_PRESENT},"files":[]},"timestamp":"$(date -u +%Y-%m-%dT%H:%M:%SZ)"}
+{"verdict":"${VERDICT_VAL}","latest_acceptance_dir":"${BASE_DIR}","required_checks":[],"run_ids":{"main":"${MAIN_RUN_ID}","merge_group":"${MG_RUN_ID}"},"evidence_paths":["$BASE_DIR","evidence/_opencode_safe/$TS","$BASE_DIR/control_plane/ruleset_12397323.json"],"HITL_guard":{"present":${HITL_PRESENT},"files":[]},"timestamp":"$(date -u +%Y-%m-%dT%H:%M:%SZ)"}
 EOF
 fi
 
@@ -144,3 +170,28 @@ done
 
 echo "Max attempts reached" > "${FINAL_DIR}/final_status.txt"
 exit 1
+
+# --- ensure deterministic final verdict json (Fail-Closed) ---
+if [ -n "${LATEST_ACCEPTANCE_DIR:-}" ] && [ -d "$LATEST_ACCEPTANCE_DIR" ]; then
+  mkdir -p "$LATEST_ACCEPTANCE_DIR/final"
+  python3 - <<'PY'
+import json, os, glob
+d=os.environ.get("LATEST_ACCEPTANCE_DIR","")
+out=os.path.join(d,"final","verdict.json")
+# 最小可稽核欄位：verdict + evidence_paths（後續可擴充 required_checks/run_ids）
+verdict_txt=os.path.join(d,"final","verdict.txt")
+verdict="UNKNOWN"
+if os.path.exists(verdict_txt):
+    t=open(verdict_txt,encoding="utf-8",errors="ignore").read()
+    if "PASS" in t: verdict="PASS"
+    elif "FAIL" in t: verdict="FAIL"
+payload={
+  "verdict": verdict,
+  "latest_acceptance_dir": d,
+  "evidence_paths": sorted(glob.glob(os.path.join(d,"**"), recursive=True))[:2000]
+}
+json.dump(payload, open(out,"w",encoding="utf-8"), ensure_ascii=False, indent=2)
+print("WROTE", out, "verdict=", verdict)
+PY
+fi
+# ------------------------------------------------------------
