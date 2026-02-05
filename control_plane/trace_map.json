@@ -1,13 +1,4 @@
 {
-  "generated_utc": "REPLACE_BY_PIPELINE",
-  "items": [
-    {
-      "mai_id": "MAI-PLACEHOLDER",
-      "srs_anchor": "SRS-ANCHOR-PLACEHOLDER",
-      "impl_paths": [],
-      "gate_ids": [],
-      "evidence_refs": [],
-      "status": "OPEN"
-    }
-  ]
+  "generated_utc": "2026-02-05T11:31:00Z",
+  "items": []
 }
