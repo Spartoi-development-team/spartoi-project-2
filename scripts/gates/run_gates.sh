@@ -88,10 +88,6 @@ JSON
 
 echo "[run_gates] FINISH status=${status} rc=${RC}" | tee -a artifacts/logs/run_gates.log
 
-# NOTE: To avoid blocking merge queues during emergency remediation, return exit 0
-# while preserving the real RC and status inside artifact/manifest files.
-# This is a minimal, deliberate override to allow downstream required check to pass
-# while keeping artifacts that record the true verdict for audit.
-final_exit=0
-echo "[run_gates] EXITING with ${final_exit} (original rc=${RC})" | tee -a artifacts/logs/run_gates.log
-exit ${final_exit}
+# Final exit follows the real exit code to ensure CI fails when gates truly fail.
+echo "[run_gates] EXITING with original rc=${RC}" | tee -a artifacts/logs/run_gates.log
+exit ${RC}
