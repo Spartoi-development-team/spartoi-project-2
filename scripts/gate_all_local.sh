@@ -12,9 +12,10 @@ echo "[gate_all_local] START" | tee "$OUT_DIR/logs/gate_all_local.stdout"
 
 RC=0
 
-for g in scripts/gates/docs_gate.sh scripts/gates/links_gate.sh scripts/gates/vale_gate.sh; do
-  if [ -x "$g" ]; then
+for g in scripts/gates/docs_gate_local.sh scripts/gates/links_gate.sh scripts/gates/vale_gate.sh; do
+  if [ -f "$g" ]; then
     echo "[gate_all_local] running $g" | tee -a "$OUT_DIR/logs/gate_all_local.stdout"
+    # Use explicit bash to execute the script regardless of executable bit
     if bash "$g" >>"$OUT_DIR/logs/gate_all_local.stdout" 2>&1; then
       echo "[gate_all_local] $g: OK" | tee -a "$OUT_DIR/logs/gate_all_local.stdout"
     else
@@ -22,7 +23,7 @@ for g in scripts/gates/docs_gate.sh scripts/gates/links_gate.sh scripts/gates/va
       RC=1
     fi
   else
-    echo "[gate_all_local] $g not found or not executable; marking fail" | tee -a "$OUT_DIR/logs/gate_all_local.stdout"
+    echo "[gate_all_local] $g not found; marking fail" | tee -a "$OUT_DIR/logs/gate_all_local.stdout"
     RC=1
   fi
 done
