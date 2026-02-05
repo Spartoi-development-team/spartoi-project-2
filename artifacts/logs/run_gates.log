@@ -1,0 +1,3 @@
+[run_gates] START
+[run_gates] EXECUTE_DISABLED is active — blocking any execute/trading paths
+[run_gates] FINISH status=PASS rc=0

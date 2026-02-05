@@ -1,0 +1,7 @@
+{
+  "evidence": [
+    "artifacts/logs/gate_all_local.stdout",
+    "evidence/_b1/acceptance_console.txt",
+    "evidence/_b1/triad.json"
+  ]
+}

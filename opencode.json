@@ -1,9 +1,14 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "plugin": [
-    "oh-my-opencode@latest",
-    "opencode-smart-voice-notify"
-  ],
   "model": "github-copilot/gpt-5-mini",
-  "small_model": "github-copilot/gpt-5-mini"
+  "instructions": [
+    "Spartoi-OMOC 工程實作指南.md",
+    "Spartoi-OMOC_開發實作方案.md",
+    "Spartoi｜P1_SRS_v7.0.0.md",
+    "Spartoi｜P1_ARCH_v6.0.0-r5.md",
+    "Spartoi｜P1_LBP-B(ICD)_v5.0.1.md",
+    "Spartoi｜P1_LBP-E(Fitness)_v3.0.1.md",
+    "Spartoi｜SubP1-LITE+MVP 開發 RUNBOOK & WI_v1.4.0.md",
+    "OMOC-GMA Lite 實作_任務交接報告_02042347.md"
+  ]
 }

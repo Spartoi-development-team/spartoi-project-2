@@ -1,0 +1,6 @@
+{
+  "verdict": "PASS",
+  "checked_at": "20260205T011457Z",
+  "evidence_index": "artifacts/evidence_index.json",
+  "gate_report": "artifacts/gate_report.json"
+}
