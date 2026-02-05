@@ -1,0 +1,4 @@
+{
+  "allowed": false,
+  "reason": "Global kill-switch for execute/trading paths; must be explicitly allowed by control plane"
+}
