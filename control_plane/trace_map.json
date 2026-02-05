@@ -1850,7 +1850,8 @@
     "acceptance_artifact": "",
     "verification_method": "",
     "pass_criteria": "",
-    "gate_ref": "",
+    "gate_ref": "GATE-RL-002",
+    "verification_method": "TVE equivalence / SEM3 pipeline / Playwright",
     "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5467"
   },
   {

@@ -1,0 +1,11 @@
+github.com
+  ✓ Logged in to github.com account shw097 (GITHUB_TOKEN)
+  - Active account: true
+  - Git operations protocol: https
+  - Token: ghu_************************************
+
+  ✓ Logged in to github.com account shw097 (/home/codespace/.config/gh/hosts.yml)
+  - Active account: false
+  - Git operations protocol: https
+  - Token: gho_************************************
+  - Token scopes: 'gist', 'read:org', 'repo', 'workflow'

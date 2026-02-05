@@ -1,0 +1,16 @@
+total 12
+drwxrwxrwx+ 2 codespace codespace 4096 Feb  4 15:06 .
+drwxrwxrwx+ 4 codespace codespace 4096 Feb  3 17:56 ..
+-rw-rw-rw-  1 codespace codespace 1098 Feb  5 02:11 quality-gates.yml
+.github/workflows/quality-gates.yml:1:name: quality-gates
+.github/workflows/quality-gates.yml:7:  merge_group:
+.github/workflows/quality-gates.yml:11:  gates:
+.github/workflows/quality-gates.yml:12:    name: gates
+.github/workflows/quality-gates.yml:17:      - name: Run gates
+.github/workflows/quality-gates.yml:19:          bash scripts/gates/run_gates.sh || true
+.github/workflows/quality-gates.yml:24:          name: gates-artifacts
+.github/workflows/quality-gates.yml:28:  # Runs only when the event is merge_group to provide a minimal check
+.github/workflows/quality-gates.yml:29:  # that can report the same required check name for the merge queue.
+.github/workflows/quality-gates.yml:30:  gates_mq:
+.github/workflows/quality-gates.yml:31:    name: gates
+.github/workflows/quality-gates.yml:32:    if: "github.event_name == 'merge_group'"

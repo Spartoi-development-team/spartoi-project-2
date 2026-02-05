@@ -1,8 +1,6 @@
 name: quality-gates
 
 on:
-  push:
-    branches: [main]
   pull_request:
   merge_group:
     types: [checks_requested]
@@ -16,7 +14,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Run gates
         run: |
-          bash scripts/gates/run_gates.sh || true
+          set -e
+          bash scripts/gates/run_gates.sh
       - name: Upload artifacts
         if: always()
         uses: actions/upload-artifact@v4

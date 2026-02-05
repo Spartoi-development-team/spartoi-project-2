@@ -1,25 +1,34 @@
+// OH-MY-OPENCODE consolidated config
 {
-  // Sisyphus orchestration defaults for OMOC subagents
-  "sisyphus": {
-    "model": "github-copilot/gpt-5-mini",
-    "allow_call_omo_agent": true
-  },
-  "explore": {
-    "model": "github-copilot/raptor-mini",
-    "restriction": {
-      "allow_call_omo_agent": false
+  // model pins
+  "model": "github-copilot/gpt-5-mini",
+  "small_model": "github-copilot/gpt-4.1",
+
+  // provider control: wildcard entries should come first for clarity
+  "enabled_providers": [
+    "*",
+    "github-copilot"
+  ],
+  "disabled_providers": [
+    "opencode"
+  ],
+
+  // permissions: ordered list. Wildcard '*' rules first; specific overrides later.
+  "permissions": [
+    // catch-all: ask by default
+    {
+      "match": "*",
+      "effect": "ask",
+      "actions": ["bash", "write"]
+    },
+    // explicit allows needed by OMOC workflows
+    {
+      "match": "*",
+      "effect": "allow",
+      "actions": ["call_omo_agent", "task", "delegate_task"]
     }
-  },
-  "librarian": {
-    "model": "github-copilot/raptor-mini",
-    "restriction": {
-      "allow_call_omo_agent": false
-    }
-  },
-  "oracle": {
-    "model": "github-copilot/gpt-4.1",
-    "restriction": {
-      "allow_call_omo_agent": false
-    }
-  }
+  ],
+
+  // Safety: do not enable EXECUTE in any place by default. This file intentionally
+  // does not include an EXECUTE enablement flag.
 }
