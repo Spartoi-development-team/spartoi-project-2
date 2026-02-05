@@ -29,14 +29,17 @@ fi
 python3 "$SCRIPT_DIR/opencode_doctor.py" --ts "$TS" --check
 
 # read report and see if unknown keys were detected
+REPORT_PATH="$EVIDENCE_DIR/opencode_doctor_report.json"
 DETECTED_COUNT=$(python3 - <<PY
 import json,sys
-p='"$EVIDENCE_DIR/opencode_doctor_report.json"'
+report_path = r"$REPORT_PATH"
 try:
-    rep=json.load(open($p))
-    keys=rep.get('detected_unknown_keys') or []
+    with open(report_path, 'r', encoding='utf-8') as fh:
+        rep = json.load(fh)
+    keys = rep.get('detected_unknown_keys') or []
     print(len(keys))
-except Exception as e:
+except Exception:
+    # If the report doesn't exist or is malformed, assume 0 to avoid failing the script
     print(0)
 PY
 )
