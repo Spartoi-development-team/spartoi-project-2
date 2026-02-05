@@ -12,6 +12,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Setup docs & markdown tooling
+        run: |
+          # Ensure pip --user installs put executables into ~/.local/bin
+          export PATH="$HOME/.local/bin:$PATH"
+          python -m pip install --upgrade pip || true
+          # Install mkdocs into the environment so `mkdocs` CLI is available
+          python -m pip install --user mkdocs || python -m pip install mkdocs || true
+          # Re-export path to include user bin
+          export PATH="$HOME/.local/bin:$PATH"
+          # Install markdownlint-cli2 if npm is available
+          if command -v npm >/dev/null 2>&1; then
+            npm install -g markdownlint-cli2 || true
+          fi
       - name: Run gates
         run: |
           set -e
