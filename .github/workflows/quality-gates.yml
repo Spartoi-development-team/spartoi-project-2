@@ -12,24 +12,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup docs & markdown tooling
+      - name: Setup Python and install MkDocs
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - name: Install mkdocs and verify
         run: |
-          # Prefer python3 binary on runners
-          PY=python3
-          if ! command -v $PY >/dev/null 2>&1; then
-            PY=python
-          fi
-          # Ensure pip is up-to-date
-          $PY -m pip install --upgrade pip setuptools wheel || true
-          # Try installing mkdocs globally first; if that fails, fall back to --user
-          if $PY -m pip install mkdocs; then
-            echo "mkdocs installed globally"
-          else
-            $PY -m pip install --user mkdocs || true
-          fi
-          # add user local bin to PATH for subsequent steps
-          echo "PATH=$HOME/.local/bin:$PATH" >> "$GITHUB_ENV"
-          # Install markdownlint-cli2 if npm is available
+          python -m pip install --upgrade pip setuptools wheel
+          # Install mkdocs and optional themes used by the repo
+          python -m pip install mkdocs mkdocs-material --no-cache-dir
+          # verify mkdocs CLI is available
+          mkdocs --version || python -m mkdocs --version
+      - name: Install markdownlint-cli2 (optional)
+        run: |
           if command -v npm >/dev/null 2>&1; then
             npm install -g markdownlint-cli2 || true
           fi
