@@ -115,16 +115,69 @@ def gather_run_ids(base_dir):
     out = {'main': None, 'merge_group': None}
     cp = Path(base_dir) / 'control_plane'
     if cp.exists():
-        p = cp / 'latest_main_runs.json'
+        # Support multiple evidence file shapes collected by control_plane_snapshot.sh
+        # 1) pr_mq_runs.json -> { pr_runs: [...], merge_group_runs: [...] }
+        # 2) latest_pr_run_explicit.json -> [ {...} ]
+        # 3) latest_pr_run.json -> {...} or [ ... ]
+        # 4) latest_merge_group_run_explicit.json -> [ {...} ]
+        # 5) latest_merge_group_run.json -> {...}
+        # Prefer databaseId if present, fall back to id or url
+        def extract_id(obj):
+            if not isinstance(obj, dict):
+                return None
+            for key in ('databaseId', 'database_id', 'id'):
+                if key in obj:
+                    return obj.get(key)
+            # fallback to url so we have something
+            if 'url' in obj:
+                return obj.get('url')
+            return None
+
+        # 1) pr_mq_runs.json
+        p = cp / 'pr_mq_runs.json'
         if p.exists():
             j = load_json(p)
-            if isinstance(j, list) and len(j) > 0:
-                out['main'] = j[0].get('id') if isinstance(j[0], dict) else None
-        q = cp / 'latest_merge_group_run.json'
-        if q.exists():
-            j = load_json(q)
             if isinstance(j, dict):
-                out['merge_group'] = j.get('id')
+                prrs = j.get('pr_runs') or []
+                mgrs = j.get('merge_group_runs') or []
+                if isinstance(prrs, list) and len(prrs) > 0:
+                    out['main'] = extract_id(prrs[0])
+                if isinstance(mgrs, list) and len(mgrs) > 0:
+                    out['merge_group'] = extract_id(mgrs[0])
+
+        # 2) explicit latest pr run list
+        if out.get('main') is None:
+            p2 = cp / 'latest_pr_run_explicit.json'
+            if p2.exists():
+                j = load_json(p2)
+                if isinstance(j, list) and len(j) > 0:
+                    out['main'] = extract_id(j[0])
+
+        # 3) legacy latest_pr_run.json (may be object or array)
+        if out.get('main') is None:
+            p3 = cp / 'latest_pr_run.json'
+            if p3.exists():
+                j = load_json(p3)
+                if isinstance(j, list) and len(j) > 0:
+                    out['main'] = extract_id(j[0])
+                elif isinstance(j, dict):
+                    out['main'] = extract_id(j)
+
+        # 4) explicit latest merge group run list
+        if out.get('merge_group') is None:
+            p4 = cp / 'latest_merge_group_run_explicit.json'
+            if p4.exists():
+                j = load_json(p4)
+                if isinstance(j, list) and len(j) > 0:
+                    out['merge_group'] = extract_id(j[0])
+
+        # 5) legacy latest_merge_group_run.json
+        if out.get('merge_group') is None:
+            q = cp / 'latest_merge_group_run.json'
+            if q.exists():
+                j = load_json(q)
+                if isinstance(j, dict):
+                    out['merge_group'] = extract_id(j)
     return out
 
 
