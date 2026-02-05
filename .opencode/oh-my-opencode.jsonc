@@ -1,0 +1,25 @@
+{
+  // Sisyphus orchestration defaults for OMOC subagents
+  "sisyphus": {
+    "model": "github-copilot/gpt-5-mini",
+    "allow_call_omo_agent": true
+  },
+  "explore": {
+    "model": "github-copilot/raptor-mini",
+    "restriction": {
+      "allow_call_omo_agent": false
+    }
+  },
+  "librarian": {
+    "model": "github-copilot/raptor-mini",
+    "restriction": {
+      "allow_call_omo_agent": false
+    }
+  },
+  "oracle": {
+    "model": "github-copilot/gpt-4.1",
+    "restriction": {
+      "allow_call_omo_agent": false
+    }
+  }
+}

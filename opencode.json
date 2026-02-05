@@ -1,5 +1,32 @@
 {
   "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "oh-my-opencode@latest"
+  ],
   "model": "github-copilot/gpt-5-mini",
-  "small_model": "github-copilot/gpt-5-mini"
+  "small_model": "github-copilot/gpt-4.1",
+  "enabled_providers": [
+    "github-copilot"
+  ],
+  "disabled_providers": [
+    "opencode",
+    "openai",
+    "anthropic",
+    "google",
+    "xai"
+  ],
+  "permissions": [
+    {
+      "match": "*",
+      "effect": "ask"
+    },
+    {
+      "actions": ["call_omo_agent", "task", "delegate_task"],
+      "effect": "allow"
+    },
+    {
+      "actions": ["bash", "write"],
+      "effect": "ask"
+    }
+  ]
 }
