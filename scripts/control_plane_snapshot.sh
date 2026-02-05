@@ -5,6 +5,23 @@
 set +e
 TS=$(date -u +%Y%m%dT%H%M%SZ)
 OUTDIR="evidence/_acceptance/${TS}/control_plane"
+# Ensure ruleset snapshot is collected (ruleset id: 12397323)
+mkdir -p "$OUTDIR"
+if command -v gh >/dev/null 2>&1; then
+  echo "Fetching ruleset_12397323 via gh api"
+  gh api repos/${GITHUB_REPOSITORY:-Spartoi-development-team/spartoi-project-2}/rulesets/12397323 --jq '.' > "$OUTDIR/ruleset_12397323.json" 2>/dev/null || true
+else
+  echo "gh CLI not available; skipping ruleset fetch" > "$OUTDIR/ruleset_12397323.json" || true
+fi
+
+# Normalize required_status_checks into rules_main.json if present
+if [ -f "$OUTDIR/ruleset_12397323.json" ]; then
+  if command -v jq >/dev/null 2>&1; then
+    jq '{required_status_checks: .required_status_checks, id: .id, name: .name}' "$OUTDIR/ruleset_12397323.json" > "$OUTDIR/rules_main.json" 2>/dev/null || true
+  else
+    cp "$OUTDIR/ruleset_12397323.json" "$OUTDIR/rules_main.json" || true
+  fi
+fi
 mkdir -p "${OUTDIR}"
 
 # 1) rules_main.json (if present in control_plane/_evidence)

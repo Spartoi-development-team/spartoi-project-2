@@ -1,0 +1,175 @@
+[git remote -v]
+[git config --get-regexp ^remote\..*\.gh-resolved$]
+* Request at 2026-02-05 04:12:30.199844519 +0000 UTC m=+0.066657222
+* Request to https://api.github.com/graphql
+> POST /graphql HTTP/1.1
+> Host: api.github.com
+> Accept: application/vnd.github.merge-info-preview+json, application/vnd.github.nebula-preview
+> Authorization: token ████████████████████
+> Content-Length: 543
+> Content-Type: application/json; charset=utf-8
+> Graphql-Features: merge_queue
+> Time-Zone: Etc/UTC
+> User-Agent: GitHub CLI 2.72.0
+
+GraphQL query:
+fragment repo on Repository {
+    id
+    name
+    owner { login }
+    hasIssuesEnabled
+    description
+    hasWikiEnabled
+    viewerPermission
+    defaultBranchRef {
+      name
+    }
+  }
+
+  query RepositoryInfo($owner: String!, $name: String!) {
+    repository(owner: $owner, name: $name) {
+      ...repo
+      parent {
+        ...repo
+      }
+      mergeCommitAllowed
+      rebaseMergeAllowed
+      squashMergeAllowed
+    }
+  }
+GraphQL variables: {"name":"spartoi-project-2","owner":"Spartoi-development-team"}
+
+< HTTP/2.0 200 OK
+< Access-Control-Allow-Origin: *
+< Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+< Content-Security-Policy: default-src 'none'
+< Content-Type: application/json; charset=utf-8
+< Date: Thu, 05 Feb 2026 04:12:30 GMT
+< Github-Authentication-Token-Expiration: 2026-02-05 13:07:23 UTC
+< Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+< Server: github.com
+< Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+< Vary: Accept-Encoding, Accept, X-Requested-With
+< X-Accepted-Oauth-Scopes: repo
+< X-Content-Type-Options: nosniff
+< X-Frame-Options: deny
+< X-Github-Media-Type: github.v4; param=merge-info-preview.nebula-preview; format=json
+< X-Github-Request-Id: 5642:19F044:A338E2:BCCCA7:698418AE
+< X-Oauth-Client-Id: Iv1.ad5f73e593b03f40
+< X-Oauth-Scopes: 
+< X-Ratelimit-Limit: 50000
+< X-Ratelimit-Remaining: 49971
+< X-Ratelimit-Reset: 1770268152
+< X-Ratelimit-Resource: graphql
+< X-Ratelimit-Used: 29
+< X-Xss-Protection: 0
+
+{
+  "data": {
+    "repository": {
+      "id": "R_kgDORG9Ueg",
+      "name": "spartoi-project-2",
+      "owner": {
+        "login": "Spartoi-development-team"
+      },
+      "hasIssuesEnabled": true,
+      "description": null,
+      "hasWikiEnabled": true,
+      "viewerPermission": "ADMIN",
+      "defaultBranchRef": {
+        "name": "main"
+      },
+      "parent": null,
+      "mergeCommitAllowed": true,
+      "rebaseMergeAllowed": true,
+      "squashMergeAllowed": true
+    }
+  }
+}
+
+* Request took 477.755562ms
+[git status --porcelain]
+Warning: 3 uncommitted changes
+[git symbolic-ref --quiet HEAD]
+[git config --get-regexp ^branch\.omoc/spartoi-mq-20260205T020736Z\.(remote|merge|pushremote|gh-merge-base)$]
+[git rev-parse --symbolic-full-name omoc/spartoi-mq-20260205T020736Z@{push}]
+[git show-ref --verify -- HEAD refs/remotes/origin/omoc/spartoi-mq-20260205T020736Z]
+[git -c log.ShowSignature=false log --pretty=format:%H%x00%s%x00%b%x00 --cherry origin/main...omoc/spartoi-mq-20260205T020736Z]
+* Request at 2026-02-05 04:12:30.699575661 +0000 UTC m=+0.566388374
+* Request to https://api.github.com/graphql
+> POST /graphql HTTP/1.1
+> Host: api.github.com
+> Accept: application/vnd.github.merge-info-preview+json, application/vnd.github.nebula-preview
+> Authorization: token ████████████████████
+> Content-Length: 625
+> Content-Type: application/json; charset=utf-8
+> Graphql-Features: merge_queue
+> Time-Zone: Etc/UTC
+> User-Agent: GitHub CLI 2.72.0
+
+GraphQL query:
+query PullRequestForBranch($owner: String!, $repo: String!, $headRefName: String!, $states: [PullRequestState!]) {
+    repository(owner: $owner, name: $repo) {
+      pullRequests(headRefName: $headRefName, states: $states, first: 30, orderBy: { field: CREATED_AT, direction: DESC }) {
+        nodes {url,id,number,state,baseRefName,headRefName,isCrossRepository,headRepositoryOwner{id,login,...on User{name}}}
+      }
+      defaultBranchRef { name }
+    }
+  }
+GraphQL variables: {"headRefName":"omoc/spartoi-mq-20260205T020736Z","owner":"Spartoi-development-team","repo":"spartoi-project-2","states":["OPEN"]}
+
+< HTTP/2.0 200 OK
+< Access-Control-Allow-Origin: *
+< Access-Control-Expose-Headers: ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset
+< Content-Security-Policy: default-src 'none'
+< Content-Type: application/json; charset=utf-8
+< Date: Thu, 05 Feb 2026 04:12:31 GMT
+< Github-Authentication-Token-Expiration: 2026-02-05 13:07:23 UTC
+< Referrer-Policy: origin-when-cross-origin, strict-origin-when-cross-origin
+< Server: github.com
+< Strict-Transport-Security: max-age=31536000; includeSubdomains; preload
+< Vary: Accept-Encoding, Accept, X-Requested-With
+< X-Accepted-Oauth-Scopes: repo
+< X-Content-Type-Options: nosniff
+< X-Frame-Options: deny
+< X-Github-Media-Type: github.v4; param=merge-info-preview.nebula-preview; format=json
+< X-Github-Request-Id: 5642:19F044:A3396A:BCCD47:698418AE
+< X-Oauth-Client-Id: Iv1.ad5f73e593b03f40
+< X-Oauth-Scopes: 
+< X-Ratelimit-Limit: 50000
+< X-Ratelimit-Remaining: 49970
+< X-Ratelimit-Reset: 1770268152
+< X-Ratelimit-Resource: graphql
+< X-Ratelimit-Used: 30
+< X-Xss-Protection: 0
+
+{
+  "data": {
+    "repository": {
+      "pullRequests": {
+        "nodes": [
+          {
+            "url": "https://github.com/Spartoi-development-team/spartoi-project-2/pull/11",
+            "id": "PR_kwDORG9Ues7BnoVA",
+            "number": 11,
+            "state": "OPEN",
+            "baseRefName": "main",
+            "headRefName": "omoc/spartoi-mq-20260205T020736Z",
+            "isCrossRepository": false,
+            "headRepositoryOwner": {
+              "id": "O_kgDOD1wYRA",
+              "login": "Spartoi-development-team"
+            }
+          }
+        ]
+      },
+      "defaultBranchRef": {
+        "name": "main"
+      }
+    }
+  }
+}
+
+* Request took 507.176718ms
+a pull request for branch "omoc/spartoi-mq-20260205T020736Z" into branch "main" already exists:
+https://github.com/Spartoi-development-team/spartoi-project-2/pull/11

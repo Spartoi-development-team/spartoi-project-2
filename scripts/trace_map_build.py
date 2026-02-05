@@ -19,6 +19,7 @@ def extract_mai_lines(text):
     for i,l in enumerate(text.splitlines()):
         if re.search(r'(?i)\bMAI[-\s]\w+', l):
             lines.append((i+1, l.strip()))
+    # If parser finds no MAI, ensure control_plane/CR_OPEN.md is updated by caller.
     return lines
 
 def main():

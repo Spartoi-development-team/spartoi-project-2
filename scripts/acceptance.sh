@@ -30,7 +30,68 @@ while [ $attempt -lt $max_attempts ]; do
   fi
 
   # 3) build trace_map
-  python3 scripts/trace_map_build.py || true
+python3 scripts/trace_map_build.py || true
+
+# --- deterministic verdict JSON output (minimal schema) ---
+FINAL_DIR="$BASE_DIR/final"
+mkdir -p "$FINAL_DIR"
+VERDICT_TEXT_FILE="$FINAL_DIR/verdict.txt"
+VERDICT_JSON_FILE="$FINAL_DIR/verdict.json"
+# If a plaintext verdict exists, prefer it; fall back to exit codes or default to FAIL
+VERDICT_VAL="FAIL"
+if [ -f "$VERDICT_TEXT_FILE" ]; then
+  # Accept simple PASS/FAIL in the first line
+  VLINE=$(sed -n '1p' "$VERDICT_TEXT_FILE" | tr -d '\r\n' || true)
+  case "$VLINE" in
+    PASS|pass|Pass) VERDICT_VAL="PASS" ;;
+    *) VERDICT_VAL="FAIL" ;;
+  esac
+fi
+
+# Collect required checks list
+REQUIRED_CHECKS_FILE="$BASE_DIR/pr10_checks_latest.json"
+REQUIRED_CHECKS_LIST=()
+if [ -f "$REQUIRED_CHECKS_FILE" ]; then
+  if command -v jq >/dev/null 2>&1; then
+    REQUIRED_CHECKS_LIST=$(jq -r '.[].name' "$REQUIRED_CHECKS_FILE" 2>/dev/null | jq -R -s -c 'split("\n")[:-1]' || echo "[]")
+  fi
+fi
+
+# Collect run ids if available
+MAIN_RUN_ID=""
+MG_RUN_ID=""
+if [ -f "$BASE_DIR/control_plane/latest_main_runs.json" ]; then
+  MAIN_RUN_ID=$(jq -r '.[0].id // empty' "$BASE_DIR/control_plane/latest_main_runs.json" 2>/dev/null || true)
+fi
+if [ -f "$BASE_DIR/control_plane/latest_merge_group_run.json" ]; then
+  MG_RUN_ID=$(jq -r '.id // empty' "$BASE_DIR/control_plane/latest_merge_group_run.json" 2>/dev/null || true)
+fi
+
+# HITL guard evidence
+HITL_PRESENT=false
+HITL_FILES=( )
+if find "$BASE_DIR" -type f -iname '*kill*' -o -iname '*kill_switch*' | grep -q . 2>/dev/null; then
+  HITL_PRESENT=true
+  while IFS= read -r f; do HITL_FILES+=("$f"); done < <(find "$BASE_DIR" -type f -iname '*kill*' -o -iname '*kill_switch*' 2>/dev/null)
+fi
+
+cat > "$VERDICT_JSON_FILE" <<EOF
+{
+  "verdict": "${VERDICT_VAL}",
+  "required_checks": ${REQUIRED_CHECKS_LIST:-[]},
+  "run_ids": {"main": ${MAIN_RUN_ID:+"${MAIN_RUN_ID}"}, "merge_group": ${MG_RUN_ID:+"${MG_RUN_ID}"}},
+  "evidence_paths": ["$BASE_DIR", "evidence/_opencode_safe/$TS", "evidence/ruleset_12397323.json"],
+  "HITL_guard": {"present": ${HITL_PRESENT}, "files": $(printf '%s
+  "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+}
+EOF
+
+# Ensure verdict exit code is logically consistent for downstream verification
+if [ "${VERDICT_VAL}" = "PASS" ]; then
+  echo "0" > "$FINAL_DIR/verdict.exit_code" || true
+else
+  echo "2" > "$FINAL_DIR/verdict.exit_code" || true
+fi
   if [ -f control_plane/trace_map.json ]; then
     cp control_plane/trace_map.json "${CONTROL_DIR}/trace_map.json" || true
   fi
