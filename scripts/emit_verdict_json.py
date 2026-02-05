@@ -163,6 +163,14 @@ def gather_run_ids(base_dir):
                 elif isinstance(j, dict):
                     out['main'] = extract_id(j)
 
+        # 3b) latest_main_runs.json - list of recent main runs (push events)
+        if out.get('main') is None:
+            p3b = cp / 'latest_main_runs.json'
+            if p3b.exists():
+                j = load_json(p3b)
+                if isinstance(j, list) and len(j) > 0:
+                    out['main'] = extract_id(j[0])
+
         # 4) explicit latest merge group run list
         if out.get('merge_group') is None:
             p4 = cp / 'latest_merge_group_run_explicit.json'
@@ -178,7 +186,43 @@ def gather_run_ids(base_dir):
                 j = load_json(q)
                 if isinstance(j, dict):
                     out['merge_group'] = extract_id(j)
+    # 5b) latest_merge_group_runs.json - list of merge_group runs
+    if out.get('merge_group') is None:
+        q2 = cp / 'latest_merge_group_runs.json'
+        if q2.exists():
+            j = load_json(q2)
+            if isinstance(j, list) and len(j) > 0:
+                out['merge_group'] = extract_id(j[0])
+        # Final fallback: scan all control_plane JSON files for runs containing a url or databaseId
+        if out.get('main') is None or out.get('merge_group') is None:
+            for f in cp.glob('**/*.json'):
+                try:
+                    jj = load_json(f)
+                except Exception:
+                    jj = None
+                if not jj:
+                    continue
+                # If list, inspect elements
+                lst = jj if isinstance(jj, list) else [jj]
+                for item in lst:
+                    if not isinstance(item, dict):
+                        continue
+                    # detect PR run
+                    if out.get('main') is None and (item.get('event') == 'pull_request' or item.get('headBranch')):
+                        candidate = extract_id(item) or item.get('url')
+                        if candidate:
+                            out['main'] = candidate
+                    # detect merge_group run
+                    if out.get('merge_group') is None and (item.get('event') == 'merge_group' or (item.get('name') and 'merge' in item.get('name'))):
+                        candidate = extract_id(item) or item.get('url')
+                        if candidate:
+                            out['merge_group'] = candidate
+                    if out.get('main') and out.get('merge_group'):
+                        break
+                if out.get('main') and out.get('merge_group'):
+                    break
     return out
+
 
 
 def find_hitl_files(base_dir):

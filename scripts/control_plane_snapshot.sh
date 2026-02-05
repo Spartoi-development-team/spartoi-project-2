@@ -45,6 +45,20 @@ for f in control_plane/_evidence/*/rules_effective_main.json; do
   break
 done
 
+# Also preserve historic PR/MQ run snapshots if available
+for f in control_plane/_evidence/*/pr_mq_runs.json; do
+  cp "$f" "${OUTDIR}/pr_mq_runs.json" 2>/dev/null || true
+  break
+done
+for f in control_plane/_evidence/*/latest_pr_run_explicit.json; do
+  cp "$f" "${OUTDIR}/latest_pr_run_explicit.json" 2>/dev/null || true
+  break
+done
+for f in control_plane/_evidence/*/latest_merge_group_run_explicit.json; do
+  cp "$f" "${OUTDIR}/latest_merge_group_run_explicit.json" 2>/dev/null || true
+  break
+done
+
 # Copy any historical control_plane/_evidence artifacts if present
 shopt -s nullglob 2>/dev/null || true
 for f in control_plane/_evidence/*/rules_main.json; do
