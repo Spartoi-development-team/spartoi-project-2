@@ -1,3 +1,9 @@
-# OMOC on Codespaces
+---
+title: Home
+---
 
-If CI is green, you may merge. If CI is red, you may not negotiate with it.
+# OMOC Acceptance
+
+This is a minimal placeholder index page created by the OMOC control-plane to satisfy MkDocs in CI.
+
+See `control_plane/CR_OPEN.md` for project details.
