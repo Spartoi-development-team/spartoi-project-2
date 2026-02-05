@@ -31,11 +31,24 @@ import json,sys
 try:
   j=json.load(open('${VJ}'))
   v=j.get('verdict','')
-  if v=='PASS':
+  req=j.get('required_checks',[])
+  hitl=j.get('HITL_guard',{})
+  has_gates=False
+  try:
+    has_gates=any(x.lower()=='gates' for x in req)
+  except Exception:
+    has_gates=False
+  hitl_present=bool(hitl.get('present'))
+  if v=='PASS' and has_gates and hitl_present:
     print('PASS')
     sys.exit(0)
   else:
-    print('NOTPASS')
+    # emit reason codes for repair planning
+    reasons=[]
+    if v!='PASS': reasons.append('verdict!='+v)
+    if not has_gates: reasons.append('missing_gates')
+    if not hitl_present: reasons.append('hitl_missing')
+    print('NOTPASS', ','.join(reasons))
     sys.exit(4)
 except Exception as e:
   print('BADJSON')

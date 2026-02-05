@@ -4,11 +4,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* ❌ 完整 JSON Schema 展開（只能寫最小欄位列表 + Route-Out） * ❌ 把 Runbook/SFHB 當 SSOT 或契約引用 * ❌ 設計細節全文複製進 SRS",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:144",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:145",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -17,11 +16,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* ❌ 完整 JSON Schema 展開（只能寫最小欄位列表 + Route-Out） * ❌ 把 Runbook/SFHB 當 SSOT 或契約引用 * ❌ 設計細節全文複製進 SRS",
     "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:145",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -30,11 +28,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* ❌ 完整 JSON Schema 展開（只能寫最小欄位列表 + Route-Out） * ❌ 把 Runbook/SFHB 當 SSOT 或契約引用 * ❌ 設計細節全文複製進 SRS",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:146",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:145",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -43,11 +40,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* 本 SRS 內已存在且可驗收的需求條文（含欄位清單、Gate、工件契約），不得以「摘要/口號」取代 * 任何刪除/簡化 MUST： 1. 在 §13.2 Conflict Ledger 登錄",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:153",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:187",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -56,11 +52,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "3. RTM-B 外掛補齊驗證機制（hash/sample/統計） 4. APPX-I Candidate Migration Ledger 補齊 15 條實質內容（numeric-free） 5. 新增 §3.20 ICT模組需求框架",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:158",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:162",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -82,11 +77,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:310",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -95,11 +89,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:311",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -108,11 +101,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
     "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -121,11 +113,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:313",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -134,11 +125,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:314",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -147,11 +137,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:315",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -160,11 +149,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* §3.23 TVE等價驗證需求 [#SRS-V700-FR-TVE] * §3.24 SEM³驗證框架需求 [#SRS-V700-FR-SEM3] * §3.25 Playwright自動化需求 [#SRS-V700-FR-PLAYWRIGHT]",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:316",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:312",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -173,11 +161,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "介面schema LBP-B(ICD) 「Route-Out: LBP-B(ICD) SCHEMA-XXX」",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:556",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:559",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -199,11 +186,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* §10.2 FR 驗收索引 [#SRS-V700-MAI-FR] * §10.3 NFR 驗收索引 [#SRS-V700-MAI-NFR] * §10.4 IR 驗收索引 [#SRS-V700-MAI-IR]",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:712",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:351",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -225,11 +211,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "§0.4.4 Gate執行與驗證機制 [ANCHOR:SRS-V700-GATE-EXECUTION] Gate執行流程（Normative）：",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:882",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:923",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -329,11 +314,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "jobcard_schema_validation.json Test MAI-WRC-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2294",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5504",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -381,11 +365,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "系統MUST驗證策略符合台股微結構三軸約束 Fit Criterion twms_axis_check_report.json Pass",
     "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2481",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -394,11 +377,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "SRS-FR-TWMS-AXIS-002: 驗收報表schema 欄位 內容",
     "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2505",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -407,11 +389,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* axis_1_time_window: {verdict, violations[]} * axis_2_liquidity: {verdict, violations[]} * axis_3_trading_rules: {verdict, violations[]}",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2527",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2525",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -433,11 +414,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-CORPUS Acceptance MAI-RAG-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2566",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2565",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -459,11 +439,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "sem3_pipeline_test.json Pass Verification Method Test",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2602",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2598",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -472,11 +451,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-METHOD-TRIPLE-SOURCE Acceptance MAI-METHOD-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2625",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2663",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -485,11 +463,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "SRS-FR-METHOD-003: MethodCard Schema 欄位 內容",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2642",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2683",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -498,11 +475,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-METHOD-TRIPLE-SOURCE Acceptance MAI-METHOD-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2659",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2663",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -511,11 +487,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "SRS-FR-METHOD-003: MethodCard Schema 欄位 內容",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2681",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2683",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -524,11 +499,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-METHOD-CARD Acceptance MAI-METHOD-003",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2698",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2697",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -537,11 +511,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-BACKTEST-REPORT Acceptance MAI-BACKTEST-003",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2715",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2753",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -550,11 +523,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-TA-OUTPUT Acceptance MAI-TA-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2737",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2775",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -602,11 +574,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "decision_package_schema_test.json Inspection MAI-HITL-DP-002",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2826",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5560",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -615,11 +586,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "decision_package_schema_test.json Pass Verification Method Inspection",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2861",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2858",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -628,11 +598,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "decision_package_schema_test.json Inspection MAI-HITL-DP-002",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2883",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5560",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -654,11 +623,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-PERFORMANCE-REPORT Acceptance MAI-PERFORM-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2922",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2960",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -680,11 +648,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "LBP-B(ICD) v4.0.0 SCHEMA-PERFORMANCE-REPORT Acceptance MAI-PERFORM-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2961",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2960",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -693,11 +660,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "ui_decision_isolation_test.json Pass Verification Method Test",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2978",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2976",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -706,11 +672,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "ui_jobcard_io_test.json Pass Verification Method Demonstration",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2995",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:2993",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -732,11 +697,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "SRS-CAUI-IC-001: UI觸發任一執行流程MUST生成/引用run_config_snapshot.json SRS-CAUI-IC-002: UI必須將本次輸入工件納入release_bundle_manifest.json（含input_digest） SRS-CAUI-IC-003: UI必須顯示以下Gate評估結果：GATE-RL-001~005（發布準備度）、RC1~RC5（蒸餾質量） SRS-CAUI-IC-004: EXECUTE預設禁用：UI初始狀態MUST為EXECUTE_DISABLED或RADAR_ONLY；只有在RC Gate全數PASS且HITL明確確認後才允許切換 ________________",
     "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3038",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -797,11 +761,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "fallback_test.json所有路徑Pass Verification Method Test",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3647",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3643",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -810,11 +773,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "llm_dependency_audit.json驗證通過 Verification Method Inspection",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3677",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3679",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -823,11 +785,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "驗收標準： MUST提供llm_dependency_audit.json，證明： * REQUIRED_LLM = 0（核心功能無強制依賴） * OPTIONAL_LLM = N（可選加速）",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3694",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3695",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -849,11 +810,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* 交叉驗證：至少2名標註員獨立評分 fidelity_report.json最小欄位： * batch_id, bleu4_score, human_eval_scores, human_eval_mean, inter_annotator_agreement, failed_cases",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3757",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3801",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -888,11 +848,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* batch_id, total_scripts, passed_scripts, failed_scripts, executability_ratio, failure_reasons[] 門檻值（Candidate）： 建議可執行率≥95% SRS-RC-004：RC4（Platform Alignment - 平台對齊）",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3832",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3828",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -901,11 +860,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* batch_id, baseline_metrics{}, distilled_metrics{}, metric_diffs{}, consistency_pass 門檻值（Candidate）： 建議關鍵指標差異≤5% RC治理規則",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3873",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3878",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -914,11 +872,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "schema驗證通過 Verification Method Inspection",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3900",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3905",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -927,11 +884,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* pass_probability: {win_rate_ge_55pct, mdd_le_20pct, sharpe_ge_1p5} * recommended_candidate_thresholds: {win_rate_threshold, mdd_threshold, sharpe_threshold, rationale, confidence_level} SRS-THR-002: Candidate禁止成為Fail-Closed門檻",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3926",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3924",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -940,11 +896,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* CR_OPEN（未驗證不得上線） ________________",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3943",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3944",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -953,11 +908,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "系統MUST驗證輸入資料品質（完整性/時效性/一致性） Fit Criterion data_quality_report.json Pass",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3960",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3956",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -966,11 +920,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "replay_test.json Pass Verification Method Demonstration",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3977",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3975",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -979,11 +932,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "* 本 SRS 內已存在且可驗收的需求條文（含欄位清單、Gate、工件契約），不得以「摘要/口號」取代 * 任何刪除/簡化 MUST： 1. 在 §13.2 Conflict Ledger 登錄",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:3990",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:187",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1005,11 +957,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "intent_spec.json最小欄位列表（完整schema Route-Out至ICD）： * intent_version (string) * run_id (string)",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4018",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4059",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1018,11 +969,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "Route-Out: ICD / schema_id: SCHEMA-VALIDATION-HOOK SRS-CTRL-TRIO-003: evidence_refs.json（最小契約） 欄位",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4043",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4088",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1031,11 +981,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "Route-Out: ICD / schema_id: SCHEMA-INTENT-SPEC SRS-CTRL-TRIO-002: validation_hook.json（最小契約） 欄位",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4065",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4066",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1044,11 +993,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "Route-Out: ICD / schema_id: SCHEMA-VALIDATION-HOOK SRS-CTRL-TRIO-003: evidence_refs.json（最小契約） 欄位",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4087",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4088",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1122,11 +1070,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "manifest schema驗證通過 Verification Method Inspection",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4467",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4473",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1174,11 +1121,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "驗收索引 GATE-RL-002 APPX-RSB-INDEX",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4561",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4557",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1187,11 +1133,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "xq_integration_test.json Pass Verification Method Test",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4578",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4576",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1200,11 +1145,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "系統MUST能產出符合XQ平台規格的XS腳本 Fit Criterion xs_syntax_test.json Pass",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4595",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4591",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1239,11 +1183,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "sinopac_api_test.json Pass（若啟用） Verification Method Test",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4651",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4649",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1252,11 +1195,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "finmind_api_test.json Pass（若啟用） Verification Method Test",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4668",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:4666",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1278,11 +1220,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "LBP-B(ICD) SCHEMA-DISTILL-SEM3 Acceptance MAI-HYP-H1-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5040",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5078",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1291,11 +1232,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "本節將《全文件最終增補升級方案v2》的八大設計假說條文化為可驗收需求。 H1: SEM³（三層蒸餾） [ANCHOR:SRS-V700-HYPOTHESIS-H1]",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5061",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5059",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1304,11 +1244,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "LBP-B(ICD) SCHEMA-DISTILL-SEM3 Acceptance MAI-HYP-H1-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5082",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5078",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1317,11 +1256,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "LBP-B(ICD) SCHEMA-METHOD-TRIPLE-SOURCE Acceptance MAI-HYP-H2-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5101",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5099",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1330,11 +1268,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "LBP-B(ICD) SCHEMA-RAG-TRIRAG Acceptance MAI-HYP-H3-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5124",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5120",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1369,11 +1306,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "LBP-B(ICD) SCHEMA-MARKET-PROFILE Acceptance MAI-HYP-H8-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5183",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5221",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1382,11 +1318,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "待驗證 失敗→RADAR_ONLY H4",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5248",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5243",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1395,11 +1330,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "待驗證 無證據→BLOCK_RELEASE H7",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5259",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5258",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1447,11 +1381,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "待驗證 H3 TriRAG（三階段RAG）",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5392",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5389",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1460,11 +1393,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "待驗證 H6 Evidence-Only Firewall",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5401",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5398",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1473,11 +1405,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "待驗證",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5410",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5407",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1499,11 +1430,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "核心FR驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-FR）： mai_id srs_req_id",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5454",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5489",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1525,11 +1455,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "MAI為本SRS的驗收工件索引，每條需求對應一個acceptance_hook。 MAI欄位結構： 欄位",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5462",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5468",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1538,11 +1467,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "MAI為本SRS的驗收工件索引，每條需求對應一個acceptance_hook。 MAI欄位結構： 欄位",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5470",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5468",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1551,11 +1479,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "decision_package_schema_test.json Inspection MAI-HITL-DP-002",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5562",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5560",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1629,11 +1556,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "核心NFR驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-NFR）： mai_id srs_req_id",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5608",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5643",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1694,11 +1620,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "twms_schema_validation.json Inspection MAI-TWMS-003",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5628",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5632",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1707,11 +1632,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "twms_schema_validation.json Inspection MAI-TWMS-003",
     "gate_ref": "",
     "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5632",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1720,11 +1644,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "twms_schema_validation.json Inspection MAI-TWMS-003",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5636",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5632",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1733,11 +1656,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "§10.3 NFR 驗收索引 [ANCHOR:SRS-V700-MAI-NFR] 核心NFR驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-NFR）：",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5640",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5641",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1746,11 +1668,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "§10.3 NFR 驗收索引 [ANCHOR:SRS-V700-MAI-NFR] 核心NFR驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-NFR）：",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5644",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5641",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1759,11 +1680,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "核心IR驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-IR）： mai_id srs_req_id",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5722",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5757",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1785,11 +1705,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "run_config_schema_check.json Inspection MAI-DEGRADE-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5730",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5772",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1798,11 +1717,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "run_config_schema_check.json Inspection MAI-DEGRADE-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5734",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5772",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1811,11 +1729,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "run_config_schema_check.json Inspection MAI-DEGRADE-001",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5738",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5772",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1824,11 +1741,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "Contract參照數量： 55 contracts（見§6.2） Schema參照數量： 28 schemas（見§6.3） ________________",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5786",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6085",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1837,11 +1753,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "核心GOV驗收工件索引（完整表格見APPX-BUNDLE-CORE-A6 CH1 MAI-GOV）： mai_id srs_req_id",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5800",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5835",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1941,11 +1856,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "§10.7 MAI 外掛驗證機制 [ANCHOR:SRS-V700-MAI-VERIFY] SRS-MAI-SYNC-001: MAI外掛同步驗證（Fail-Closed）",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5959",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5997",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1954,11 +1868,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "若MAI以外掛承載，系統MUST對MAI外掛執行同步驗證：外掛存在、hash記錄於Manifest、且與正文宣告的統計一致；任一不一致MUSTFail-Closed Fit Criterion MAI外掛存在；manifest含該工件hash；正文MAI覆蓋統計與外掛一致",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5971",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6005",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1980,11 +1893,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "系統MUST使用單一命名規則引用MAI外掛（檔名、artifact_id、schema_id）；任一不一致MUST視為不同工件並Fail-Closed Fit Criterion SRS/Manifest/validation_hook的MAI引用三者一致",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5976",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6022",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -1993,11 +1905,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "§10.7 MAI 外掛驗證機制 [ANCHOR:SRS-V700-MAI-VERIFY] SRS-MAI-SYNC-001: MAI外掛同步驗證（Fail-Closed）",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5992",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5997",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -2006,11 +1917,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "§10.7 MAI 外掛驗證機制 [ANCHOR:SRS-V700-MAI-VERIFY] SRS-MAI-SYNC-001: MAI外掛同步驗證（Fail-Closed）",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5993",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:5997",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -2019,11 +1929,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "若MAI以外掛承載，系統MUST對MAI外掛執行同步驗證：外掛存在、hash記錄於Manifest、且與正文宣告的統計一致；任一不一致MUSTFail-Closed Fit Criterion MAI外掛存在；manifest含該工件hash；正文MAI覆蓋統計與外掛一致",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6007",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6005",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -2032,11 +1941,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "升級方案v3（外掛+正文摘要+驗證機制） gate_ref BLOCK_RELEASE",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6417",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6453",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -2045,11 +1953,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "RTM-A驗證統計： * 總條目：74 * row_count：74",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6434",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:6475",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -2110,11 +2017,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "正文中不得以\"Candidate/待定/先這樣\"形式保留未驗證門檻或規則；所有此類項MUST轉為CR_OPEN條文並綁定Fail-Closed gate_policy Fit Criterion 正文Candidate字樣0命中（允許僅存在於非規範ledger註記）；每條CR_OPEN具gate_policy",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7004",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7000",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   },
@@ -2149,11 +2055,10 @@
     "srs_req_id": "",
     "acceptance_artifact": "",
     "verification_method": "",
-    "pass_criteria": "",
+    "pass_criteria": "Evidence_Ref最小欄位Schema（完整10欄位版）： { \"evidence_id\": \"string (唯一識別碼)\",",
     "gate_ref": "",
-    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7780",
+    "source_locator": "ssot/inputs/Spartoi｜P1_SRS_v7.0.0.md:7821",
     "missing_fields": [
-      "pass_criteria",
       "gate_ref"
     ]
   }

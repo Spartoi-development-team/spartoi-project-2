@@ -1,0 +1,9 @@
+{
+  "allowed_paths": [
+    ".opencode/node_modules/@opencode-ai/plugin/dist/tool.d.ts",
+    ".opencode/node_modules/@opencode-ai/plugin/dist/example.js",
+    "site/assets/javascripts/bundle.79ae519e.min.js",
+    "scripts/emit_verdict_json.py"
+  ],
+  "note": "Repository-level allowlist for known non-execute files to avoid false positives in acceptance scanning. Modify only through PR with review."
+}

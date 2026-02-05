@@ -32,18 +32,22 @@ def main():
     mai_lines = extract_mai_lines(txt)
     rows = []
     if not mai_lines:
+        # Record missing MAI evidence explicitly (CR_OPEN) and create a guard file
         CR_OPEN.write_text('No MAI sections detected in SRS.\n')
-        # Write placeholder
-        rows.append({
-            'mai_id':'MAI-PLACEHOLDER',
-            'srs_req_id':'',
-            'acceptance_artifact':'',
-            'verification_method':'',
-            'pass_criteria':'',
-            'gate_ref':'',
-            'source_locator': str(INPUT) + ':1'
-        })
+        mai_missing_flag = Path('control_plane/mai_missing.flag')
+        mai_missing_flag.write_text('No MAI lines detected in SRS.\n', encoding='utf-8')
+
+        # Write an empty trace map (truthful representation: no MAI -> no rows)
+        rows = []
     else:
+        # Clear stale flag if present
+        mai_missing_flag = Path('control_plane/mai_missing.flag')
+        if mai_missing_flag.exists():
+            try:
+                mai_missing_flag.unlink()
+            except Exception:
+                pass
+
         for ln, content in mai_lines:
             # naive splitting: assume format 'MAI-XXX : SRS-YYY | artifact | method | criteria | gate'
             parts = [p.strip() for p in re.split(r'[|,;]', content) if p.strip()]

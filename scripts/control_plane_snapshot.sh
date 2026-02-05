@@ -7,6 +7,12 @@ TS=$(date -u +%Y%m%dT%H%M%SZ)
 OUTDIR="evidence/_acceptance/${TS}/control_plane"
 # Ensure ruleset snapshot is collected (ruleset id: 12397323)
 mkdir -p "$OUTDIR"
+# Copy static control_plane artifacts (e.g., HITL / kill-switch SSOT) if present in repo control_plane/
+for f in control_plane/EXECUTE_DISABLED control_plane/RADAR_ONLY control_plane/PAPER control_plane/kill_switch; do
+  if [ -f "$f" ]; then
+    cp "$f" "$OUTDIR/" 2>/dev/null || true
+  fi
+done
 if command -v gh >/dev/null 2>&1; then
   echo "Fetching ruleset_12397323 via gh api"
   gh api repos/${GITHUB_REPOSITORY:-Spartoi-development-team/spartoi-project-2}/rulesets/12397323 --jq '.' > "$OUTDIR/ruleset_12397323.json" 2>/dev/null || true
@@ -83,6 +89,13 @@ fi
 # 4) check_run_names.txt: extract job names from .github/workflows/quality-gates.yml or use detected evidence
 if [ -f .github/workflows/quality-gates.yml ]; then
   grep -E "^\s+[a-zA-Z0-9_-]+:\s*$" .github/workflows/quality-gates.yml | sed 's/://g' | tr -d ' ' > "${OUTDIR}/check_run_names.txt" || true
+fi
+
+# Ensure merge_group is present as an event in workflows to support merge queue
+if [ -f .github/workflows/quality-gates.yml ]; then
+  if ! grep -q "merge_group" .github/workflows/quality-gates.yml; then
+    echo "WARNING: quality-gates.yml missing merge_group event" > "${OUTDIR}/quality_gates_merge_group_missing.txt" || true
+  fi
 fi
 
 echo "Snapshot complete" > "${OUTDIR}/snapshot.txt"
