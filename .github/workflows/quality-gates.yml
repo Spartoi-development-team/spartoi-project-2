@@ -28,6 +28,10 @@ jobs:
           if command -v npm >/dev/null 2>&1; then
             npm install -g markdownlint-cli2 || true
           fi
+      - name: Preflight: run opencode doctor (fail-closed)
+        run: |
+          set -euo pipefail
+          bash scripts/preflight.sh
       - name: Run gates
         run: |
           set -e
