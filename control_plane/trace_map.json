@@ -1,13 +1,29 @@
 {
-  "generated_utc": "REPLACE_BY_PIPELINE",
+  "generated_utc": "2026-02-05T11:31:00Z",
   "items": [
     {
-      "mai_id": "MAI-PLACEHOLDER",
-      "srs_anchor": "SRS-ANCHOR-PLACEHOLDER",
+      "mai_id": "MAI-STRUCTURE",
+      "srs_anchor": "Spartoi｜P1_SRS_v7.0.0#structure",
+      "impl_paths": ["docs/architecture/structure.md"],
+      "gate_ids": ["gates:docs","gates:links"],
+      "evidence_refs": ["ssot/Spartoi｜P1_SRS_v7.0.0.md#structure"],
+      "status": "MAPPED"
+    },
+    {
+      "mai_id": "MAI-FR",
+      "srs_anchor": "Spartoi｜P1_SRS_v7.0.0#functional-requirements",
+      "impl_paths": [],
+      "gate_ids": ["gates:docs"],
+      "evidence_refs": [],
+      "status": "CR_OPEN"
+    },
+    {
+      "mai_id": "MAI-NFR",
+      "srs_anchor": "Spartoi｜P1_SRS_v7.0.0#nonfunctional-requirements",
       "impl_paths": [],
       "gate_ids": [],
       "evidence_refs": [],
-      "status": "OPEN"
+      "status": "CR_OPEN"
     }
   ]
 }

@@ -1,0 +1,20 @@
+{
+  "generated_utc": "2026-02-05T11:45:00Z",
+  "items": [
+    {
+      "mai_id": "MAI-STRUCTURE",
+      "summary": "Requirements describing system structure and module boundaries",
+      "status": "MISSING"
+    },
+    {
+      "mai_id": "MAI-FR",
+      "summary": "Functional requirements (FR) missing explicit acceptance criteria",
+      "status": "MISSING"
+    },
+    {
+      "mai_id": "MAI-NFR",
+      "summary": "Non-functional requirements (NFR) acceptance mapping missing",
+      "status": "MISSING"
+    }
+  ]
+}

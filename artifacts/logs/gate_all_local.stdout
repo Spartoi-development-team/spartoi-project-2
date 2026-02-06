@@ -5,7 +5,7 @@ INFO    -  Cleaning site directory
 INFO    -  Building documentation to directory: /workspaces/spartoi-project-2/site
 INFO    -  The following pages exist in the docs directory, but are not included in the "nav" configuration:
   - assumption_ledger.md
-INFO    -  Documentation built in 0.80 seconds
+INFO    -  Documentation built in 0.39 seconds
 ✅ MkDocs build PASSED
 
 [2/2] Running markdownlint-cli2 on project files...
