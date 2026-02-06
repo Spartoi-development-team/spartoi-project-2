@@ -1,11 +1,11 @@
 name: quality-gates
 
 on:
-  push:
-    branches: [main]
   pull_request:
+  workflow_dispatch:
   merge_group:
     types: [checks_requested]
+
 
 jobs:
   gates:
